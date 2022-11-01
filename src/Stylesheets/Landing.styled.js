@@ -13,7 +13,6 @@ export const LeftSide = styled.div`
     display: block;
     float: left;
     margin: 8rem 1rem 1rem 10rem;
-    // overflow: hidden;
 
     @media (max-width: 1300px){
         width: 18rem;
