@@ -4,10 +4,54 @@
   font-family: 'Raleway', 'Monteserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: black;
+  /* color: black; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin: 0rem 2rem 1rem;
+    
+   
+}
+.swiper > .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 3rem;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper > .swiper-button-next{
+    color: #c5d86d;
+    font-weight: 700;
+    border-radius: 50%;   
+}
+
+.swiper > .swiper-button-prev{
+    color:#c5d86d;
+    font-weight: 700;
+    border-radius: 50%;
+    font-size: 1rem; 
+}
+
+
+@media(max-width:1000px){
+    .swiper > .swiper-button-next::after,  .swiper > .swiper-button-prev::after{
+        font-size: 2rem;
+        
+    }
+}
+
+@media(max-width:300px){
+    .swiper > .swiper-button-next::after, .swiper > .swiper-button-prev::after{
+        padding-top: 2rem;
+        
+    }
 }
