@@ -34,11 +34,33 @@ code {
     border-radius: 50%;   
 }
 
+.tab{
+    color: #f05d23;
+    margin-right: 1rem;
+}
+
+.nonTab{
+    color: #260c1a;
+    margin-right: 1rem;
+}
+
+.tabItem{
+   
+}
+
 @media(max-width:1000px){
     .swiper > .swiper-button-next::after,  .swiper > .swiper-button-prev::after{
         font-size: 2rem;
         
     }
+}
+
+@media (max-width:700){
+    
+}
+
+@media (max-width:600px){
+            
 }
 
 @media(max-width:300px){

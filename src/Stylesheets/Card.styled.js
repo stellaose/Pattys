@@ -5,7 +5,7 @@ export const LandingAbout = styled.div`
     grid-template-columns: 20% auto;
     width: 85%;
     margin: 2rem  auto 3rem;
-    padding: 4rem 1rem;
+    padding: 4rem 1rem 1rem;
     gap: 6rem;
     
     @media (max-width:1200px){
