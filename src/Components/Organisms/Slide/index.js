@@ -7,7 +7,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import {  Navigation } from "swiper";
-import { FirstSlide } from "./Slide";
+import { 
+        FirstSlide,
+        SecondSlide,
+        ThirdSlide,
+        FourthSlide } from "./Slide";
 
 
 const Slide = () => {
@@ -15,17 +19,14 @@ const Slide = () => {
         <>
             <div >
             <Swiper
-                    // pagination={{
-                    // type: "fraction",
-                    // }}
                     navigation={true}
                     modules={[ Navigation]}
                     className="mySwiper"
                 >
                     <SwiperSlide><FirstSlide/></SwiperSlide>
-                    <SwiperSlide><FirstSlide/></SwiperSlide>
-                    <SwiperSlide><FirstSlide/></SwiperSlide>
-                    <SwiperSlide><FirstSlide/></SwiperSlide>
+                    <SwiperSlide><SecondSlide/></SwiperSlide>
+                    <SwiperSlide><ThirdSlide/></SwiperSlide>
+                    <SwiperSlide><FourthSlide/></SwiperSlide>
                 </Swiper>
             </div>
         </>

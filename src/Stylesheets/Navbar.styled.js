@@ -253,9 +253,7 @@ export const EndNavList = styled.div`
     font-size: 1.2rem;
     font-weight: 700;
     z-index: 50;
-    
-    background-color: rgba(255, 255, 255, 0.8);
-    /* background-color: blue; */
+    background-color: rgba(247, 247, 242, 0.9);
     
     h3{
         margin: 1rem auto;

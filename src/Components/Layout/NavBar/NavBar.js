@@ -42,6 +42,14 @@ const NavBar = () => {
         setPage(false)
     }
     
+    const closeDrop = () => {
+        setDrop(false)
+    }
+    
+    const closeNav = () => {
+        setNav(false)
+    }
+    
     const ref = useOutsideClick(closeBar)
     return (
         <Nav>
@@ -112,11 +120,11 @@ const NavBar = () => {
                             <div>
                                 <NavBarDropdown>
                                     <li>
-                                        <NavLink to="login" exact='true' activeclassName= 'active'>
+                                        <NavLink to="login" exact='true' activeclassName= 'active' onClick={closeDrop}>
                                             Login
                                         </NavLink></li>
                                     <li>
-                                        <NavLink to="register" exact='true' activeclassName= 'active'>
+                                        <NavLink to="register" exact='true' activeclassName= 'active' onClick={closeDrop}>
                                             Register
                                         </NavLink>
                                     </li>
@@ -133,13 +141,13 @@ const NavBar = () => {
                     </EndNav>
                     {nav && ( 
                         <EndNavList>
-                        <NavLink to = 'product' exact='true' activeclassName = 'active'>
+                        <NavLink to = 'product' exact='true' activeclassName = 'active' onClick={closeNav}>
                             <h3>
                                 Shop
                             </h3>
                         </NavLink>
                         
-                        <NavLink to='sales' exact='true' activeclassName = 'active'>
+                        <NavLink to='sales' exact='true' activeclassName = 'active' onClick={closeNav}>
                             <h3>
                                 Sales
                             </h3>
@@ -151,30 +159,30 @@ const NavBar = () => {
                                 </NavLink>
                             </PageDiv>
                         )}
-                        <NavLink to ='contact-us' exact='true' activeclassName = 'active'>
+                        <NavLink to ='contact-us' exact='true' activeclassName = 'active' onClick={closeNav}>
                             <h3>
                                 Contact
                             </h3>
                         </NavLink>
-                        <a href = 'https://www.instagram.com/stellaose/' target='_blank' rel='noreferrer'>
+                        <a href = 'https://www.instagram.com/stellaose/' target='_blank' rel='noreferrer' onClick={closeNav}>
                             <p>
                                 <AiFillFacebook/>
                             </p>
                         </a>
                         
-                        <a href = 'https://twitter.com/stellaose_' target='_blank' rel='noreferrer'>
+                        <a href = 'https://twitter.com/stellaose_' target='_blank' rel='noreferrer' onClick={closeNav}>
                             <p>
                                 <AiFillTwitterCircle/>
                             </p>
                         </a>
                         
-                        <a href = 'https://www.linkedin.com/in/stella-oseyomon-8a2836103' target='_blank' rel='noreferrer'>
+                        <a href = 'https://www.linkedin.com/in/stella-oseyomon-8a2836103' target='_blank' rel='noreferrer' onClick={closeNav}>
                             <p>
                                 <AiFillLinkedin/>
                             </p>
                         </a>
                         
-                        <a href = 'https://web.facebook.com/stella.oseyomon' target='_blank' rel='noreferrer'>
+                        <a href = 'https://web.facebook.com/stella.oseyomon' target='_blank' rel='noreferrer' onClick={closeNav}>
                             <p>
                                 <AiOutlineInstagram/>
                             </p>

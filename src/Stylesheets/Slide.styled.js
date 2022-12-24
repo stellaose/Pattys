@@ -4,6 +4,7 @@ export const SlideBody = styled.div`
     display: grid;
     grid-template-columns: auto 40vw;
     gap: 3rem;
+    height: 31rem;
     
     @media (max-width:1000px){
         gap: 2rem;
@@ -16,6 +17,7 @@ export const SlideBody = styled.div`
     @media (max-width:670px){
         display: flex;
         flex-direction: column;
+        height: fit-content;
     }
 `
 
@@ -105,6 +107,7 @@ export const LeftSlide = styled.div`
             font-size: 1.1rem;
             font-weight: 700;
             margin-top: 2rem;
+            cursor: pointer;
         }
     }
 `

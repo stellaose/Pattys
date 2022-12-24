@@ -12,7 +12,7 @@ export const FirstSlide = () => {
                     <Fade top>
                         <h3>New Arrivals</h3>
                         
-                        <h1>Denim Full Of Spirit</h1>
+                        <h1>It's in your Jeans.</h1>
                    
                         <p>
                             The perfect fit. Giving you the desired shape while making a statement.
@@ -36,24 +36,28 @@ export const FirstSlide = () => {
 export const SecondSlide = () => {
     return (
         <>
-            <div >
-                <div >
-                    <img src="/assets/farm-portfolio.png" alt="slide"/>
-                </div>
-                <div >
+            <SlideBody>
+                <LeftSlide>
                     <Fade top>
-                        <h1>C & M FarmTechs</h1>
+                        <h3>New Arrivals</h3>
                         
-                        <p>C&M FarmTech offers a comprehensive solution for specialized farming that transforms it into various products for commercial and individual purposes. </p>
-                    </Fade>
+                        <h1>Wear the Fashion.</h1>
                    
-                    <Fade bottom>
-                        {/* <Link href='/case-study/farmTechs'  passHref> */}
-                            <button>See more</button>
-                        {/* </Link> */}
+                        <p>
+                            Feel trendy, feel authentic. Express your style with us while looking perfect from every angle.
+                        </p>
+                        
+                        <Link to='/products'>
+                            <button>Explore Now</button>
+                        </Link>
                     </Fade> 
-                </div>
-            </div>
+                </LeftSlide>
+                <RightSlide >
+                    <RightImg src="/asset/shirt1.jpg" alt="slide"/>
+                </RightSlide>
+                
+                
+            </SlideBody>
         </>
     )
 }
@@ -62,28 +66,28 @@ export const SecondSlide = () => {
 export const ThirdSlide = () => {
     return (
         <>
-            <div >
-                 
-                <div >
-                    <img src="/assets/da-portfolio.jpg" alt="slide"/>
-                </div>
-                
-                <div >
+            <SlideBody>
+                <LeftSlide>
                     <Fade top>
-                        <h1>Destiney Arkaden</h1>
+                        <h3>New Arrivals</h3>
                         
-                        <p>Destiney Arkaden provides an educational platform that enables prospective international students to find the right study programs and universities abroad, especially in Germany and other EU countries.</p>
-                    </Fade>
+                        <h1>Feet With a Beat.</h1>
                    
-                    <Fade bottom>
+                        <p>
+                            Be comfy, be stylish, make your walk better. It's all about your needs.
+                        </p>
                         
-                        
-                            <button>See more</button>
-                        
+                        <Link to='/products'>
+                            <button>Explore Now</button>
+                        </Link>
                     </Fade> 
-                </div>
-               
-            </div>
+                </LeftSlide>
+                <RightSlide >
+                    <RightImg src="/asset/heels.jpg" alt="slide"/>
+                </RightSlide>
+                
+                
+            </SlideBody>
         </>
     )
 }
@@ -91,22 +95,28 @@ export const ThirdSlide = () => {
 export const FourthSlide = () => {
     return (
         <>
-            <div >
-                <div >
-                    <img src="/assets/man-portfolio.jpg" alt="slide"/>
-                </div>
-                <div >
+            <SlideBody>
+                <LeftSlide>
                     <Fade top>
-                        <h1>Mandigo Discothek</h1>
+                        <h3>New Arrivals</h3>
                         
-                        <p>Transforming Berlin’s Elite Nightlife With Its Impeccable Design And Finishing, Complemented With Stunning And First Of Its Kind Decor And Lighting, World Class Customer Service And Hospitality. </p>
-                    </Fade>
+                        <h1>Long Live Bag.</h1>
                    
-                    <Fade bottom>
-                            <button>See more</button>
+                        <p>
+                            Welcome to Backpack Country. It's A New Backpack Every Day. 
+                        </p>
+                        
+                        <Link to='/products'>
+                            <button>Explore Now</button>
+                        </Link>
                     </Fade> 
-                </div>
-            </div>
+                </LeftSlide>
+                <RightSlide >
+                    <RightImg src="/asset/bag.jpg" alt="slide"/>
+                </RightSlide>
+                
+                
+            </SlideBody>
         </>
     )
 }
