@@ -55,27 +55,27 @@ export const LeftSlide = styled.div`
     }
     
     h1{
-        font-size: 3.6rem;
+        font-size: 3.2rem;
         font-weight: 700;
         
         @media (max-width:1100px){
-            font-size: 3.4rem;
-        }
-        
-        @media (max-width:800px){
             font-size: 3rem;
         }
         
-        @media (max-width:670px){
+        @media (max-width:800px){
             font-size: 2.8rem;
         }
         
-        @media (max-width:400px){
+        @media (max-width:670px){
             font-size: 2.5rem;
         }
         
-        @media (max-width:300px){
+        @media (max-width:400px){
             font-size: 2rem;
+        }
+        
+        @media (max-width:300px){
+            font-size: 1.8rem;
         }
     }
     
