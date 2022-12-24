@@ -8,7 +8,7 @@ const LandingTab = () => {
         <>
             <LandingTabBody>
                 <LandingTabContent>
-                    <h2>Introduce</h2>
+                    <h2>Featured Products</h2>
                     <TabComponent/>
                 </LandingTabContent>
                 

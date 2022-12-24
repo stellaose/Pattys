@@ -50,7 +50,12 @@ export const LandingTabItem = styled.div`
 
 export const TabLink = styled.div`
     display: flex;
-    margin-top: 1rem;
+    margin: 1rem 0 2rem;
+        
+        @media (max-width:700px){
+            margin-top: 1rem;
+            /* overflow-x: auto; */
+        }
         
         @media (max-width:600px){
             display: grid;
@@ -63,8 +68,13 @@ export const TabLink = styled.div`
             }
         }
         
-        @media (max-width:700px){
-            margin-top: 1rem;
-            /* overflow-x: auto; */
+        @media (max-width:400px){
+            grid-template-columns: 6.5rem 6.5rem 6.5rem 6.5rem;
+            
+        }
+        
+        @media (max-width:300px){
+            grid-template-columns: 6rem 6rem 6rem 6rem;
+            
         }
 `

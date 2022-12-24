@@ -37,35 +37,44 @@ code {
 .tab{
     color: #f05d23;
     margin-right: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .nonTab{
     color: #260c1a;
     margin-right: 1rem;
-}
-
-.tabItem{
-   
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 @media(max-width:1000px){
     .swiper > .swiper-button-next::after,  .swiper > .swiper-button-prev::after{
         font-size: 2rem;
-        
+    }
+    
+    .tab, .nonTab{
+        font-size: 1.1rem;
     }
 }
 
-@media (max-width:700){
+/* @media (max-width:700){
     
-}
+} */
 
 @media (max-width:600px){
-            
+    .tab, .nonTab{
+        font-size: 1rem;
+    }
 }
 
 @media(max-width:300px){
     .swiper > .swiper-button-next::after, .swiper > .swiper-button-prev::after{
         padding-top: 2rem;
         
+    }
+    
+    .tab, .nonTab{
+        font-size: 0.9rem;
     }
 }
