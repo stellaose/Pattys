@@ -5,6 +5,7 @@ import Trending from './Trending'
 import NewArrivals from './NewArrivals'
 import AllProducts from './AllProducts'
 import { 
+    LandingTab,
         LandingTabItem,
         TabLink } from '../../../../../Stylesheets/Tabs.styled';
 
@@ -26,7 +27,7 @@ const TabComponent = () => {
                         
                 </TabLink>
                     
-                <div >
+                <LandingTab>
                     <TabContent id="tab1" activeTab={activeTab}>
                         <BestSeller/>
                     </TabContent>
@@ -39,7 +40,7 @@ const TabComponent = () => {
                     <TabContent id="tab4" activeTab={activeTab}>
                         <AllProducts/>
                     </TabContent>
-                </div>
+                </LandingTab>
             </LandingTabItem>
         </>
     )

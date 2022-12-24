@@ -1,5 +1,5 @@
 import React from 'react'
-import { LandingTabBody, LandingTabContent } from '../../../../Stylesheets/Tabs.styled'
+import { LandingTabBody } from '../../../../Stylesheets/Tabs.styled'
 import TabComponent from './TabComponent'
 
 
@@ -7,10 +7,8 @@ const LandingTab = () => {
     return (
         <>
             <LandingTabBody>
-                <LandingTabContent>
-                    <h2>Featured Products</h2>
-                    <TabComponent/>
-                </LandingTabContent>
+                <h2>Featured Products</h2>
+                <TabComponent/>
                 
             </LandingTabBody>
         </>

@@ -38,14 +38,20 @@ code {
     color: #f05d23;
     margin-right: 1rem;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .nonTab{
     color: #260c1a;
     margin-right: 1rem;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#tab1{
+    margin-top: 2rem;
 }
 
 @media(max-width:1000px){
