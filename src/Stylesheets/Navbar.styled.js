@@ -116,7 +116,11 @@ export const MidNav = styled.div`
 
 
 export const NavImg = styled.img`
-    height: 2.5rem;
+    height: 3rem;
+    
+    @media (max-width:1000px){
+        height: 2.5rem;
+    }
     
     @media (max-width:600px){
         height: 2rem;

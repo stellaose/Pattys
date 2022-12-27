@@ -39,7 +39,7 @@ export const CollectionsContent = styled.div`
     display: flex;
     margin-top: 2rem;
     
-    @media (max-width:600px){
+    @media (max-width:800px){
         display: block;
     }
 `
@@ -52,7 +52,7 @@ export const CollectionsOne = styled.div`
     padding: 2rem 1rem;
     grid-template-columns: 55% 42%;
     
-    @media (max-width:600px){
+    @media (max-width:800px){
         width: 90%;
         margin: 0 auto 2rem;
         display: flex;
@@ -108,7 +108,7 @@ export const CollectionsOne = styled.div`
             margin-top: 8rem;
             cursor: pointer;
             
-            @media (max-width:600px){
+            @media (max-width:800px){
                 margin-top: 2rem;
                 
             }
@@ -118,6 +118,10 @@ export const CollectionsOne = styled.div`
     img{
         width: 90%;
         margin-top: 2rem;
+        
+        @media (max-width:800px){
+            margin-top: 0;
+        }
     }
 `
 
@@ -125,8 +129,12 @@ export const CollectionsTwo = styled.div`
     background-color: white;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     padding: 2rem 1rem;
+    
+    @media (max-width:800px){
+        width: 90%;
+        margin: 0 auto;
+    }
     
     
     h2{
@@ -173,4 +181,67 @@ export const CollectionsTwo = styled.div`
         text-align: center;
     }
 `
+
+export const InstagramBody = styled.div`
+    display: block;
+    width: 90%;
+    margin: 0 auto 8rem;
+    /* padding: 2rem 1rem; */
+    
+    @media (max-width:600px){
+        width: 90%;
+        padding: 2rem 0;
+    }
+    
+    @media (max-width:400px){
+        width: 94%;
+    }
+    
+    h2{
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        font-weight: 700;
+        
+        @media (max-width:1000px){
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width:600px){
+            font-size: 1.4rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width:400px){
+            font-size: 1.3rem;
+        }
+    }
+`
+
+export const InstagramContent = styled.div`
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    gap: 2rem 0;
+    margin: 2rem auto;
+    /* padding: 2rem 1rem; */
+    
+    @media (max-width:1000px){
+        grid-template-columns: 33.3% 33.3% 33.3%;
+    }
+    
+    @media (max-width:700px){
+        padding: 2rem 0;
+        grid-template-columns: 50% 50%;
+    }
+    
+    @media (max-width:400px){
+        width: 94%;
+        display: block;
+    }
+    
+    img{
+        width: 100%;
+    }
+`
+
+
 

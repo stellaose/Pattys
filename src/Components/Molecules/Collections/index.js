@@ -27,6 +27,7 @@ const Collections = () => {
                         
                         <img src="/asset/Landing/collect.jpg" alt=""/>
                     </CollectionsOne>
+                    
                     <CollectionsTwo>
                         <h2>Basic Colour Caps</h2>
                         <p>Unisex dope facecap made from 100 percent cotton material</p>

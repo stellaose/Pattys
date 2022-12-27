@@ -7,7 +7,7 @@ import { LeftSlide, RightImg, RightSlide, SlideBody } from '../../../Stylesheets
 export const FirstSlide = () => {
     return (
         <>
-            <SlideBody>
+            <SlideBody id='slideBody'>
                 <LeftSlide>
                     <Fade top>
                         <h3>New Arrivals</h3>

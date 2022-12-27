@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../Components/Hero'
 import Collections from '../Components/Molecules/Collections';
+import Instagram from '../Components/Molecules/Instagram';
 import About from '../Components/Organisms/Cards/About';
 import LandingTab from '../Components/Organisms/Tabs/LandingTab';
 import {
@@ -14,6 +15,7 @@ const Landing = () => {
             <About/>
             <LandingTab/>
             <Collections/>
+            <Instagram/>
         </LandingBody>
         </>
     )
