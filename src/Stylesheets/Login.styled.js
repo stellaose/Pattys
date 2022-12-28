@@ -18,6 +18,8 @@ export const LoginContainer = styled.div`
     
     img {
         width: 100%;
+    min-height: 35rem;
+        
         border-radius: 20px;
         
         @media (max-width:860px){
@@ -57,6 +59,10 @@ export const LoginBox = styled.div`
         font-family: 'Bungee', cursive;
         color: #260c1a;
         text-align: center;
+        
+        @media (max-width:1000px){
+            font-size: 1.4rem;
+        }
     }
     
     @media (max-width:880px){
