@@ -60,7 +60,7 @@ const Footer = () => {
                         
                         <NavLink to ='contact-us' exact='true' activeclassName = 'active'>
                             <p>
-                                Contact
+                                Contact Us
                             </p>
                         </NavLink>
                         <NavLink to ='checkout' exact='true' activeclassName = 'active'>

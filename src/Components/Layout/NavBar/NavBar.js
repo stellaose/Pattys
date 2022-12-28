@@ -87,7 +87,7 @@ const NavBar = () => {
                     
                     <NavLink to ='contact-us' exact='true' activeclassName = 'active'>
                         <h3>
-                            Contact
+                            Contact Us
                         </h3>
                     </NavLink>
                     
@@ -150,15 +150,7 @@ const NavBar = () => {
                                         </>
                                     )
                                 }
-                                    {/* <li>
-                                        <NavLink to="login" exact='true' activeclassName= 'active' onClick={closeDrop}>
-                                            Login
-                                        </NavLink></li>
-                                    <li>
-                                        <NavLink to="register" exact='true' activeclassName= 'active' onClick={closeDrop}>
-                                            Register
-                                        </NavLink>
-                                    </li> */}
+                                    
                                 </NavBarDropdown>   
                             </div>
                         )}
@@ -192,7 +184,7 @@ const NavBar = () => {
                         )}
                         <NavLink to ='contact-us' exact='true' activeclassName = 'active' onClick={closeNav}>
                             <h3>
-                                Contact
+                                Contact Us
                             </h3>
                         </NavLink>
                         <a href = 'https://www.instagram.com/stellaose/' target='_blank' rel='noreferrer' onClick={closeNav}>

@@ -77,6 +77,7 @@ export const SubmitForm = styled.form`
     padding: 4rem 2rem;
     border-radius: 10px;
     
+    
     @media (max-width:600px){
         padding: 3rem 1rem;
     }
@@ -108,6 +109,14 @@ export const FormInput = styled.input `
     border-bottom: 1px solid #260c1a;
     background-color: transparent;
     outline: none;
+    
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+        transition: background-color 5000s;
+        -webkit-text-fill-color: none !important;
+    }
     
     @media (max-width:400px){
         font-size: 0.9rem;
@@ -154,6 +163,14 @@ export const NameInput = styled.input`
     margin-bottom: 2rem;
     outline: none;
     background-color: transparent;
+    
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+        transition: background-color 5000s;
+        -webkit-text-fill-color: none !important;
+    }
     
     @media (max-width:400px){
         font-size: 0.9rem;

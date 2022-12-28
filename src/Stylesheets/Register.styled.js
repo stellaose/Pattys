@@ -127,6 +127,14 @@ export const LoginInput = styled.input`
     padding: 0.5rem;
     outline: none;
     
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+        transition: background-color 5000s;
+        -webkit-text-fill-color: none !important;
+    }
+    
     @media(max-width:600px){
         width: 95%;
     }
@@ -189,6 +197,14 @@ export const NameInput = styled.input`
     font-weight: 500;
     padding: 0.5rem;
     outline: none;
+    
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+        transition: background-color 5000s;
+        -webkit-text-fill-color: none !important;
+    }
 `
 
 export const LoginSection = styled.div`
