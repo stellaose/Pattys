@@ -99,10 +99,7 @@ export const LoginColumn = styled.div`
     h3{
         text-align: center;
         margin: 1rem auto 3rem;
-    }
-    
-   
-    
+    } 
   
 `
 
@@ -213,6 +210,12 @@ export const LoginButton = styled.input`
     outline: none;
     cursor: pointer;
     background-color: #f05d23;
+    
+    &:hover{
+        color: #f05d23;
+        border: 1px solid #f05d23;
+        background-color: transparent;
+    }
 `
 
 export const GoogleSection = styled.div`
@@ -259,3 +262,4 @@ export const GoogleSection = styled.div`
     }
     
 `
+

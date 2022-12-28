@@ -18,7 +18,7 @@ export const LoginContainer = styled.div`
     
     img {
         width: 100%;
-        min-height: 35rem;
+        min-height: 30rem;
         
         border-radius: 20px;
         
@@ -179,6 +179,14 @@ export const LoginButton = styled.input`
     outline: none;
     cursor: pointer;
     background-color: #c5d86d;
+    color: #f7f7f2;
+    font-weight: 600;
+    
+    &:hover {
+        border: 1px solid #c5d86d;
+        color: #c5d86d;
+        background-color: transparent;
+    }
 `
 
 export const GoogleSection = styled.div`
