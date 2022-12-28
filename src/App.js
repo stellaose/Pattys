@@ -15,6 +15,8 @@ import Footer from './Components/Layout/Footer/Footer';
 import Order from './Pages/Order';
 import Wishlist from './Pages/Wishlist';
 import Checkout from './Pages/Checkout';
+import ProductScreen from './Pages/ProductScreen';
+import ForgetPassword from './Pages/ForgetPassword';
 
 function App() {
   return (
@@ -30,6 +32,10 @@ function App() {
 
         <Routes>
           <Route exact path = 'login' element= {<Login />}/>
+        </Routes>
+        
+        <Routes>
+            <Route exact path='forget-password' element={<ForgetPassword/>}/>
         </Routes>
 
         <Routes>
@@ -54,6 +60,10 @@ function App() {
 
         <Routes>
           <Route exact path = 'product' element = {<Product />}/>
+        </Routes>
+        
+        <Routes>
+            <Route exact path = 'product/productId' element={<ProductScreen/>}/>
         </Routes>
 
         <Routes>

@@ -186,7 +186,6 @@ export const InstagramBody = styled.div`
     display: block;
     width: 90%;
     margin: 0 auto 8rem;
-    /* padding: 2rem 1rem; */
     
     @media (max-width:600px){
         width: 90%;

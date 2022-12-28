@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState} from 'react';
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import useOutsideClick from '../../../hooks/useOutsideClick.js';
 import { AiFillFacebook,
          AiFillTwitterCircle,
@@ -49,6 +49,8 @@ const NavBar = () => {
     const closeNav = () => {
         setNav(false)
     }
+    
+    const location = useLocation()
     
     const ref = useOutsideClick(closeBar)
     return (
@@ -119,7 +121,36 @@ const NavBar = () => {
                         {drop && (
                             <div>
                                 <NavBarDropdown>
-                                    <li>
+                                {
+                                    location.pathname === "/login" ? (
+                                        <li>
+                                            <Link to="/register">
+                                                Register
+                                            </Link>
+                                        </li>
+                                        
+                                    ) : location.pathname === '/register' ? (
+                                        <li>
+                                            <Link to="/login">
+                                                Login
+                                            </Link>
+                                        </li>
+                                        
+                                    ) : (
+                                        <>
+                                            <li>
+                                                <NavLink to="login" exact='true' activeclassName= 'active' onClick={closeDrop}>
+                                                    Login
+                                                </NavLink></li>
+                                            <li>
+                                                <NavLink to="register" exact='true' activeclassName= 'active' onClick={closeDrop}>
+                                                    Register
+                                                </NavLink>
+                                            </li>
+                                        </>
+                                    )
+                                }
+                                    {/* <li>
                                         <NavLink to="login" exact='true' activeclassName= 'active' onClick={closeDrop}>
                                             Login
                                         </NavLink></li>
@@ -127,7 +158,7 @@ const NavBar = () => {
                                         <NavLink to="register" exact='true' activeclassName= 'active' onClick={closeDrop}>
                                             Register
                                         </NavLink>
-                                    </li>
+                                    </li> */}
                                 </NavBarDropdown>   
                             </div>
                         )}
