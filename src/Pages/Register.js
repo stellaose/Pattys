@@ -1,12 +1,19 @@
-import React from 'react'
-import { FcGoogle } from 'react-icons/fc'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {  
         LoginBody, 
         LoginBox, 
+        LoginButton, 
         LoginColumn, 
         LoginContainer, 
         LoginInput,
-        LoginLabel} from '../Stylesheets/Login.styled'
+        LoginLabel,
+        LoginSection,
+        NameLabel,
+        NameInput,
+        NameSection,
+        PasswordDiv} from '../Stylesheets/Register.styled'
+
 
 const Register = () => {
     return (
@@ -15,16 +22,51 @@ const Register = () => {
                 <LoginContainer>
                     <img src="/asset/register.jpg" alt="" loading='eager'/>
                     <LoginBox>
-                        <h2>PATTYS</h2>
+                        <h1>Pattys</h1>
+                        
                         <LoginColumn>
-                            <p><FcGoogle/> <span> Login with Google</span></p>
-                            
+                            <NameSection>
+                                <div>
+                                    <NameLabel htmlFor="">FirstName</NameLabel>
+                                    <br/>
+                                    <NameInput type='text'/>
+                                </div>
+                                <div>
+                                    <NameLabel htmlFor="">LastName</NameLabel>
+                                    <br/>
+                                    <NameInput type='text'/>
+                                </div>
+                            </NameSection>
+                            <br/>
                             <LoginLabel htmlFor="">Email</LoginLabel>
                             <br/>
-                            <LoginInput/>
+                            <LoginInput type='email'/>
+                            <br/>
+                            <br/>
+                            <LoginLabel htmlFor="">Password</LoginLabel>
+                            <br/>
+                            <LoginInput type='password'/>
+                            <br/>
+                            
+                            <PasswordDiv>
+                                <Link to = '/register'>
+                                    <small>Create Account?</small>
+                                </Link>
+                                
+                                <Link to = '/forget-password'>
+                                    <small>Forget Password</small>
+                                </Link>
+                            </PasswordDiv>
+                            
+                            <LoginSection>
+                                <LoginButton type= 'submit' value='Login'/>
+                            </LoginSection>
+                            
                         </LoginColumn>
                         
                     </LoginBox>
+                    
+
                 </LoginContainer>
             </LoginBody>
         </>

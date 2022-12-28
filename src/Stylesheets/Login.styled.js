@@ -18,7 +18,7 @@ export const LoginContainer = styled.div`
     
     img {
         width: 100%;
-    min-height: 35rem;
+        min-height: 35rem;
         
         border-radius: 20px;
         
@@ -55,15 +55,29 @@ export const LoginBox = styled.div`
     border-radius: 20px;
     display: block;
     
+    @media (max-width:400px){
+        padding: 2rem 0.5rem;
+    }
+    
+    
     h1{
         font-family: 'Bungee', cursive;
         color: #260c1a;
         text-align: center;
         
         @media (max-width:1000px){
+            font-size: 1.6rem;
+        }
+        
+        @media (max-width:600px){
             font-size: 1.4rem;
         }
+        
+        @media (max-width:400px){
+            font-size: 1.2rem;
+        }
     }
+    
     
     @media (max-width:880px){
         padding: 2rem 1rem;
@@ -73,6 +87,14 @@ export const LoginBox = styled.div`
 export const LoginColumn = styled.div`
     width: 90%;
     margin: 2rem auto;
+    
+    @media (max-width:600px){
+        width: 95%;
+    }
+    
+    @media (max-width:400px){
+        width: 100%;
+    }
     
     h3{
         text-align: center;
@@ -101,6 +123,14 @@ export const LoginLabel = styled.label`
     margin-top: 1rem;
     font-size: 1rem;
     font-weight: 600;
+    
+    @media (max-width:400px){
+        font-size: 0.9rem;
+    }
+    
+    @media (max-width:300px){
+        font-size: 0.8rem;
+    }
 `
 
 export const LoginInput = styled.input`
@@ -111,6 +141,18 @@ export const LoginInput = styled.input`
     font-weight: 500;
     padding: 0.5rem;
     outline: none;
+    
+    @media(max-width:600px){
+        width: 95%;
+    }
+    
+    @media (max-width:400px){
+        font-size: 0.9rem;
+    }
+    
+    @media (max-width:300px){
+        font-size: 0.8rem;
+    }
 `
 
 export const PasswordDiv = styled.div`
@@ -130,7 +172,7 @@ export const LoginSection = styled.div`
 export const LoginButton = styled.input`
     text-align: center;
     width: 80%;
-    padding: 0.5rem 0;
+    padding: 0.7rem 0;
     border-radius: 10px;
     font-size: 1rem;
     border: none;
@@ -155,12 +197,30 @@ export const GoogleSection = styled.div`
         svg{
             font-size: 1.8rem;
             margin-bottom: -0.5rem;
+            
+            @media (max-width:600px){
+                font-size: 1.6rem;
+            }
+            
+            @media (max-width:400px){
+                font-size: 1.5rem;
+            }
         }
+        
         
         span{
             font-size: 1rem;
             font-weight: 600;
+            
+            @media (max-width:600px){
+                font-size: 0.9rem;
+            }
+            
+            @media (max-width:400px){
+                font-size: 0.85rem;
+            }
         }
+        
     }
     
 `
