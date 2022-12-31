@@ -59,11 +59,11 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route exact path = 'product' element = {<Product />}/>
+          <Route exact path = 'shop' element = {<Product />}/>
         </Routes>
         
         <Routes>
-            <Route exact path = 'product/productId' element={<ProductScreen/>}/>
+            <Route exact path = 'shop/:productId' element={<ProductScreen/>}/>
         </Routes>
 
         <Routes>

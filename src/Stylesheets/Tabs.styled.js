@@ -98,10 +98,11 @@ export const Name = styled.div`
     display: flex;
     justify-content: space-around;
     padding: 1rem 0;
-    
+
     p{
         svg{
             font-size: 1.5rem;
+            color: #260c1a;
         }
     }
 `
@@ -109,27 +110,38 @@ export const Name = styled.div`
 export const Item = styled.div`
     width: 80%;
     
-    h3{
-        font-size: 1.1rem;
-        color: #260c1a;
-        line-height: 1.5rem;
+    a{
+        text-decoration: none;
         
-        @media (max-width:1000px){
-            font-size: 1.05rem;
+        h3{
+                font-size: 1.1rem;
+                color: #260c1a;
+                line-height: 1.5rem;
+                cursor: pointer;
+                
+                &:hover{
+                    text-decoration: underline;
+                }
+                
+                @media (max-width:1000px){
+                    font-size: 1.05rem;
+                }
+                
+                @media (max-width:600px){
+                    font-size: 1rem;
+                }
+                
+                @media (max-width:400px){
+                    font-size: 0.95rem;
+                }
+                
+                @media (max-width:300px){
+                    font-size: 0.9rem;
+                }
+            }
         }
-        
-        @media (max-width:600px){
-            font-size: 1rem;
-        }
-        
-        @media (max-width:400px){
-            font-size: 0.95rem;
-        }
-        
-        @media (max-width:300px){
-            font-size: 0.9rem;
-        }
-    }
+    
+   
     
     p{
         margin-top: 0.5rem;
@@ -174,6 +186,7 @@ export const Body = styled.div`
         grid-template-columns: auto;
         align-items: center;
     }
+
 `
 
 export const Map = styled.div`

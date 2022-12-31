@@ -61,7 +61,7 @@ const NavBar = () => {
                 </Link>
                 
                 <MidNav>
-                    <NavLink to = 'product' exact='true' activeclassName = 'active'>
+                    <NavLink to = 'shop' exact='true' activeclassName = 'active'>
                         <h3>
                             Shop
                         </h3>
@@ -164,7 +164,7 @@ const NavBar = () => {
                     </EndNav>
                     {nav && ( 
                         <EndNavList>
-                        <NavLink to = 'product' exact='true' activeclassName = 'active' onClick={closeNav}>
+                        <NavLink to = 'shop' exact='true' activeclassName = 'active' onClick={closeNav}>
                             <h3>
                                 Shop
                             </h3>
