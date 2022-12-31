@@ -67,8 +67,8 @@ export const getProductDetails = (id) => async (dispatch) => {
     try {
         dispatch(oneProductRequest())
         
-        const response = await axios.get(`${config.BASE_URL}/v1/product/one-product${id}`)
-        console.log(response.data)
+        const response = await axios.get(`${config.BASE_URL}/v1/product/one-product/${id}`)
+        console.log('data',response.data)
         
         dispatch(oneProductSuccess(response.data))
         

@@ -2,26 +2,25 @@ import { ProductType } from '../Types/ProductType'
 
 const initialState = {
     loading: false,
-    products: [],
+    product: {},
 }
 
-const productReducer = (state = initialState, action) => {
+const productDetailsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ProductType.ALL_PRODUCT_REQUEST:
+        case ProductType.SINGLE_PRODUCT_REQUEST:
             return{
                 ...state,
                 loading: true,
             }
-        
-        case ProductType.ALL_PRODUCT_SUCCESS:
+            
+        case ProductType.SINGLE_PRODUCT_SUCCESS:
             return{
                 loading: false,
-                products: action.payload.findProduct,
-                productCount: action.payload.countProduct
-                
+                product: action.payload.oneProduct,
+                    
             }
-            
-        case ProductType.ALL_PRODUCT_FAILURE:
+                
+        case ProductType.SINGLE_PRODUCT_FAILURE:
             return{
                 loading: false,
                 product: {},
@@ -37,4 +36,4 @@ const productReducer = (state = initialState, action) => {
     }
 }
 
-export default productReducer
+export default productDetailsReducer
