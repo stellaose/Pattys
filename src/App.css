@@ -18,6 +18,14 @@
     100% { transform: rotate(360deg); }
 }
 
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
 @media (max-width:600px){
     .loader{
         width: 40px;

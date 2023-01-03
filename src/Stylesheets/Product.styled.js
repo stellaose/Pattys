@@ -184,8 +184,12 @@ export const ProductScreenContent = styled.div`
     grid-template-columns: 35% auto;
     gap: 2rem;
     
-    @media (max-width:1000px){
-        grid-template-columns: 50% auto;
+    @media (max-width:1100px){
+        grid-template-columns: 45% auto;
+    }
+    
+    @media (max-width:900px){
+        grid-template-columns: 45% auto;
     }
     
     @media (max-width:700px){
@@ -194,36 +198,88 @@ export const ProductScreenContent = styled.div`
 `
 
 export const ProductLeftScreen = styled.div`
-
+    @media (max-width:700px){
+        text-align: center;
+    }
 ` 
 
 export const ProductRightScreen = styled.div`
-
+  
+    
+    h2{
+        font-size: 1.7rem;
+        
+        @media (max-width:1000px){
+            font-size: 1.6rem;
+        }
+        
+        @media (max-width:600px){
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width:400px){
+            font-size: 1.4rem;
+        }
+    }
 ` 
 
 export const LeftImg = styled.img`
     width: 100%;
     border-radius: 10px;
     
+    @media (max-width:1100px){
+        min-height: 28rem;
+    }
+    
+    @media (max-width:1000px){
+        min-height: 25rem;
+    }
+    
     @media (max-width:700px){
+        width: 80%;
+        min-height: unset;
+    }
+    
+    @media (max-width:400px){
         width: 90%;
     }
 `
 
 export const ReviewSection = styled.div`
-    margin-top: 1rem;
-    width: 40%;
+    margin-top: 1.5rem;
+    width: 70%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     
     @media (max-width:1000px){
+        width: 90%;
+    }
+    
+    @media (max-width:800px){
         width: unset;
     }
     
+    @media (max-width:700px){
+        width: 80%;
+    }
+    
+    @media (max-width:500px){
+        width: 90%;
+    }
+    
+    @media (max-width:360px){
+        display: block;
+    }
+    
     p{
-        margin-top: 0.5rem;
+        margin-top: 0rem;
         svg{
-            margin-top: -1.5rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width:360px){
+            margin: 0.5rem 0;
         }
     }
 `
@@ -235,6 +291,22 @@ export const PriceSection = styled.div`
         font-size: 1.8rem;
         font-weight: 700;
         color: #aeaeac;
+        
+        @media (max-width:1000px){
+            font-size: 1.7rem;
+        }
+        
+        @media (max-width:600px){
+            font-size: 1.6rem;
+        }
+        
+        @media (max-width:400px){
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width:300px){
+            font-size: 1.4rem;
+        }
     }
 `
 
@@ -255,6 +327,32 @@ export const ShareSection = styled.div`
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+    
+    svg{
+        font-size: 1.8rem;
+        margin: 1rem 2rem 1rem 0;
+    }
+`
+
+export const ButtonSection = styled.div`
+    margin-top: 1rem;
+    
+    button{
+        padding: 0.7rem 2rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+        background-color: #260c1a;
+        color: #f7f7f2;
+        font-weight: 700;
+        
+        &:hover{
+            border: 1px solid #aeaeac;
+            background-color: transparent;
+            color: #260c1a;
+        }
     }
 `
