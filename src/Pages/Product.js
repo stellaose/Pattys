@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProduct } from '../Redux/Actions/ProductAction';
 import ReactStars from 'react-rating-stars-component'
-import Loader from 'react-loaders';
 import {   
     Img,
         Item,
+        LoadingSection,
         Map, 
         Name, 
         ProductContent, 
@@ -30,7 +30,13 @@ const Product = () => {
         <>
             <ProductsBody>
                 {loading ? (
-                    <Loader type='line-scale'/>
+                    
+                    <>
+                        <LoadingSection>
+                        <div class="loader"></div>
+                        </LoadingSection>
+                    </>
+                    
                     ) : (
                     <ProductsContainer>
                         <ProductContent>
@@ -79,7 +85,7 @@ const Product = () => {
                                 })
                             }
                             
-                            {error && 'An error occured. Please try again'}
+                            {error && 'An error occurred. Please try again'}
                         </ProductContent>
                         
                     </ProductsContainer>

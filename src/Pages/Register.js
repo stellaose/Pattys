@@ -49,12 +49,10 @@ const Register = () => {
                             <br/>
                             
                             <PasswordDiv>
-                                <Link to = '/register'>
-                                    <small>Create Account?</small>
-                                </Link>
+                                <small>{' '}</small>
                                 
-                                <Link to = '/forget-password'>
-                                    <small>Forget Password</small>
+                                <Link to = '/login'>
+                                    <small>Have an account? Login here</small>
                                 </Link>
                             </PasswordDiv>
                             
