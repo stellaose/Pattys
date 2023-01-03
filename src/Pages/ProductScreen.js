@@ -97,13 +97,13 @@ const ProductScreen = () => {
                                         <p>, {product?.color[2]}</p> */}
                                         
                                     </OtherSection>
-                                    
+{/*                                     
                                     <ShareSection>
                                         <h3>Share</h3>
                                         <FacebookShareButton
                                             url={`https://pattys.vercel.app/shop/${id}`}
                                         />
-                                    </ShareSection>
+                                    </ShareSection> */}
                                     
                                 </ProductRightScreen>
                                 
