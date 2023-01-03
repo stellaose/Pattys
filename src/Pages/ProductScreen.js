@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 import { getProductDetails } from '../Redux/Actions/ProductAction';
 import ReactStars from 'react-rating-stars-component'
 import { LeftImg, LoadingSection,
@@ -97,13 +97,13 @@ const ProductScreen = () => {
                                         <p>, {product?.color[2]}</p> */}
                                         
                                     </OtherSection>
-{/*                                     
+                                    
                                     <ShareSection>
                                         <h3>Share</h3>
                                         <FacebookShareButton
-                                            url={`https://pattys.vercel.app/shop/${id}`}
+                                            url={`https://pattys.vercel.app/shop/${product?._id}`}
                                         />
-                                    </ShareSection> */}
+                                    </ShareSection>
                                     
                                 </ProductRightScreen>
                                 
