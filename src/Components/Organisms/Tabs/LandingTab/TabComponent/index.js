@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { TabItem, TabContent } from '../../TabItem';
+import { TabItem, TabContent } from '../TabItem';
 import BestSeller from './BestSeller'
 import Trending from './Trending'
 import NewArrivals from './NewArrivals'

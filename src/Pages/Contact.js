@@ -42,11 +42,12 @@ const Contact = () => {
                         <div>
                             <NameLabel htmlFor="">Name</NameLabel>
                             <br/>
-                                <NameInput  placeholder="Name" 
+                              <NameInput 
+                                placeholder="Name"
                                 type="text" 
                                 name="name" 
                                 required 
-                            />
+                              />
                         </div>
                         <div>
                             <NameLabel htmlFor="">Email</NameLabel>
@@ -79,7 +80,7 @@ const Contact = () => {
                     />
                     <br/>
                     <InputBtn>
-                        <InputButton type="submit" disabled={state.submitting} className="flat-button" value="SEND" onClick={() => setShow(true)}/>
+                        <InputButton type="submit" disabled={state.submitting}  value="SEND" onClick={() => setShow(true)}/>
                     </InputBtn>
                     
                    

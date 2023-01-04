@@ -202,14 +202,13 @@ export const InputButton = styled.input`
     font-size: 1rem;
     color: #f7f7f2;
     font-weight: 600;
-    border: none;
+    border: 1px solid #c5d86d;
     outline: none;
     cursor: pointer;
     background-color: #c5d86d;
     
     &:hover{
         color: #c5d86d;
-        border: 1px solid #c5d86d;
         background-color: transparent;
     }
 `

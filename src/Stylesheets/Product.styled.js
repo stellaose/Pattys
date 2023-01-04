@@ -325,7 +325,27 @@ export const OtherSection = styled.div`
 export const CountSection = styled.div`
     margin-bottom: 1rem;
     button{
-        padding: 0.1rem 0.2rem;
+        padding: 0.3rem 0.2rem;
+        color: #f7f7f2;
+        border: none;
+        background-color: #260c1a;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+        
+        
+        svg{
+            font-size: 1rem;
+        }
+    }
+    
+    .button{
+        padding: 0.3rem 0.2rem;
+        color: #f7f7f2;
+        border: none;
+        background-color: #260c1a;
+        cursor: pointer;
+        border-radius: 5px 0 0 5px ;
+        
         
         svg{
             font-size: 1rem;
@@ -334,8 +354,12 @@ export const CountSection = styled.div`
     
     input{
         width: 3rem;
-        padding: 0.1rem 0.2rem;
+        padding: 0.2rem;
         font-size: 1rem;
+        background-color: transparent;
+        border: 1px solid #260c1a;
+        outline: none;
+        /* border-radius: 5px; */
     }
 `
 export const ShareSection = styled.div`
@@ -344,11 +368,28 @@ export const ShareSection = styled.div`
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 1.4rem;
+        
+        @media (max-width:1000px){
+          font-size: 1.3rem;
+        }
+        
+        @media (max-width:600px){
+          font-size: 1.2rem;
+        }
     }
     
     svg{
         font-size: 1.8rem;
         margin: 1rem 2rem 1rem 0;
+        
+        @media (max-width:1000px){
+          font-size: 1.7rem;
+          margin: 1rem 1rem 1rem 0;
+        }
+        
+        @media (max-width:600px){
+          font-size: 1.6rem;
+        }
     }
 `
 
@@ -366,9 +407,78 @@ export const ButtonSection = styled.div`
         font-weight: 700;
         
         &:hover{
-            border: 1px solid #aeaeac;
+            border: 1px solid #260c1a;
             background-color: transparent;
             color: #260c1a;
         }
+        
+        @media(max-width:600px){
+          padding: 0.5rem 1.5rem;
+          font-size: 1rem;
+          
+        }
     }
+`
+
+export const DescriptionHeight = styled.div`
+  /* width: unse; */
+  margin: 2rem auto;
+  
+  p{
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+        
+    @media (max-width:800px){
+        font-size: 1rem;
+    }
+            
+    @media (max-width: 400px){
+        font-size: 0.9rem;
+    }
+            
+    @media (max-width:300px){
+        font-size: 0.85rem;
+    }
+  }
+  
+`
+
+export const LineHeight = styled.div`
+  width: 70%;
+  margin: 2rem auto 3rem;
+  display: grid;
+  grid-template-columns: 20% auto;
+  
+   @media (max-width:1000px){
+      width: 80%;
+   }
+   
+   @media (max-width:600px){
+      width: 85%;
+   }
+   
+   @media (max-width:400px){
+    width: 95%;
+    grid-template-columns: 15% auto;
+      
+   }
+`
+
+export const LeftSideImg = styled.div`
+  width: 90%;
+  margin: auto 0;
+  
+  
+  img{
+    width: 90%;
+    border-radius: 50%;
+  }
+`
+
+export const RightSide = styled.div`
+  padding-top: 1rem;
+  
+  @media (max-width:600px){
+    padding-top: 0;
+  }
 `

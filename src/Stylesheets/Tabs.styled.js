@@ -202,3 +202,112 @@ export const Img = styled.img`
         text-align: center;
     }
 `
+
+export const ProductTabBody = styled.div`
+  width: 80%;
+  margin: 3rem auto 4rem;
+  
+  @media (max-width:1000px){
+    width: 85%;
+  }
+  
+  @media (max-width:600px){
+    width: 90%;
+  }
+  
+  @media (max-width:400px){
+    width: 95%;
+  }
+`
+
+export const ProductTabLink = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+`
+
+export const TabProduct = styled.div`
+
+`
+
+export const FormBody = styled.div`
+  width: 60%;
+  margin: 2rem auto;
+  border: 1px solid #c5d86d;
+  border-radius: 10px;
+  
+  h3{
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width:1000px){
+    width: 70%;
+  }
+  
+  @media (max-width:600px){
+    width: 80%;
+  }
+  
+  @media (max-width:400px){
+    width: 90%;
+  }
+`
+
+export const FormReview = styled.div`
+  padding: 1rem 2rem;
+  
+` 
+
+export const FormDiv = styled.div`
+  margin: 1rem 0;
+  
+ 
+`
+
+export const FormLabel = styled.label`
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+`
+
+export const TextArea = styled.textarea`
+  height: 5rem;
+  width: 95%;
+  padding: 1rem 0.5rem;
+  border: none;
+  resize: none;
+  outline: none;
+  font-size: 1rem;
+  border-bottom: 1px solid #260c1a;
+  background-color: transparent;
+    
+  &::-webkit-scrollbar{
+    display: none;
+  }
+`
+
+export const InputButton = styled.input`
+    width: 70%;
+    padding: 0.7rem 0;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #f7f7f2;
+    font-weight: 600;
+    border: 1px solid #c5d86d;
+    outline: none;
+    cursor: pointer;
+    background-color: #c5d86d;
+    
+    &:hover{
+        color: #c5d86d;
+        background-color: transparent;
+    }
+`
+
+export const InputBtnDiv = styled.div`
+  margin: 2rem auto;
+  align-items: center;
+  text-align: center;
+  width: 70%;
+`

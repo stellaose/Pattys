@@ -100,14 +100,20 @@ export const LeftSlide = styled.div`
     
     a{
         button{
-            border: none;
+            border: 1px solid #260c1a;
             background-color: #260c1a;
             padding: 1rem 1.5rem;
             color: #f7f7f2;
             font-size: 1.1rem;
             font-weight: 700;
+            border-radius: 10px;
             margin-top: 2rem;
             cursor: pointer;
+            
+            &:hover{
+              background-color: transparent;
+              color: #260c1a;
+            }
         }
     }
 `

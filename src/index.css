@@ -49,6 +49,24 @@ code {
     cursor: pointer;
 }
 
+.screen{
+  color: #260c1a;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 5px solid #f05d23;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nonScreen{
+  color: #260c1a;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 #tab1{
     margin-top: 2rem;
 }
@@ -58,13 +76,14 @@ code {
         font-size: 2rem;
     }
     
-    .tab, .nonTab{
+    .tab, .nonTab, .screen, .nonScreen{
         font-size: 1.1rem;
     }
+    
 }
 
 @media (max-width:600px){
-    .tab, .nonTab{
+    .tab, .nonTab, .screen, .nonScreen{
         font-size: 1rem;
     }
 }
@@ -75,7 +94,9 @@ code {
         
     }
     
-    .tab, .nonTab{
+    .tab, .nonTab, .screen, .nonScreen{
         font-size: 0.9rem;
     }
 }
+
+

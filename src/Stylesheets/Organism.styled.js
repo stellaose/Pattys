@@ -50,6 +50,7 @@ export const CollectionsOne = styled.div`
     margin-right: 2rem;
     display: grid;
     padding: 2rem 1rem;
+    border-radius: 5px;
     grid-template-columns: 55% 42%;
     
     @media (max-width:800px){
@@ -99,19 +100,25 @@ export const CollectionsOne = styled.div`
     
     a{
         button{
-            border: none;
-            background-color: #260c1a;
-            padding: 0.5rem 1.5rem;
-            color: #f7f7f2;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-top: 8rem;
-            cursor: pointer;
+          border: 1px solid #260c1a;
+          background-color: #260c1a;
+          padding: 0.5rem 1.5rem;
+          color: #f7f7f2;
+          font-size: 1.1rem;
+          border-radius: 5px;
+          font-weight: 700;
+          margin-top: 8rem;
+          cursor: pointer;
             
-            @media (max-width:800px){
-                margin-top: 2rem;
+          @media (max-width:800px){
+            margin-top: 2rem;
                 
-            }
+          }
+            
+          &:hover{
+            background-color: transparent;
+            color: #260c1a;
+          }
         }
     }
     
