@@ -229,11 +229,11 @@ export const LeftImg = styled.img`
     border-radius: 10px;
     
     @media (max-width:1100px){
-        min-height: 28rem;
+        min-height: 30rem;
     }
     
     @media (max-width:1000px){
-        min-height: 25rem;
+        min-height: 27rem;
     }
     
     @media (max-width:700px){
@@ -285,7 +285,7 @@ export const ReviewSection = styled.div`
 `
 
 export const PriceSection = styled.div`
-    margin: 2rem 0;
+    margin: 1.3rem 0;
     
     p{
         font-size: 1.8rem;
@@ -314,7 +314,7 @@ export const OtherSection = styled.div`
     width: 20%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     
     p{
         font-weight: 500;
@@ -322,6 +322,22 @@ export const OtherSection = styled.div`
     }
 `
 
+export const CountSection = styled.div`
+    margin-bottom: 1rem;
+    button{
+        padding: 0.1rem 0.2rem;
+        
+        svg{
+            font-size: 1rem;
+        }
+    }
+    
+    input{
+        width: 3rem;
+        padding: 0.1rem 0.2rem;
+        font-size: 1rem;
+    }
+`
 export const ShareSection = styled.div`
     h3{
         font-weight: 600;
