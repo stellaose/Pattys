@@ -20,7 +20,7 @@ export const Review = ({review}) => {
             return(
               <LineHeight>
                 <LeftSideImg>
-                  <img src="/asset/profile.jpg" alt=""/>
+                  <img src="/asset/profile.jpg" alt="" loading='eager'/>
                 </LeftSideImg>
                 
                 <RightSide>
