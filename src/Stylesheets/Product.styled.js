@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProductsBody = styled.div`
+export const ProductsListBody = styled.div`
     background-color: #f7f7f2;
     padding: 1rem 0 2rem;
 `
@@ -42,7 +42,6 @@ export const ProductContent = styled.div`
         grid-template-columns: auto;
         align-items: center;
     }
-
 `
 
 export const Map = styled.div`
@@ -59,7 +58,6 @@ export const Name = styled.div`
     display: flex;
     justify-content: space-around;
     padding: 1rem 0;
-
     p{
         svg{
             font-size: 1.5rem;
@@ -421,7 +419,6 @@ export const ButtonSection = styled.div`
 `
 
 export const DescriptionHeight = styled.div`
-  /* width: unse; */
   margin: 2rem auto;
   
   p{

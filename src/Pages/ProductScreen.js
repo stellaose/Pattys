@@ -3,35 +3,40 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getProductDetails } from "../Redux/Actions/ProductAction";
 import {
-        TabItem,
-        TabContent} from "../Components/Organisms/Tabs/ProductTabs/TabItem";
+  TabItem,
+  TabContent,
+} from "../Components/Organisms/Tabs/ProductTabs/TabItem";
 import {
-        Description,
-        Review } from "../Components/Organisms/Tabs/ProductTabs/Details";
+  Description,
+  Review,
+} from "../Components/Organisms/Tabs/ProductTabs/Details";
 import ReactStars from "react-rating-stars-component";
 import {
-        ButtonSection,
-        CountSection,
-        LeftImg,
-        LoadingSection,
-        OtherSection,
-        PriceSection,
-        ProductLeftScreen,
-        ProductRightScreen,
-        ProductScreenBody,
-        ProductScreenContent,
-        ReviewSection,
-        ShareSection } from "../Stylesheets/Product.styled";
+  ButtonSection,
+  CountSection,
+  LeftImg,
+  LoadingSection,
+  OtherSection,
+  PriceSection,
+  ProductLeftScreen,
+  ProductRightScreen,
+  ProductScreenBody,
+  ProductScreenContent,
+  ReviewSection,
+  ShareSection,
+} from "../Stylesheets/Product.styled";
 import {
-        FacebookShareButton,
-        TwitterShareButton,
-        WhatsappShareButton} from "react-share";
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
 import { BsFacebook, BsTwitter, BsWhatsapp } from "react-icons/bs";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import {
-        ProductTabBody,
-        ProductTabLink,
-        TabProduct} from "../Stylesheets/Tabs.styled";
+  ProductTabBody,
+  ProductTabLink,
+  TabProduct,
+} from "../Stylesheets/Tabs.styled";
 
 const ProductScreen = () => {
   const [activeTab, setActiveTab] = useState("screen1");
@@ -40,14 +45,12 @@ const ProductScreen = () => {
   const { loading, error, product } = useSelector(
     (state) => state.productDetail
   );
-  console.log("this is product", product._id);
 
   const shareUrl = `https://pattys.vercel.app/${product?._id}`;
 
   const ratingChanged = () => {};
 
   const reviews = product?.reviews;
-  console.log('This is review', reviews)
   const description = product?.description;
 
   useEffect(() => {
@@ -124,7 +127,7 @@ const ProductScreen = () => {
                   <button className="button">
                     <AiOutlineMinus />
                   </button>
-                    <input type="number" value="1" />
+                  <input type="number" value="1" />
                   <button>
                     <AiOutlinePlus />
                   </button>

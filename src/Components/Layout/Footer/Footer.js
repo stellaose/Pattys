@@ -20,7 +20,7 @@ const Footer = () => {
             <FooterBody>
                 <FooterContent>
                     <PageLeftDiv>
-                        <NavLink to = 'shop' exact='true' activeclassName = 'active'>
+                        <NavLink to = 'shop-now' exact='true' activeclassName = 'active'>
                             <p>
                                 Shop
                             </p>

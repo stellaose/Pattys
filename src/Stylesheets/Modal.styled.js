@@ -33,6 +33,26 @@ export const ModalContainer = styled.div`
         }
 `
 
+export const SearchContainer = styled.div`
+    /* padding: 1rem 1rem 2rem; */
+    background-color: #f7f7f2;
+    width: 50%;
+    justify-content: center;
+    opacity: 1;
+    border-radius: 10px;
+    color: #260c1a;
+    overflow: auto;
+    
+    @media (max-width: 1000px) {
+      width: 70%;
+    }
+    
+    @media (max-width: 600px) {
+      width: 80%;
+      padding: 1rem 0;
+    }
+`
+
 export const ModalBody = styled.div`
     text-align: center;
     margin: 0.5rem auto;
@@ -113,4 +133,105 @@ export const ModalBody = styled.div`
             font-size: 0.9rem;
         }
     }
+`
+
+export const SearchModalInput = styled.div`
+  text-align: center;
+  margin: 2rem auto;
+  padding:0 1rem;
+  display: block;
+`
+
+export const Input = styled.input`
+  width: 70%;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #260c1a;
+  
+  @media (max-width:805px){
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  @media (max-width:600px){
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width:400px){
+    font-size: 0.8rem;
+  }
+`
+
+export const Button = styled.button`
+  padding: 0.5rem;
+  display: flex;
+  float: right;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  
+  svg{
+    font-size: 2rem;
+    color: #f05d23;
+    
+    @media (max-width:1000px){
+      font-size: 1.9rem;
+    }
+    
+    @media (max-width:800px){
+      font-size: 1.8rem;
+    }
+    
+    @media (max-width:600px){
+      font-size: 1.6rem;
+    }
+    
+    @media (max-width:400px){
+      font-size: 1.5rem;
+    }
+  }
+                
+  @media (max-width:600px){
+    font-size: 1.1rem;
+  }
+                    
+  @media(max-width:400px){
+    font-size: 1rem;
+    margin-left: 0;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+                    
+  @media (max-width:300px){
+    font-size: 0.9rem;
+  }
+`
+
+export const BtnInput = styled.input`
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #260c1a;
+  cursor: pointer;
+  color: #f7f7f2;
+  font-weight: 600;
+  background-color: #260c1a;
+  
+  @media (max-width:805px){
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  @media (max-width:600px){
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width:400px){
+    font-size: 0.8rem;
+  }
 `

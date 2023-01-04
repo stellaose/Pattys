@@ -57,13 +57,17 @@ function App() {
         <Routes>
           <Route exact path = 'cart' element= {<Cart />}/>
         </Routes>
+        
+        <Routes>
+          <Route exact path = 'shop-now/:keyword' element = {<Product />}/>
+        </Routes>
 
         <Routes>
-          <Route exact path = 'shop' element = {<Product />}/>
+          <Route exact path = 'shop-now' element = {<Product />}/>
         </Routes>
         
         <Routes>
-            <Route exact path = 'shop/:id' element={<ProductScreen/>}/>
+            <Route exact path = 'shop-now/shop/:id' element={<ProductScreen/>}/>
         </Routes>
 
         <Routes>
