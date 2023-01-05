@@ -159,6 +159,55 @@ export const Img = styled.img`
     }
 `
 
+export const PaginationBody = styled.div`
+  display: flex;
+  width: 60%;
+  margin: 2rem auto;
+  justify-content: center;
+  
+  @media (max-width:1000px){
+    width: 70%;
+  }
+  
+  @media (max-width:600px){
+    width: 80%;
+  }
+  
+  
+  ul{
+    display: flex;
+    justify-content: space-between;
+    
+    li{
+      list-style-type: none;
+      margin: 0 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      
+      a{
+        text-decoration: none;
+        color: #aeaeac;
+      }
+      
+      @media (max-width:1000px){
+        font-size: 1.1rem;
+        margin: 0 0.8rem;
+        
+      }
+      
+      @media (max-width:600px){
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        
+      }
+      
+      @media (max-width:300px){
+        font-size: 0.9rem;
+      }
+    }
+  }
+`
+
 export const LoadingSection = styled.div`
     width: 40vw;
     align-items: center;
@@ -225,6 +274,8 @@ export const ProductRightScreen = styled.div`
 export const LeftImg = styled.img`
     width: 100%;
     border-radius: 10px;
+    min-height: 27rem;
+    
     
     @media (max-width:1100px){
         min-height: 30rem;

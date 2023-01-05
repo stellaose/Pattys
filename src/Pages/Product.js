@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProduct } from '../Redux/Actions/ProductAction';
-import ReactStars from 'react-rating-stars-component'
+import ReactStars from 'react-rating-stars-component';
+import Pagination from 'react-js-pagination';
 import {   
     Img,
         Item,
@@ -12,13 +13,20 @@ import {
         ProductContent, 
         ProductsListBody, 
         ProductsContainer, 
-        ReviewStar} from '../Stylesheets/Product.styled';
+        ReviewStar,
+        PaginationBody} from '../Stylesheets/Product.styled';
 
 const Product = () => {
     const dispatch = useDispatch();
-    const { loading, error, products, productCount } = useSelector(state => state.products)
+    
+    const [currentPage, setCurrentPage] = useState(1)
+    const { loading, error, products, productCount, resultPerPage } = useSelector(state => state.products)
     
     const { keyword } = useParams()
+    
+    const setCurrentPageNo = (e) => {
+      setCurrentPage(e)
+    }
     
     useEffect(() => {
         dispatch(getProduct(keyword))
@@ -79,6 +87,23 @@ const Product = () => {
                             
                     {error && 'An error occurred. Please try again'}
                   </ProductContent>
+                  
+                  <PaginationBody>
+                    <Pagination
+                      activePage={currentPage}
+                      itemsCountPerPage={resultPerPage}
+                      totalItemsCount={productCount}
+                      onChange={setCurrentPageNo}
+                      nextPageText='Next'
+                      prevPageText='Prev'
+                      firstPageText='First'
+                      LastPageText='Last'
+                      itemClass='page-item'
+                      linkClass= 'page-link'
+                      activeClass='pageItemActive'
+                      activeLinkClass = 'pageLinkActive'
+                    />
+                  </PaginationBody>
               </ProductsContainer>
           )}
         </ProductsListBody>

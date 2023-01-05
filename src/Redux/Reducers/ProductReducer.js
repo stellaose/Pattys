@@ -17,7 +17,8 @@ const productReducer = (state = initialState, action) => {
             return{
                 loading: false,
                 products: action.payload.findProduct,
-                productCount: action.payload.countProduct
+                productCount: action.payload.countProduct,
+                resultPerPage: action.payload.resultPerPage
                 
             }
             
