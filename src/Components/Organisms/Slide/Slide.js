@@ -18,7 +18,7 @@ export const FirstSlide = () => {
                             The perfect fit. Giving you the desired shape while making a statement.
                         </p>
                         
-                        <Link to='/shop-now'>
+                        <Link to='/shop-now' onClick={() => {window.scroll(0, 0)}}>
                             <button>Explore Now</button>
                         </Link>
                     </Fade> 
@@ -47,7 +47,7 @@ export const SecondSlide = () => {
                             Feel trendy, feel authentic. Express your style with us while looking perfect from every angle.
                         </p>
                         
-                        <Link to='/shop-now'>
+                        <Link to='/shop-now' onClick={() => {window.scroll(0, 0)}}>
                             <button>Explore Now</button>
                         </Link>
                     </Fade> 
@@ -77,7 +77,7 @@ export const ThirdSlide = () => {
                             Be comfy, be stylish, make your walk better. It's all about your needs.
                         </p>
                         
-                        <Link to='/shop-now'>
+                        <Link to='/shop-now' onClick={() => {window.scroll(0, 0)}}>
                             <button>Explore Now</button>
                         </Link>
                     </Fade> 
@@ -106,7 +106,7 @@ export const FourthSlide = () => {
                             Welcome to Backpack Country. It's A New Backpack Every Day. 
                         </p>
                         
-                        <Link to='/shop-now'>
+                        <Link to='/shop-now' onClick={() => {window.scroll(0, 0)}}>
                             <button>Explore Now</button>
                         </Link>
                     </Fade> 

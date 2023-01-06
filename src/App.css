@@ -26,11 +26,54 @@
     color: red;
 }
 
+.pageItemActive{
+  color: #260c1a;
+}
+
+.pageLinkActive{
+  text-decoration: none;
+  color: #f05d23 !important;
+}
+
+.page-item{
+  /* color: #aeaeac; */
+  /* color: #f05d23; */
+  list-style-type: none;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.page-item > .page-link{
+  color: #aeaeac;
+  text-decoration: none;
+  /* color: #f05d23; */
+  
+}
+
+@media (max-width:1000px){
+  .page-item{
+    font-size: 1.1rem;
+    margin: 0 0.8rem;
+  }
+}
+
 @media (max-width:600px){
-    .loader{
-        width: 40px;
-        height: 40px;
-        margin: -56px 0 0 -56px;
+  .loader{
+    width: 40px;
+    height: 40px;
+    margin: -56px 0 0 -56px;
         
-    }
+  }
+    
+  .page-item{
+    font-size: 1rem;
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width:300px){
+  .page-item{
+    font-size: 0.9rem;
+  }
 }

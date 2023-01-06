@@ -48,7 +48,6 @@ export const Map = styled.div`
     border-radius: 10px;
     
     &:hover {
-        /* box-shadow: 0 0 5px rgba(15, 15, 15, 0.26); */
         transform: translateY(-0.5rem);
         transition: 1s;
     }
@@ -178,33 +177,6 @@ export const PaginationBody = styled.div`
     display: flex;
     justify-content: space-between;
     
-    li{
-      list-style-type: none;
-      margin: 0 1rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      
-      a{
-        text-decoration: none;
-        color: #aeaeac;
-      }
-      
-      @media (max-width:1000px){
-        font-size: 1.1rem;
-        margin: 0 0.8rem;
-        
-      }
-      
-      @media (max-width:600px){
-        font-size: 1rem;
-        margin: 0 0.5rem;
-        
-      }
-      
-      @media (max-width:300px){
-        font-size: 0.9rem;
-      }
-    }
   }
 `
 
@@ -472,21 +444,24 @@ export const ButtonSection = styled.div`
 export const DescriptionHeight = styled.div`
   margin: 2rem auto;
   
-  p{
-    font-size: 1.1rem;
+  h3{
+    margin: 2rem auto 1rem;
+  }
+  
+  li{
+    font-size: 1rem;
     line-height: 1.7rem;
+    list-style: none;
         
-    @media (max-width:800px){
-        font-size: 1rem;
-    }
-            
-    @media (max-width: 400px){
+    @media (max-width: 800px){
         font-size: 0.9rem;
     }
             
-    @media (max-width:300px){
+    @media (max-width:400px){
         font-size: 0.85rem;
     }
+    
+    
   }
   
 `

@@ -55,7 +55,15 @@ export const Description = ({description}) => {
       {description && description?.map((item) => {
         return(
           <DescriptionHeight key={item?._id}>
-            <p>{item?.details}</p>
+            <h3>{item?.head ? item?.head : null}</h3>
+            
+            {item?.details && item?.details.map((data) => {
+              return(
+                <div>
+                  <li>{data}</li>
+                </div>
+              )
+            })}
           </DescriptionHeight>
         )
       })}

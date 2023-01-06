@@ -48,11 +48,11 @@ const clearError = () => {
     }
 }
 
-export const getProduct = (keyword = '') => async (dispatch) => {
+export const getProduct = (keyword = '', currentPage = 1) => async (dispatch) => {
     try {
         dispatch(fetchProductRequest())
         
-        const response = await axios.get(`${config.BASE_URL}/v1/product/all-products?keyword=${keyword}`)
+        const response = await axios.get(`${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}`)
         console.log(response.data)
         
         dispatch(fetchProductSuccess(response.data))

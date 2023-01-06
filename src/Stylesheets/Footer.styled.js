@@ -62,7 +62,7 @@ export const PageLeftDiv = styled.div`
         p{
             margin-bottom: 1rem;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 500;
             
             &:hover{
@@ -70,15 +70,15 @@ export const PageLeftDiv = styled.div`
             }
             
             @media (max-width:800px){
-                font-size: 1.1rem;
-            }
-            
-            @media (max-width: 400px){
                 font-size: 1rem;
             }
             
-            @media (max-width:300px){
+            @media (max-width: 400px){
                 font-size: 0.9rem;
+            }
+            
+            @media (max-width:300px){
+                font-size: 0.8rem;
             }
         }
 
@@ -98,26 +98,29 @@ export const PageMidDiv = styled.div`
             display: none;
         }
     }
+    
+
     p{
-        margin-top: 1rem;
-        font-size: 1.2rem;
-        font-weight: 500;
+      margin: 0.5rem 0 1rem;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 500;
             
-        &:hover{
-            color: #c5d86d;
-        }
+      &:hover{
+        color: #c5d86d;
+      }
             
-        @media (max-width:800px){
-            font-size: 1.1rem;
-        }
+      @media (max-width:800px){
+        font-size: 1rem;
+      }
             
-        @media (max-width: 400px){
-            font-size: 1rem;
-        }
+      @media (max-width: 400px){
+        font-size: 0.9rem;
+      }
             
-        @media (max-width:300px){
-            font-size: 0.9rem;
-        }
+      @media (max-width:300px){
+        font-size: 0.8rem;
+      }
     }
     
     a{
@@ -169,7 +172,7 @@ export const PageMidDiv = styled.div`
         p{
             margin-bottom: 1rem;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 500;
             
             &:hover{
@@ -177,15 +180,15 @@ export const PageMidDiv = styled.div`
             }
             
             @media (max-width:800px){
-                font-size: 1.1rem;
-            }
-            
-            @media (max-width: 400px){
                 font-size: 1rem;
             }
             
-            @media (max-width:300px){
+            @media (max-width: 400px){
                 font-size: 0.9rem;
+            }
+            
+            @media (max-width:300px){
+                font-size: 0.8rem;
             }
         }
 
@@ -218,16 +221,15 @@ export const Subscribe = styled.div`
             }
         }
         
-        input{
+        input[type='text'], input[type='submit']{
             margin-top: 1rem;
-            background-color: #c5d86d;
-            border: none;
             padding: 0.5rem 1rem;
             font-size: 1.1rem;
             font-weight: 600;
             color: #260c1a;
-            border-radius: 10px;
             outline: none;
+            border: 1px solid #c5d86d;
+            
             
             @media (max-width:800px){
                 font-size: 1rem;
@@ -241,6 +243,16 @@ export const Subscribe = styled.div`
                 font-size: 0.8rem;
             }
         }
+        
+    input[type='text']{
+      border-radius: 5px 0 0 5px;
+    }
+    
+    input[type='submit']{
+      border-radius: 0 5px 5px 0;
+      background-color: #c5d86d;
+      
+    }
 `
 
 export const Social = styled.div`

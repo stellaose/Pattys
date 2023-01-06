@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FaRegWindowClose } from 'react-icons/fa'
 import { 

@@ -94,6 +94,16 @@ export const Tab = styled.div`
     
 `
 
+export const MoreSection = styled.div`
+  text-align: right;
+  
+  a{
+    text-decoration: none;
+    color: #aeaeac;
+    font-weight: 600;
+  }
+`
+
 export const Name = styled.div`
     display: flex;
     justify-content: space-around;
@@ -108,38 +118,38 @@ export const Name = styled.div`
 `
 
 export const Item = styled.div`
-    width: 80%;
+  width: 80%;
     
-    a{
-        text-decoration: none;
+  a{
+    text-decoration: none;
         
-        h3{
-                font-size: 1.1rem;
-                color: #260c1a;
-                line-height: 1.5rem;
-                cursor: pointer;
+    h3{
+      font-size: 1.1rem;
+      color: #260c1a;
+      line-height: 1.5rem;
+      cursor: pointer;
                 
-                &:hover{
-                    text-decoration: underline;
-                }
+      &:hover{
+        text-decoration: underline;
+      }
                 
-                @media (max-width:1000px){
-                    font-size: 1.05rem;
-                }
+      @media (max-width:1000px){
+        font-size: 1.05rem;
+      }
                 
-                @media (max-width:600px){
-                    font-size: 1rem;
-                }
+      @media (max-width:600px){
+        font-size: 1rem;
+      }
                 
-                @media (max-width:400px){
-                    font-size: 0.95rem;
-                }
+      @media (max-width:400px){
+        font-size: 0.95rem;
+      }
                 
-                @media (max-width:300px){
-                    font-size: 0.9rem;
-                }
-            }
-        }
+      @media (max-width:300px){
+        font-size: 0.9rem;
+      }
+    }
+  }
     
    
     
@@ -186,15 +196,24 @@ export const Body = styled.div`
         grid-template-columns: auto;
         align-items: center;
     }
+    
+    
+   
 
 `
 
 export const Map = styled.div`
     border-radius: 5px;
+    
+    &:hover {
+      transform: translateY(-0.5rem);
+      transition: 1s;
+    }
 `
 export const Img = styled.img`
     width: 100%;
     height: 16rem;
+    border-radius: 10px;
     
     @media (max-width:500px){
         height: fit-content;

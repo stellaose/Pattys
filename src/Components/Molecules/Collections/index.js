@@ -18,7 +18,7 @@ const Collections = () => {
                             <h2>Adidas Sports Performance Socks Light Nosh 3PP</h2>
                             <p>The adidas logo adds a sporty finishing touch.</p>
                             
-                            <Link to = '/shop-now'>
+                            <Link to = '/shop-now' onClick={() => {window.scroll(0, 0)}}>
                                 <button>
                                     Shop Now
                                 </button>
