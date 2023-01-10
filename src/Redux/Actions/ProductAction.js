@@ -48,14 +48,16 @@ const clearError = () => {
     }
 }
 
-export const getProduct = (keyword = '', currentPage = 1) => async (dispatch) => {
+
+
+export const getProduct = (keyword = "", currentPage = 1, price = [1000, 50000] ) => async (dispatch) => {
     try {
         dispatch(fetchProductRequest())
         
-        const response = await axios.get(`${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}`)
-        console.log(response.data)
+        const {data} = await axios.get(`${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}&price[gt]=${price[0]}&price[lt]=${price[1]}`)
+        console.log('response here', data)
         
-        dispatch(fetchProductSuccess(response.data))
+        dispatch(fetchProductSuccess(data))
         
     } catch (error) {
         console.log(error)

@@ -9,7 +9,15 @@ export const FooterBody = styled.div`
     justify-content: center;
     
     @media (max-width:600px){
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    @media (max-width:400px){
+        padding: 2rem 1rem;
+    }
+    
+    @media (max-width:300px){
+        padding: 2rem 0.5rem;
     }
 `
 

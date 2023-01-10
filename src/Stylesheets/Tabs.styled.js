@@ -204,10 +204,15 @@ export const Body = styled.div`
 
 export const Map = styled.div`
     border-radius: 5px;
-    
+
     &:hover {
       transform: translateY(-0.5rem);
       transition: 1s;
+    }
+    
+    @media (max-width:500px){
+      margin: auto;
+      
     }
 `
 export const Img = styled.img`
@@ -218,7 +223,7 @@ export const Img = styled.img`
     @media (max-width:500px){
         height: fit-content;
         width: 96%;
-        text-align: center;
+        margin: auto;
     }
 `
 

@@ -59,6 +59,10 @@ code {
   cursor: pointer;
 }
 
+.slider{
+  width: 94% !important;
+}
+
 .nonScreen{
   color: #260c1a;
   margin-right: 1rem;

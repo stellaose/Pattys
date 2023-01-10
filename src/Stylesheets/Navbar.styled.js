@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Nav = styled.div` 
-    padding: 1.5rem 3rem 1rem;
+    padding: 1.5rem 3rem 0.5rem;
     position: relative;
     color: #260c1a;
     background-color: #f7f7f2;

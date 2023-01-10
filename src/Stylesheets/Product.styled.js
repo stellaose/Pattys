@@ -26,22 +26,22 @@ export const ProductsContainer = styled.div`
 
 export const ProductContent = styled.div`
    
-    display: grid;
-    grid-template-columns: 24% 24% 24% 24%;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  gap: 1rem;
     
-    @media (max-width:1200px){
-        grid-template-columns: 32% 32% 32%;
-    }
+  @media (max-width:1200px){
+    grid-template-columns: 32% 32% 32%;
+  }
     
-    @media (max-width:800px){
-        grid-template-columns: auto auto;
-    }
+  @media (max-width:800px){
+    grid-template-columns: auto auto;
+  }
     
-    @media (max-width:500px){
-        grid-template-columns: auto;
-        align-items: center;
-    }
+  @media (max-width:500px){
+    grid-template-columns: auto;
+    align-items: center;
+  }
 `
 
 export const Map = styled.div`
@@ -180,11 +180,59 @@ export const PaginationBody = styled.div`
   }
 `
 
+export const FilterContainer = styled.div`
+  margin: 0 auto 2rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 19rem 19rem 19rem;
+  gap: 2rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  
+  @media (max-width:1000px){
+    grid-template-columns: 19rem 19rem 19rem;
+  }
+  
+  @media (max-width:600px){
+    grid-template-columns: 17rem 17rem 17rem;
+    width: 99%;
+  }
+  
+  @media (max-width:400px){
+    grid-template-columns: 15rem 15rem 15rem;
+  }
+  
+  @media (max-width:500px){
+    grid-template-columns: 13rem 13rem 13rem;
+  }
+`
+
+export const RangeBody = styled.div`
+  text-align: left;
+  
+  p{
+    font-weight: 600;
+  }
+`
+
+
+export const CategoryBody = styled.div`
+  text-align: left;
+  
+  p{
+    font-weight: 600;
+  }
+`
+
 export const LoadingSection = styled.div`
     width: 40vw;
     align-items: center;
     margin: 0 auto;
-    height: 31rem;
+    height: 28rem;
     
     @media (max-width:600px){
         height: 28rem;

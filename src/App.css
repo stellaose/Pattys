@@ -48,8 +48,15 @@
   color: #aeaeac;
   text-decoration: none;
   /* color: #f05d23; */
-  
 }
+
+.input-range {
+  height: 1rem;
+  position: relative;
+  width: 100%;
+  /* margin-top: 2rem; */
+}
+
 
 @media (max-width:1000px){
   .page-item{

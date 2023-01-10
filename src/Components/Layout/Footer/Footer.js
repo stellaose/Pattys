@@ -20,13 +20,13 @@ const Footer = () => {
       <FooterBody>
         <FooterContent>
           <PageLeftDiv>
-            <NavLink to = 'shop-now' exact='true' activeclassName = 'active'>
+            <NavLink to = 'shop-now' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 Shop
               </p>
             </NavLink>
                         
-            <NavLink to='sales' exact='true' activeclassName = 'active'>
+            <NavLink to='sales' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 Sales
               </p>
@@ -34,13 +34,13 @@ const Footer = () => {
                         
                         
                         
-            <NavLink to ='about-us' exact='true' activeclassName = 'active'>
+            <NavLink to ='about-us' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 About Us
               </p>
             </NavLink>
                         
-            <NavLink to ='my-wishlist' exact='true' activeclassName = 'active'>
+            <NavLink to ='my-wishlist' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 Wishlist
               </p>
@@ -57,12 +57,12 @@ const Footer = () => {
             <h3>Email Address</h3>
             <p>stellaoseinc@gmail.com</p>
                         
-            <NavLink to ='contact-us' exact='true' activeclassName = 'active'>
+            <NavLink to ='contact-us' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 Contact Us
               </p>
             </NavLink>
-            <NavLink to ='checkout' exact='true' activeclassName = 'active'>
+            <NavLink to ='checkout' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 Checkout
               </p>

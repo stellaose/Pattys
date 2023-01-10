@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getProduct } from '../Redux/Actions/ProductAction';
 import ReactStars from 'react-rating-stars-component';
 import Pagination from 'react-js-pagination';
-import {   
-    Img,
+import {
+        CategoryBody,
+        FilterContainer, 
+        Img,
         Item,
         LoadingSection,
         Map, 
@@ -13,41 +15,84 @@ import {
         ProductContent, 
         ProductsListBody, 
         ProductsContainer, 
+        RangeBody,
         ReviewStar,
         PaginationBody} from '../Stylesheets/Product.styled';
+import Slider from '@mui/material/Slider';
+ 
 
 const Product = () => {
   const dispatch = useDispatch();
     
   const [currentPage, setCurrentPage] = useState(1)
-  const { loading, error, products, productCount, resultPerPage } = useSelector(state => state.products)
+  const [price, setPrice] = useState([1000, 50000])
+  const { loading, error, products, productCount, resultPerPage, filteredProduct } = useSelector(state => state.products)
+  
+  // console.log('Filtered product', filteredProduct)
     
   const { keyword } = useParams()
     
   const setCurrentPageNo = (e) => {
     setCurrentPage(e)
   }
+  
+  const priceHandler = (event, newPrice) => {
+    setPrice(newPrice)
+  }
     
   useEffect(() => {
-    dispatch(getProduct(keyword, currentPage))
-  }, [dispatch, keyword, currentPage])
+
+    dispatch(getProduct(keyword, currentPage, price))
+  }, [dispatch, keyword, currentPage, price])
     
   const ratingChanged = () => {
         
   }
+  
+  let count = filteredProduct;
     
   return (
     <>
       <ProductsListBody>
-        {loading ? (
+      <ProductsContainer>
+      <FilterContainer>
+        <RangeBody>
+          <p>Price</p>
+          <Slider
+            sx={{
+              height: 2,
+              margin: '0.5rem',
+              color: '#c5d86d'
+            }}
+            size= 'small'
+            className="slider"
+            value={price}
+            onChange={priceHandler}
+            valueLabelDisplay="auto"
+            aria-labelledby='range-slider'
+            min={1000}
+            max={50000}
+          />
+          
+        </RangeBody>
+        
+        <CategoryBody>
+          <p>Category</p>
+        </CategoryBody>
+        <div>
+          Stella
+        </div>       
+      </FilterContainer>
+
+      {loading ? (
           <>
             <LoadingSection>
               <div class="loader"></div>
             </LoadingSection>
           </>
         ) : (
-          <ProductsContainer>
-            <ProductContent>
+          <>
+          <ProductContent>
               {
                 products && products?.map((product) => {
                   return (
@@ -87,25 +132,34 @@ const Product = () => {
                             
               {error && 'An error occurred. Please try again'}
             </ProductContent>
+            
+            {resultPerPage > count && (
+              <PaginationBody>
+                <Pagination
+                  activePage = {currentPage}
+                  itemsCountPerPage = {resultPerPage}
+                  totalItemsCount = {productCount}
+                  onChange = {setCurrentPageNo}
+                  nextPageText="Next"
+                  prevPageText="Prev"
+                  firstPageText="First"
+                  lastPageText="Last"
+                  itemClass="page-item"
+                  linkClass="page-link"
+                  activeClass="pageItemActive"
+                  activeLinkClass="pageLinkActive"
+                />
+              </PaginationBody>
+            )}
                   
-            <PaginationBody>
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resultPerPage}
-                totalItemsCount={productCount}
-                onChange={setCurrentPageNo}
-                nextPageText='Next'
-                prevPageText='Prev'
-                firstPageText='First'
-                lastPageText='Last'
-                itemClass='page-item'
-                linkClass= 'page-link'
-                activeClass='pageItemActive'
-                activeLinkClass = 'pageLinkActive'
-              />
-            </PaginationBody>
-          </ProductsContainer>
+           
+          </>
         )}
+
+
+        
+          
+          </ProductsContainer>
       </ProductsListBody>
     </>
   )
