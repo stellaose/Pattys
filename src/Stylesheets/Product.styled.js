@@ -228,6 +228,28 @@ export const CategoryBody = styled.div`
   }
 `
 
+export const CategorySelect = styled.div`
+  margin-top: 0.5rem;
+  
+  select{
+    width: 80%;
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #c5d86d;
+  }
+  
+  option{
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid #c5d86d;
+    
+    &:hover {
+      background-color: green;
+    }
+  }
+`
+
 export const LoadingSection = styled.div`
     width: 40vw;
     align-items: center;

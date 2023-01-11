@@ -17,40 +17,52 @@ import {
         ProductsContainer, 
         RangeBody,
         ReviewStar,
-        PaginationBody} from '../Stylesheets/Product.styled';
+        PaginationBody,
+        CategorySelect} from '../Stylesheets/Product.styled';
 import Slider from '@mui/material/Slider';
  
+const categories = [
+  'Shirts',
+  'Shoes',
+  'Dresses',
+  'Skirts',
+  'Trousers',
+  'Sneakers',
+  'Slides'  
+]
 
 const Product = () => {
   const dispatch = useDispatch();
     
+  const [category, setCategory] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
-  const [price, setPrice] = useState([1000, 50000])
-  const { loading, error, products, productCount, resultPerPage, filteredProduct } = useSelector(state => state.products)
+  const [price, setPrice] = useState([500, 50000])
+  const { loading, error, products, productCount, resultPerPage } = useSelector(state => state.products)
   
-  // console.log('Filtered product', filteredProduct)
-    
-  const { keyword } = useParams()
+  const { keyword } = useParams();
     
   const setCurrentPageNo = (e) => {
+    window.scroll(0, 0)
     setCurrentPage(e)
   }
   
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice)
   }
+  
+  const handleCategory = (e) => {
+    setCategory(e.target.value)
+  }
     
   useEffect(() => {
 
-    dispatch(getProduct(keyword, currentPage, price))
-  }, [dispatch, keyword, currentPage, price])
+    dispatch(getProduct(keyword, currentPage, price, category))
+  }, [dispatch, keyword, currentPage, price, category])
     
   const ratingChanged = () => {
         
   }
   
-  let count = filteredProduct;
-    
   return (
     <>
       <ProductsListBody>
@@ -59,18 +71,13 @@ const Product = () => {
         <RangeBody>
           <p>Price</p>
           <Slider
-            sx={{
-              height: 2,
-              margin: '0.5rem',
-              color: '#c5d86d'
-            }}
             size= 'small'
             className="slider"
             value={price}
             onChange={priceHandler}
             valueLabelDisplay="auto"
             aria-labelledby='range-slider'
-            min={1000}
+            min={500}
             max={50000}
           />
           
@@ -78,6 +85,19 @@ const Product = () => {
         
         <CategoryBody>
           <p>Category</p>
+          
+          <CategorySelect>
+            <select name="Category" onChange={handleCategory}>
+              <option value="" disabled="disabled" selected="selected">Category</option>
+              {categories.map((category) => (
+                <>
+                  <option value={category} key={category}>{category}</option>
+                </>
+                
+              ))}
+            </select>
+                
+          </CategorySelect>
         </CategoryBody>
         <div>
           Stella
@@ -133,7 +153,6 @@ const Product = () => {
               {error && 'An error occurred. Please try again'}
             </ProductContent>
             
-            {resultPerPage > count && (
               <PaginationBody>
                 <Pagination
                   activePage = {currentPage}
@@ -150,7 +169,6 @@ const Product = () => {
                   activeLinkClass="pageLinkActive"
                 />
               </PaginationBody>
-            )}
                   
            
           </>

@@ -50,11 +50,16 @@ const clearError = () => {
 
 
 
-export const getProduct = (keyword = "", currentPage = 1, price = [1000, 50000] ) => async (dispatch) => {
+export const getProduct = (keyword = "", currentPage = 1, price = [500, 50000], category =[]) => async (dispatch) => {
     try {
         dispatch(fetchProductRequest())
         
-        const {data} = await axios.get(`${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}&price[gt]=${price[0]}&price[lt]=${price[1]}`)
+        let link = `${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}&price[gt]=${price[0]}&price[lt]=${price[1]}`
+        
+        if (category){
+          link = `${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}&price[gt]=${price[0]}&price[lt]=${price[1]}&category=${category}`
+        }
+        const { data } = await axios.get(link)
         console.log('response here', data)
         
         dispatch(fetchProductSuccess(data))
