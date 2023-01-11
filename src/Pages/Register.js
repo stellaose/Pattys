@@ -1,74 +1,90 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import {  
-        LoginBody, 
-        LoginBox, 
-        LoginButton, 
-        LoginColumn, 
-        LoginContainer, 
-        LoginInput,
-        LoginLabel,
-        LoginSection,
-        NameLabel,
-        NameInput,
-        NameSection,
-        PasswordDiv} from '../Stylesheets/Register.styled'
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  RegisterBody,
+  RegisterBox,
+  RegisterButton,
+  RegisterColumn,
+  RegisterContainer,
+  RegisterInput,
+  RegisterLabel,
+  RegisterSection,
+  NameLabel,
+  NameInput,
+  NameSection,
+  PasswordDiv,
+  ImgSection,
+  Img,
+  Image,
+} from "../Stylesheets/Register.styled";
 
 const Register = () => {
-    return (
-        <>
-            <LoginBody>
-                <LoginContainer>
-                    <img src="/asset/register.jpg" alt="" loading='eager'/>
-                    <LoginBox>
-                        <h1>Pattys</h1>
-                        
-                        <LoginColumn>
-                            <NameSection>
-                                <div>
-                                    <NameLabel htmlFor="">FirstName</NameLabel>
-                                    <br/>
-                                    <NameInput type='text'/>
-                                </div>
-                                <div>
-                                    <NameLabel htmlFor="">LastName</NameLabel>
-                                    <br/>
-                                    <NameInput type='text'/>
-                                </div>
-                            </NameSection>
-                            <br/>
-                            <LoginLabel htmlFor="">Email</LoginLabel>
-                            <br/>
-                            <LoginInput type='email'/>
-                            <br/>
-                            <br/>
-                            <LoginLabel htmlFor="">Password</LoginLabel>
-                            <br/>
-                            <LoginInput type='password'/>
-                            <br/>
-                            
-                            <PasswordDiv>
-                                <small>{' '}</small>
-                                
-                                <Link to = '/login'>
-                                    <small>Have an account? Login here</small>
-                                </Link>
-                            </PasswordDiv>
-                            
-                            <LoginSection>
-                                <LoginButton type= 'submit' value='Login'/>
-                            </LoginSection>
-                            
-                        </LoginColumn>
-                        
-                    </LoginBox>
-                    
+  const [avatar, setAvatar] = useState()
+  
+  const handleInput = (e) => {
+    e.preventDefault()
+  }
+  return (
+    <>
+      <RegisterBody>
+        <RegisterContainer>
+          <Image src="/asset/register.jpg" alt="" loading="eager" />
+          <RegisterBox>
+            <h1>Pattys</h1>
 
-                </LoginContainer>
-            </LoginBody>
-        </>
-    )
-}
+            <RegisterColumn>
+              
+            <ImgSection>
+                <Img src="./asset/profile.jpg" alt="" loading="eager"/>
+                <label for="myfile">Select a file:</label>
+                <input type="file" id="myfile" name="myfile"/>
+              </ImgSection>
+              <NameSection>
+                <div>
+                  <NameLabel htmlFor="">FirstName</NameLabel>
+                  <br />
+                  <NameInput 
+                    type="text" 
+                    placeholder="First Name"
+                    // value={firstName}
+                    onChange={handleInput}
+                    required
+                  />
+                </div>
+                <div>
+                  <NameLabel htmlFor="">LastName</NameLabel>
+                  <br />
+                  <NameInput type="text" />
+                </div>
+              </NameSection>
+              <br />
+              <RegisterLabel htmlFor="">Email</RegisterLabel>
+              <br />
+              <RegisterInput type="email" />
+              <br />
+              <br />
+              <RegisterLabel htmlFor="">Password</RegisterLabel>
+              <br />
+              <RegisterInput type="password" />
+              <br />
 
-export default Register
+              <PasswordDiv>
+                <small> </small>
+
+                <Link to="/Login">
+                  <small>Have an account? Login here</small>
+                </Link>
+              </PasswordDiv>
+
+              <RegisterSection>
+                <RegisterButton type="submit" value="Register" />
+              </RegisterSection>
+            </RegisterColumn>
+          </RegisterBox>
+        </RegisterContainer>
+      </RegisterBody>
+    </>
+  );
+};
+
+export default Register;

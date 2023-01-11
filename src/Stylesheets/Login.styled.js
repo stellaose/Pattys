@@ -84,7 +84,7 @@ export const LoginBox = styled.div`
     }
 `
 
-export const LoginColumn = styled.div`
+export const LoginColumn = styled.form`
     width: 90%;
     margin: 2rem auto;
     

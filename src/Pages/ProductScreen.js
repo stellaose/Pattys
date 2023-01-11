@@ -11,6 +11,7 @@ import {
   Review,
 } from "../Components/Organisms/Tabs/ProductTabs/Details";
 import ReactStars from "react-rating-stars-component";
+import MetaData from "../Components/Layout/MetaData";
 import {
   ButtonSection,
   CountSection,
@@ -68,6 +69,8 @@ const ProductScreen = () => {
         ) : (
           <>
             <ProductScreenContent>
+            <MetaData title={`${product?.name}`}/>
+            
               <ProductLeftScreen>
                 {product?.images &&
                   product?.images.map((item) => {

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FcGoogle } from 'react-icons/fc'
+import { FcGoogle } from 'react-icons/fc';
+import MetaData from '../Components/Layout/MetaData'
 import {  
     GoogleSection,
         LoginBody, 
@@ -14,51 +16,84 @@ import {
         PasswordDiv} from '../Stylesheets/Login.styled'
 
 const Login = () => {
-    return (
-        <>
-            <LoginBody>
-                <LoginContainer>
-                    <LoginBox>
-                        <h1>Welcome Back!</h1>
+  const [loginInfo, setLoginInfo] = useState(
+    {
+      email:'',
+      password: ''
+    }
+  )
+  const dispatch = useDispatch()
+  
+  const {email, password} = loginInfo
+  
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setLoginInfo({
+      ...loginInfo,
+      [name]: value,
+    });
+  };
+  
+  const handleLogin = (e) => {
+    e.preventDefault();
+    alert('Login Successful')
+  }
+  return (
+    <>
+      <MetaData title={'Login || Pattys'}/>
+      <LoginBody>
+        <LoginContainer>
+          <LoginBox>
+            <h1>Welcome Back!</h1>
                         
-                        <LoginColumn>
-                            <GoogleSection>
-                                <button><FcGoogle/> <span> Login with Google</span></button>
-                            </GoogleSection>
+            <LoginColumn onSubmit={handleLogin}>
+              <GoogleSection>
+                <button><FcGoogle/> <span> Login with Google</span></button>
+              </GoogleSection>
                             
-                            <LoginLabel htmlFor="">Email</LoginLabel>
-                            <br/>
-                            <LoginInput type='text'/>
-                            <br/>
-                            <br/>
-                            <LoginLabel htmlFor="">Password</LoginLabel>
-                            <br/>
-                            <LoginInput type='password'/>
-                            <br/>
+              <LoginLabel htmlFor="email">Email</LoginLabel>
+              <br/>
+              <LoginInput 
+                type='email'
+                placeholder='E-mail'
+                onChange={handleInput}
+                required
+              />
+              <br/>
+              <br/>
+              <LoginLabel htmlFor="">Password</LoginLabel>
+              <br/>
+              <LoginInput 
+                type='password'
+                placeholder='Password'
+                onChange={handleInput}
+                required
+              />
+              <br/>
                             
-                            <PasswordDiv>
-                                <Link to = '/register'>
-                                    <small>Create Account?</small>
-                                </Link>
+              <PasswordDiv>
+                <Link to = '/register'>
+                    <small>Create Account?</small>
+                </Link>
                                 
-                                <Link to = '/forget-password'>
-                                    <small>Forget Password</small>
-                                </Link>
-                            </PasswordDiv>
+                <Link to = '/forget-password'>
+                  <small>Forget Password</small>
+                </Link>
+              </PasswordDiv>
                             
-                            <LoginSection>
-                                <LoginButton type= 'submit' value='Login'/>
-                            </LoginSection>
+              <LoginSection>
+                <LoginButton type= 'submit' value='Login'/>
+              </LoginSection>
                             
-                        </LoginColumn>
+            </LoginColumn>
                         
-                    </LoginBox>
+          </LoginBox>
                     
-                    <img src="/asset/login.jpg" alt="" loading='eager'/>
-                </LoginContainer>
-            </LoginBody>
-        </>
-    )
+          <img src="/asset/login.jpg" alt="" loading='eager'/>
+        </LoginContainer>
+      </LoginBody>
+    </>
+  )
 }
 
 export default Login
