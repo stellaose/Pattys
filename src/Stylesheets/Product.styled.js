@@ -184,7 +184,7 @@ export const FilterContainer = styled.div`
   margin: 0 auto 2rem;
   text-align: center;
   display: grid;
-  grid-template-columns: 19rem 19rem 19rem;
+  grid-template-columns: 20rem 20rem 20rem;
   gap: 2rem;
   overflow-x: auto;
   white-space: nowrap;

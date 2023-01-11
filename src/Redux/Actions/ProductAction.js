@@ -50,14 +50,14 @@ const clearError = () => {
 
 
 
-export const getProduct = (keyword = "", currentPage = 1, price = [500, 50000], category =[]) => async (dispatch) => {
+export const getProduct = (keyword = "", currentPage = 1, price = [500, 50000], category, ratings = 0) => async (dispatch) => {
     try {
         dispatch(fetchProductRequest())
         
-        let link = `${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}&price[gt]=${price[0]}&price[lt]=${price[1]}`
+        let link = `${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}&price[gt]=${price[0]}&price[lt]=${price[1]}&ratings[gte]=${ratings}`
         
         if (category){
-          link = `${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}&price[gt]=${price[0]}&price[lt]=${price[1]}&category=${category}`
+          link = `${config.BASE_URL}/v1/product/all-products?keyword=${keyword}&page=${currentPage}&price[gt]=${price[0]}&price[lt]=${price[1]}&category=${category}&ratings[gte]=${ratings}`
         }
         const { data } = await axios.get(link)
         console.log('response here', data)

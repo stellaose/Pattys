@@ -36,6 +36,7 @@ const Product = () => {
     
   const [category, setCategory] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
+  const [ratings, setRatings] = useState(0)
   const [price, setPrice] = useState([500, 50000])
   const { loading, error, products, productCount, resultPerPage } = useSelector(state => state.products)
   
@@ -44,6 +45,10 @@ const Product = () => {
   const setCurrentPageNo = (e) => {
     window.scroll(0, 0)
     setCurrentPage(e)
+  }
+  
+  const ratingsHandler = (event, newRatings) => {
+    setRatings(newRatings)
   }
   
   const priceHandler = (event, newPrice) => {
@@ -56,8 +61,8 @@ const Product = () => {
     
   useEffect(() => {
 
-    dispatch(getProduct(keyword, currentPage, price, category))
-  }, [dispatch, keyword, currentPage, price, category])
+    dispatch(getProduct(keyword, currentPage, price, category, ratings))
+  }, [dispatch, keyword, currentPage, price, category, ratings])
     
   const ratingChanged = () => {
         
@@ -99,9 +104,20 @@ const Product = () => {
                 
           </CategorySelect>
         </CategoryBody>
-        <div>
-          Stella
-        </div>       
+        <RangeBody>
+          <p>Ratings Above</p>
+          <Slider
+            size= 'small'
+            className="slider"
+            value={ratings}
+            onChange={ratingsHandler}
+            valueLabelDisplay="auto"
+            aria-label="Volume"
+            min={1}
+            max={5}
+          />
+          
+        </RangeBody>  
       </FilterContainer>
 
       {loading ? (
