@@ -40,12 +40,8 @@ export const RegisterContainer = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  min-height: 35rem;
+  min-height: 32rem;
   border-radius: 20px;
-  
-  @media (max-width:1300px){
-    min-height: 40rem;
-  }
 
   @media (max-width: 860px) {
     display: none;
@@ -54,7 +50,7 @@ export const Image = styled.img`
 
 export const RegisterBox = styled.div`
   background-color: white;
-  padding: 1rem 1rem 1rem;
+  padding: 2rem 1rem;
   border-radius: 20px;
   display: block;
 
@@ -87,7 +83,7 @@ export const RegisterBox = styled.div`
 
 export const RegisterColumn = styled.form`
   width: 90%;
-  margin: 1rem auto 0; 
+  margin: 2rem auto; 
 
   @media (max-width: 600px) {
     width: 95%;

@@ -34,11 +34,6 @@ const Register = () => {
 
             <RegisterColumn>
               
-            <ImgSection>
-                <Img src="./asset/profile.jpg" alt="" loading="eager"/>
-                <label for="myfile">Select a file:</label>
-                <input type="file" id="myfile" name="myfile"/>
-              </ImgSection>
               <NameSection>
                 <div>
                   <NameLabel htmlFor="">FirstName</NameLabel>
