@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState} from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom'
-import useOutsideClick from '../../../hooks/useOutsideClick.js';
+import { useSelector, useDispatch } from 'react-redux'
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom'
 import { AiFillFacebook,
          AiFillTwitterCircle,
          AiFillLinkedin,
@@ -15,33 +15,46 @@ import {
 import { 
         GrMenu,
         GrClose } from 'react-icons/gr'
+import { 
+        HiOutlineLogin,
+        HiOutlineLogout } from 'react-icons/hi'
+import { MdAppRegistration } from 'react-icons/md'
 import {
-        // LeftNav,
         EndNav,
         EndNavList,
         MidNav,
         Nav,
         NavbarBody,
+        NavBarDropDiv,
         NavBarDropdown,
         NavBarDropNav,
         NavImg,
-        PageDiv,
         RightNav } from '../../../Stylesheets/Navbar.styled.js';
 import SearchModal from '../../Molecules/Modal/SearchModal.js';
+import { logoutAction } from '../../../Redux/Actions/UserAction.js';
 
 const NavBar = () => {
+  
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  
   const [nav, setNav ] = useState(false);
-  const [page, setPage] = useState(false)
   const [drop, setDrop] = useState(false);
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+  
+  const { isAuthenticated, user } = useSelector(state => state.user)
+  
+  const savedUser = user?.savedUser
+  
+  const handleLogout = (e) => {
+    e.preventDefault()
+    dispatch(logoutAction(navigate))
+    // window.location.reload(false)
+  }
 
   const handleDrop = () => {
     setDrop(!drop)
   }
-    
-  const closeBar = () => {
-    setPage(false)
-}
     
   const closeDrop = () => {
     setDrop(false)
@@ -53,7 +66,6 @@ const NavBar = () => {
     
   const location = useLocation()
     
-  const ref = useOutsideClick(closeBar)
   return (
     <>
       <Nav>
@@ -69,23 +81,15 @@ const NavBar = () => {
               </h3>
             </NavLink>
                       
-            <NavLink to='sales' exact='true' activeclassName = 'active'>
+            <NavLink to='my-wishlist' exact='true' activeclassName = 'active'>
               <h3>
-                Sales
+                Wishlist
               </h3>
             </NavLink>
-                      
-            <h3 onClick={() => setPage(!page)} activeclassName = 'active'>
-              Pages
-            </h3>
-                      
-            {page && (
-              <PageDiv ref={ref}>
-                <NavLink to = 'about-us' exact='true' activeclassName = 'active' onClick={closeBar}>
-                  <p>About us</p>
-                </NavLink>
-              </PageDiv>
-            )}
+            
+            <NavLink to = 'about-us' exact='true' activeclassName = 'active'>
+              <h3>About us</h3>
+            </NavLink>
                       
             <NavLink to ='contact-us' exact='true' activeclassName = 'active'>
               <h3>
@@ -100,7 +104,7 @@ const NavBar = () => {
               <CiSearch/>
             </p>
                       
-            <NavLink to = 'favourite' exact='true' activeclassName= 'active'>
+            <NavLink to = 'my-favourite' exact='true' activeclassName= 'active'>
               <p>
                 <CiHeart/>
               </p>
@@ -113,51 +117,92 @@ const NavBar = () => {
               </p>
                           
             </NavLink>
-
+              
             <NavBarDropNav onClick={handleDrop}>
               <Link to = '#' >
-                <CiUser/>
+                {isAuthenticated ? (
+                  <>
+                    <p>
+                    {savedUser?.avatar && savedUser.avatar.map((item) => (
+                      <img src={item?.url} key={item?.url} alt=""/>
+                    ))} {' '}<span >{savedUser?.firstname}</span></p>
+                  </>
+                ) : (<p><CiUser/></p>)}
+                
               </Link>
-                              
-
-              {drop && (
-                <div>
-                  <NavBarDropdown>
-                    {
-                      location.pathname === "/login" ? (
-                        <li>
-                          <Link to="/register">
-                            Register
-                          </Link>
+               
+              {
+                isAuthenticated ? (<>
+                  {drop && (
+                    <NavBarDropDiv>
+                      <NavBarDropdown>
+                        <li >
+                          <NavLink to="profile" exact='true' activeclassName= 'active' onClick={closeDrop} style={{fontWeight: 700, color: '#c5d86d'}}>
+                            {savedUser?.avatar && savedUser.avatar.map((item) => (
+                              <img src={item?.url} key={item?.url} alt=""/>
+                            ))} {' '}
+                            {savedUser?.firstname} {' '} {savedUser?.lastname}
+                          </NavLink>
                         </li>
-                                          
-                      ) : location.pathname === '/register' ? (
+                        <hr/>
+                        <br/>
                         <li>
-                          <Link to="/login">
-                            Login
-                          </Link>
+                          <NavLink to="my-order" exact='true' activeclassName= 'active' onClick={closeDrop}>
+                            My Orders
+                          </NavLink>
                         </li>
-                                          
-                      ) : (
-                        <>
-                          <li>
-                            <NavLink to="login" exact='true' activeclassName= 'active' onClick={closeDrop}>
-                              Login
-                            </NavLink>
-                          </li>
-                          <li>
-                            <NavLink to="register" exact='true' activeclassName= 'active' onClick={closeDrop}>
-                              Register
-                            </NavLink>
-                          </li>
-                        </>
-                      )
-                    }
-                                      
-                  </NavBarDropdown>   
-                </div>
-              )}
-                          
+                        
+                        <hr/>
+                        <br/>
+                        <span onClick={handleLogout}><HiOutlineLogout/> Logout</span>
+                        
+                      </NavBarDropdown>
+                    </NavBarDropDiv>
+                  )}
+                </>) : (
+                  <>
+                    {drop && (
+                      <NavBarDropDiv>
+                        <NavBarDropdown>
+                          {
+                            location.pathname === "/login" ? (
+                              <li>
+                                <NavLink to="/register">
+                                  <MdAppRegistration/> Register
+                                </NavLink>
+                              </li>
+                                                
+                            ) : location.pathname === '/register' ? (
+                              <li>
+                                <Link to="/login">
+                                <HiOutlineLogin/> Login
+                                </Link>
+                              </li>
+                                                
+                            ) : (
+                              <>
+                                <li>
+                                  <NavLink to="login" exact='true' activeclassName= 'active' onClick={closeDrop}>
+                                    <HiOutlineLogin/> Login
+                                  </NavLink>
+                                </li>
+                                <li>
+                                  <NavLink to="register" exact='true' activeclassName= 'active' onClick={closeDrop}>
+                                    <MdAppRegistration /> Register
+                                  </NavLink>
+                                </li>
+                              </>
+                            )
+                          }
+                                            
+                        </NavBarDropdown>   
+                      </NavBarDropDiv>
+                    )}
+                  </>
+                  
+                )
+              }               
+              
             </NavBarDropNav>
                   
             <EndNav onClick={() => setNav(!nav)}>
@@ -173,18 +218,14 @@ const NavBar = () => {
                 </h3>
               </NavLink>
                           
-              <NavLink to='sales' exact='true' activeclassName = 'active' onClick={closeNav}>
+              <NavLink to='my-wishlist' exact='true' activeclassName = 'active' onClick={closeNav}>
                 <h3>
-                  Sales
+                  Wishlist
                 </h3>
               </NavLink>
-              {page && (
-                <PageDiv ref={ref}>
-                  <NavLink to = 'about-us' exact='true' activeclassName = 'active' onClick={closeBar}>
-                    <p>About us</p>
-                  </NavLink>
-                </PageDiv>
-              )}
+              <NavLink to = 'about-us' exact='true' activeclassName = 'active'>
+                <p>About us</p>
+              </NavLink>
               <NavLink to ='contact-us' exact='true' activeclassName = 'active' onClick={closeNav}>
                 <h3>
                   Contact Us

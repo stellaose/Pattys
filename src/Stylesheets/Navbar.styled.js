@@ -46,6 +46,10 @@ export const RightNav = styled.div`
                 margin: 0.5rem 0.7rem 1rem;
                 cursor: pointer;
                 
+                @media(max-width:900px){
+                  margin: 0.5rem 0.5rem 1rem;
+                }
+                
                 @media (max-width:600px){
                     font-size: 1.5rem;
                     margin: 0.7rem 0.3rem 1rem;
@@ -107,6 +111,11 @@ export const MidNav = styled.div`
         &:hover{
             color: #c5d86d;
         }
+        
+        @media (max-width:1000px){
+          margin: 0 0.75rem;
+          font-size: 1.1rem;
+        }
     }
     
     @media (max-width:800px){
@@ -133,41 +142,80 @@ export const NavImg = styled.img`
 `
 
 export const NavBarDropNav = styled.div`
-    padding: 1px;
-    position: relative;
-    z-index: 40;
-    
-        svg{
-            font-size: 1.8rem;
-            margin: 0.5rem 1rem 1rem 0.5rem;
-            
-            @media (max-width:600px){
-                font-size: 1.5rem;
-                margin: 0.7rem 0.5rem 1rem;
-            }
-            
-            &:hover{
-                color: #c5d86d;
-            }
-        }
+  padding: 1px;
+  position: relative;
+  z-index: 40;
 
-        a{
-            
+  a{
+    p{
+      font-weight: 600;
+      
+      img{
+        width: 2.5rem;
+        margin-bottom: -0.5rem;
+        border-radius: 50%;
+        
+        @media (max-width:1000px){
+          width: 2.3rem;
         }
+        
+        @media (max-width:600px){
+          width: 2rem;
+          margin-top: 0.5rem;
+        }
+        
+        @media (max-width:400px){
+          width: 1.5rem;
+        }
+        
+       
+      }
+      
+      span{
+        font-weight: 600;
+        margin-bottom: 2rem;
+          
+        @media(max-width:885px){
+          display: none;
+        }
+      }
+      
+      svg{
+        font-size: 1.8rem;
+        margin: 0.5rem 1rem 1rem 0.5rem;
+              
+        @media (max-width:600px){
+          font-size: 1.5rem;
+          margin: 0.7rem 0.5rem 1rem;
+        }
+              
+        &:hover{
+          color: #c5d86d;
+        }
+      }
+    }        
+  }
+`
 
-        img{
-            
-        }
-
-       div{
-            position: absolute;
-            align-items: center;
-            margin-left: -2.5rem;
-            padding: 1rem 1.5rem;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            background-color: white;
-            z-index: 99; 
-        }
+export const NavBarDropDiv = styled.div`
+  position: absolute;
+  align-items: center;
+  margin-left: -5rem;
+  padding: 1rem;
+  width: max-content;
+  min-width: 7rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgba(247,247,242, 0.7);
+  z-index: 99; 
+  
+  
+  @media (max-width: 800px){
+    margin-left: -6.5rem;
+  }
+  
+  @media (max-width: 400px){
+    margin-left: -7rem;
+  }
 `
 
 export const PageDiv = styled.div`
@@ -204,20 +252,47 @@ export const PageDiv = styled.div`
 `
 
 export const NavBarDropdown = styled.ul`
-    display: block;
+  display: block;
 
-    &:first-child {
-        padding-top: 0.8em;
+  &:first-child {
+    padding-top: 0.8em;
+  }
+  span{
+    font-weight: 700;
+    cursor: pointer;
+    color: #f05d23;
+    font-size: 1rem;
+    
+    svg{
+      margin-bottom: -0.3rem;
+      font-size: 1.3rem;
     }
-    li{
-        list-style-type: none;
-        margin-bottom: 0.8rem;
-        font-weight: 500;
+  }
+  
+  li{
+    list-style-type: none;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    
+    @media (max-width: 600px){
+      font-size: 0.85rem;
+    }
         
-        a{
-            text-decoration: none;
-        }
-    } 
+    a{
+      text-decoration: none;
+      
+      img{
+        width: 2rem;
+        margin-bottom: -0.5rem;
+      }
+    }
+    
+    svg{
+      font-size: 1.2rem;
+      margin-bottom: -0.2rem;
+    }
+  } 
 `
 
 export const EndNav = styled.div`
@@ -261,9 +336,18 @@ export const EndNavList = styled.div`
     
     h3{
         margin: 1rem auto;
+        font-size: 1.2rem;
         
         &:hover{
             color: #c5d86d;
+        }
+        
+        @media (max-width:500px){
+          font-size: 1.1rem;
+        }
+        
+        @media (max-width:300px){
+          font-size: 1rem;
         }
     }
     

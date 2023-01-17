@@ -1,4 +1,4 @@
-export const ProductType = {
+const ProductType = {
     ALL_PRODUCT_REQUEST: 'ALL_PRODUCT_REQUEST',
     ALL_PRODUCT_SUCCESS: 'ALL_PRODUCT_SUCCESS',
     ALL_PRODUCT_FAILURE: 'ALL_PRODUCT_FAILURE',
@@ -7,3 +7,5 @@ export const ProductType = {
     SINGLE_PRODUCT_FAILURE: 'SINGLE_PRODUCT_FAILURE',
     CLEAR_ERRORS: 'CLEAR_ERRORS'
 }
+
+export default ProductType

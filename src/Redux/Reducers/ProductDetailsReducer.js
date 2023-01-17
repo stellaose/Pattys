@@ -1,4 +1,4 @@
-import { ProductType } from '../Types/ProductType'
+import ProductType from '../Types/ProductType'
 
 const initialState = {
     loading: false,

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import MetaData from '../Components/Layout/MetaData'
 import {  
-    GoogleSection,
+        GoogleSection,
+        LoadingSection,
         LoginBody, 
         LoginBox, 
         LoginButton, 
@@ -14,83 +15,107 @@ import {
         LoginLabel,
         LoginSection,
         PasswordDiv} from '../Stylesheets/Login.styled'
+import { LoginAction, clearErrors } from '../Redux/Actions/UserAction';
 
 const Login = () => {
-  const [loginInfo, setLoginInfo] = useState(
-    {
-      email:'',
-      password: ''
-    }
-  )
+  const { loading, error, isAuthenticated } = useSelector(state => state.user)
+  
+  const [loginEmail, setLoginEmail] = useState('')
+  const [loginPassword, setLoginPassword] = useState('');
+  
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   
-  const {email, password} = loginInfo
   
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setLoginInfo({
-      ...loginInfo,
-      [name]: value,
-    });
-  };
+  const handleInputLogin = (e) => {
+    setLoginEmail(e.target.value)
+  }
+  
+  const handleInputPassword = (e) => {
+    setLoginPassword(e.target.value)
+  }
   
   const handleLogin = (e) => {
     e.preventDefault();
-    alert('Login Successful')
+    // alert('Login Successful')
+    dispatch(LoginAction(loginEmail, loginPassword, navigate))
   }
+  
+  useEffect (() => {
+    
+    if(error){
+      alert('An error occurred. Please try again')
+      dispatch(clearErrors())
+    }
+    
+    if(isAuthenticated){
+      alert('Login Successful')
+    }
+  }, [isAuthenticated, error, dispatch])
   return (
     <>
-      <MetaData title={'Login || Pattys'}/>
+      <MetaData title={'Login || Pattys E-Commerce'}/>
       <LoginBody>
-        <LoginContainer>
-          <LoginBox>
-            <h1>Welcome Back!</h1>
-                        
-            <LoginColumn onSubmit={handleLogin}>
-              <GoogleSection>
-                <button><FcGoogle/> <span> Login with Google</span></button>
-              </GoogleSection>
-                            
-              <LoginLabel htmlFor="email">Email</LoginLabel>
-              <br/>
-              <LoginInput 
-                type='email'
-                placeholder='E-mail'
-                onChange={handleInput}
-                required
-              />
-              <br/>
-              <br/>
-              <LoginLabel htmlFor="">Password</LoginLabel>
-              <br/>
-              <LoginInput 
-                type='password'
-                placeholder='Password'
-                onChange={handleInput}
-                required
-              />
-              <br/>
-                            
-              <PasswordDiv>
-                <Link to = '/register'>
-                    <small>Create Account?</small>
-                </Link>
-                                
-                <Link to = '/forget-password'>
-                  <small>Forget Password</small>
-                </Link>
-              </PasswordDiv>
-                            
-              <LoginSection>
-                <LoginButton type= 'submit' value='Login'/>
-              </LoginSection>
-                            
-            </LoginColumn>
-                        
-          </LoginBox>
-                    
-          <img src="/asset/login.jpg" alt="" loading='eager'/>
-        </LoginContainer>
+        {loading ? (
+          <>
+            <LoadingSection>
+              <div class="loader"></div>
+            </LoadingSection>
+          </>
+        ) : (
+          <LoginContainer>
+            <LoginBox>
+              <h1>Welcome Back!</h1>
+                          
+              <LoginColumn onSubmit={handleLogin}>
+                <GoogleSection>
+                  <button><FcGoogle/> <span> Login with Google</span></button>
+                </GoogleSection>
+                              
+                <LoginLabel htmlFor="email">Email</LoginLabel>
+                <br/>
+                <LoginInput 
+                  type='email'
+                  placeholder='E-mail'
+                  value={loginEmail}
+                  onChange={handleInputLogin}
+                  required
+                />
+                <br/>
+                <br/>
+                <LoginLabel htmlFor="">Password</LoginLabel>
+                <br/>
+                <LoginInput 
+                  type='password'
+                  value={loginPassword}
+                  placeholder='Password'
+                  onChange={handleInputPassword}
+                  required
+                />
+                <br/>
+                              
+                <PasswordDiv>
+                  <Link to = '/register'>
+                      <small>Create Account?</small>
+                  </Link>
+                                  
+                  <Link to = '/forget-password'>
+                    <small>Forget Password</small>
+                  </Link>
+                </PasswordDiv>
+                              
+                <LoginSection>
+                  <LoginButton type= 'submit' value='Login'/>
+                </LoginSection>
+                              
+              </LoginColumn>
+                          
+            </LoginBox>
+                      
+            <img src="/asset/login.jpg" alt="" loading='eager'/>
+          </LoginContainer>
+        )}
+        
       </LoginBody>
     </>
   )

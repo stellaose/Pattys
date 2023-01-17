@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -10,6 +11,7 @@ import {
         Img, 
         Tab, 
         Item, 
+        LoadingSection,
         Map, 
         Name,
         MoreSection} from '../../../../../Stylesheets/Tabs.styled'
@@ -17,6 +19,7 @@ import {
 const AllProducts = () => {
   const [ click, setClick ] = useState(false)
   const [info, setInfo] = useState([])
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
     
   const handleClick = () => {
@@ -27,8 +30,9 @@ const AllProducts = () => {
     
     (async () => {
       try {
+        setLoading(!loading)
         const {data} = await axios.get(`${config.BASE_URL}/v1/product/all-products`)
-        console.log(data.findProduct)
+        setLoading(false)
         setInfo(data?.findProduct)
         
       } catch (error) {
@@ -39,42 +43,49 @@ const AllProducts = () => {
     
   
   }, [])
-  
-    
     
   return (
     <>
       <Tab>
-        <Body>
-        {info.slice(0, 8).map((datei) => (
-          <Map key={datei?._id}>
-            <Link to = {`/shop-now/shop/${datei?._id}`} onClick={() => {window.scroll(0, 0)}}>
-              <Img src={datei?.images[0]?.url} alt=""/>
-            </Link>
-                                  
-            <Name>
-              <Item>
+      {loading ? (
+        <>
+          <LoadingSection>
+            <p>Loading...</p>
+          </LoadingSection>
+        </>
+      ) : (
+          <Body>
+            {info.slice(0, 8).map((datei) => (
+              <Map key={datei?._id}>
                 <Link to = {`/shop-now/shop/${datei?._id}`} onClick={() => {window.scroll(0, 0)}}>
-                  <h3>{datei?.name}</h3>
+                  <Img src={datei?.images[0]?.url} alt=""/>
                 </Link>
                                       
-                <p>&#8358;{datei?.price}</p> 
-              </Item>
-                    
-              <p>
-                {click ? <AiOutlineHeart onClick={handleClick}/> : <AiFillHeart onClick={handleClick}/>}
-              </p>
+                <Name>
+                  <Item>
+                    <Link to = {`/shop-now/shop/${datei?._id}`} onClick={() => {window.scroll(0, 0)}}>
+                      <h3>{datei?.name}</h3>
+                    </Link>
+                                          
+                    <p>&#8358;{datei?.price}</p> 
+                  </Item>
+                        
+                  <p>
+                    {click ? <AiOutlineHeart onClick={handleClick}/> : <AiFillHeart onClick={handleClick}/>}
+                  </p>
+                                          
+                </Name>
                                       
-            </Name>
-                                  
-          </Map>
-                          
-        ))}
-        
-        
+              </Map>
+                              
+            ))}
+            
+            
+          
+            {error && 'Something went wrong. Please try again later'}
+          </Body>
+      )}
        
-        {error && 'Something went wrong. Please try again later'}
-        </Body>
         
         <MoreSection>
           <Link to='/shop-now' onClick={() => {window.scroll(0, 0)}}>

@@ -22,7 +22,6 @@ export const FooterBody = styled.div`
 `
 
 export const FooterContent = styled.div`
-    
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -101,6 +101,10 @@ export const MoreSection = styled.div`
     text-decoration: none;
     color: #aeaeac;
     font-weight: 600;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
@@ -196,10 +200,6 @@ export const Body = styled.div`
         grid-template-columns: auto;
         align-items: center;
     }
-    
-    
-   
-
 `
 
 export const Map = styled.div`
@@ -334,4 +334,17 @@ export const InputBtnDiv = styled.div`
   align-items: center;
   text-align: center;
   width: 70%;
+`
+
+export const LoadingSection = styled.div`
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  height: 10rem;
+  
+  p{
+    color: #f05d23;
+    font-weight: 600;
+  }
 `

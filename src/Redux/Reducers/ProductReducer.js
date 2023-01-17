@@ -1,17 +1,18 @@
-import { ProductType } from '../Types/ProductType'
+import ProductType from '../Types/ProductType'
 
 const initialState = {
     loading: false,
     products: [],
+    error: null
 }
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
         case ProductType.ALL_PRODUCT_REQUEST:
-            return{
-                ...state,
-                loading: true,
-            }
+          return{
+            ...state,
+            loading: true,
+          }
         
         case ProductType.ALL_PRODUCT_SUCCESS:
             return{

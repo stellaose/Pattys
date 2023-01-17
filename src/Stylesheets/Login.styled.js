@@ -122,9 +122,10 @@ export const LoginLabel = styled.label`
     text-align: left;
     margin-top: 1rem;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
+    color: #aeaeac;
     
-    @media (max-width:400px){
+    @media (max-width:600px){
         font-size: 0.9rem;
     }
     
@@ -137,9 +138,9 @@ export const LoginInput = styled.input`
     border: none;
     border-bottom: 1px solid #260c1a;
     width: 90%;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
     outline: none;
     
     &:-webkit-autofill,
@@ -239,4 +240,15 @@ export const GoogleSection = styled.div`
         
     }
     
+`
+
+export const LoadingSection = styled.div`
+    width: 40vw;
+    align-items: center;
+    margin: 0 auto;
+    height: 28rem;
+    
+    @media (max-width:600px){
+        height: 28rem;
+    }
 `

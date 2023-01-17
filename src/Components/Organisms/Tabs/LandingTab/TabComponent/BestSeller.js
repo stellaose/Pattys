@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -9,7 +10,8 @@ import {
         Body, 
         Img, 
         Tab, 
-        Item, 
+        Item,
+        LoadingSection, 
         Map, 
         Name,
         MoreSection} from '../../../../../Stylesheets/Tabs.styled'
@@ -27,7 +29,7 @@ const BestSeller = () => {
   useEffect (() => {
     (async() => {
       try {
-        setLoading(false)
+        setLoading(!loading)
         const {data} = await axios.get(`${config.BASE_URL}/v1/product/all-products`)
         setLoading(false)
         setInfo(data?.findProduct)
@@ -46,40 +48,46 @@ const BestSeller = () => {
   return (
     <>
       <Tab>
-        <Body>
-        {loading ? ('Loading...') : (
+        {loading ? (
           <>
-            {data.slice(0, 8).map((item) => (
-              <Map key={item?._id}>
-                <Link to = {`/shop-now/shop/${item?._id}`} onClick={() => {window.scroll(0, 0)}}>
-                                  
-                  <Img src={item?.images[0]?.url} alt=""/>
-                </Link>
-                                  
-                <Name>
-                  <Item>
-                    <Link to = {`/shop-now/shop/${item?._id}`} onClick = {() => {window.scroll(0, 0)}}>
-                      <h3>{item?.name}</h3>
-                    </Link>
+            <LoadingSection>
+              <p>Loading...</p>
+            </LoadingSection>
+          </>
+        ) : (
+          <>
+            <Body>
+              {data.slice(0, 8).map((item) => (
+                <Map key={item?._id}>
+                  <Link to = {`/shop-now/shop/${item?._id}`} onClick={() => {window.scroll(0, 0)}}>
+                                    
+                    <Img src={item?.images[0]?.url} alt=""/>
+                  </Link>
+                                    
+                  <Name>
+                    <Item>
+                      <Link to = {`/shop-now/shop/${item?._id}`} onClick = {() => {window.scroll(0, 0)}}>
+                        <h3>{item?.name}</h3>
+                      </Link>
+                                          
+                      <p>&#8358;{item?.price}</p> 
+                    </Item>
+                    
+                    <p>
+                      {click ? <AiOutlineHeart onClick={handleClick}/> : <AiFillHeart onClick={handleClick}/>}
+                    </p>
                                         
-                    <p>&#8358;{item?.price}</p> 
-                  </Item>
-                  
-                  <p>
-                    {click ? <AiOutlineHeart onClick={handleClick}/> : <AiFillHeart onClick={handleClick}/>}
-                  </p>
-                                      
-                </Name>
-                                  
-              </Map>
-                          
-            ))}
+                  </Name>
+                                    
+                </Map>
+                            
+              ))}
+            </Body>
           </>
         )}
           
           
           {error && 'Something went wrong. Please try again later'}
-        </Body>
         
         <MoreSection>
           <Link to='/shop-now' onClick={() => {window.scroll(0, 0)}}>
