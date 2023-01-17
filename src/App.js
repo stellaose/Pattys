@@ -40,7 +40,7 @@ function App() {
 
         <Route exact path="my-favourite" element={<ProtectedRoute><Favourite /></ProtectedRoute>} />
 
-        <Route exact path="cart" element={<Cart />} />
+        <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
 
         <Route exact path="shop-now/:keyword" element={<Product />} />
 
