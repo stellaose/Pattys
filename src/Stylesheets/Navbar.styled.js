@@ -5,6 +5,7 @@ export const Nav = styled.div`
     position: relative;
     color: #260c1a;
     background-color: #f7f7f2;
+    z-index: 50;
     
     @media (max-width: 1000px){
         padding: 1rem 2rem;

@@ -57,7 +57,7 @@ const Register = () => {
       email &&
       password){
         dispatch(RegisterAction(firstname, lastname, email, password, navigate))
-        alert('signup successful')
+        
       }
   }
   return (

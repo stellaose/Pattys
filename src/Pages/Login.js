@@ -15,7 +15,7 @@ import {
         LoginLabel,
         LoginSection,
         PasswordDiv} from '../Stylesheets/Login.styled'
-import { LoginAction, clearErrors } from '../Redux/Actions/UserAction';
+import { LoginAction } from '../Redux/Actions/UserAction';
 
 const Login = () => {
   const { loading, error, isAuthenticated } = useSelector(state => state.user)
@@ -43,11 +43,6 @@ const Login = () => {
   
   useEffect (() => {
     
-    if(error){
-      alert('An error occurred. Please try again')
-      dispatch(clearErrors())
-    }
-    
     if(isAuthenticated){
       alert('Login Successful')
     }
@@ -71,7 +66,7 @@ const Login = () => {
                 <GoogleSection>
                   <button><FcGoogle/> <span> Login with Google</span></button>
                 </GoogleSection>
-                              
+                
                 <LoginLabel htmlFor="email">Email</LoginLabel>
                 <br/>
                 <LoginInput 

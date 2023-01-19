@@ -78,6 +78,7 @@ code {
     margin-top: 2rem;
 }
 
+
 @media(max-width:1000px){
     .swiper > .swiper-button-next::after,  .swiper > .swiper-button-prev::after{
         font-size: 2rem;

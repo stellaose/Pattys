@@ -7,7 +7,6 @@ import Favourite from "./Pages/Favourite";
 import Landing from "./Pages/Landing";
 import Login from "./Pages/Login";
 import NavBar from "./Components/Layout/NavBar/NavBar";
-import Profile from "./Pages/Profile";
 import Register from "./Pages/Register";
 import Product from "./Pages/Product";
 import Dashboard from "./Pages/Dashboard";
@@ -18,6 +17,7 @@ import Checkout from "./Pages/Checkout";
 import ProductScreen from "./Pages/ProductScreen";
 import ForgetPassword from "./Pages/ForgetPassword";
 import ProtectedRoute from "./Components/Molecules/ProtectedRoute";
+import Account from "./Pages/Account";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Landing />} />
 
-        <Route exact path="my-profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+        <Route exact path="my-account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
 
         <Route exact path="login" element={<Login />} />
 

@@ -2,7 +2,11 @@ import React from 'react'
 
 const ForgetPassword = () => {
   return (
-    <div>ForgetPassword</div>
+    <div>
+      ForgetPassword
+      <a href="my-account#profile-tab">Click</a>
+      
+    </div>
   )
 }
 

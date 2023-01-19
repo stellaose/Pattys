@@ -57,11 +57,42 @@
   /* margin-top: 2rem; */
 }
 
+.accTab {
+  padding: 1rem 0 1rem 1rem;
+  cursor: pointer;
+  background-color: #c5d86d;
+  color: #f7f7f2;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nonAccTab{
+  padding: 1rem 0 1rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.accTab > svg, .nonAccTab > svg{
+  font-size: 1.4rem;
+  margin-bottom: -0.3rem;
+}
+
+.accItem {
+  margin: 1rem;
+  font-weight: 600;
+}
+
+
 
 @media (max-width:1000px){
   .page-item{
     font-size: 1.1rem;
     margin: 0 0.8rem;
+  }
+  
+  .accTab, .nonAccTab {
+    padding: 1rem 0 1rem 0.5rem;
   }
 }
 
@@ -76,6 +107,21 @@
   .page-item{
     font-size: 1rem;
     margin: 0 0.5rem;
+  }
+  
+  .accTab, .nonAccTab {
+    padding: 1rem 0 1rem 0.5rem;
+  }
+  
+  .accTab > span, .nonAccTab > span{
+    display: none;
+  }
+}
+
+@media (max-width:400px){
+  .accTab > svg, .nonAccTab > svg{
+    font-size: 1.2rem;
+    margin-bottom: -0.3rem;
   }
 }
 

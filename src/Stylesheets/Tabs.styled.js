@@ -348,3 +348,37 @@ export const LoadingSection = styled.div`
     font-weight: 600;
   }
 `
+
+export const AccountTabBody = styled.div`
+  height: 85vh;
+  min-height: 31.25rem;
+`
+
+export const AccountTabItem = styled.div`
+  display: grid;
+  grid-template-columns: 15vw auto;
+  gap: 2rem;
+  height: 100%;
+  
+  @media (max-width:1000px){
+    grid-template-columns: 20vw auto;
+  }
+  
+  @media (max-width:600px){
+    grid-template-columns: 10vw auto;
+    gap: 1rem;
+  }
+  
+  @media (max-width:330px){
+    grid-template-columns: 12vw auto;
+    gap: 0.5rem;
+  }
+`
+
+export const AccountLink = styled.div`
+  padding-top: 1rem;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+  
+`
