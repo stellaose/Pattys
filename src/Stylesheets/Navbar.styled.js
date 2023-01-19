@@ -145,7 +145,7 @@ export const NavImg = styled.img`
 export const NavBarDropNav = styled.div`
   padding: 1px;
   position: relative;
-  z-index: 40;
+  display: inline-block;
 
   a{
     p{
@@ -162,13 +162,21 @@ export const NavBarDropNav = styled.div`
         
         @media (max-width:600px){
           width: 2rem;
-          margin-top: 0.5rem;
+          margin-bottom: 0;
+          margin-top: 0.2rem;
         }
         
         @media (max-width:400px){
-          width: 1.5rem;
+          width: 1.8rem;
+          margin-top: 0.4rem;
+          
         }
         
+        @media (max-width:300px){
+          width: 1.5rem;
+          margin-top: 0.7rem;
+          
+        }       
        
       }
       
@@ -201,21 +209,35 @@ export const NavBarDropNav = styled.div`
 export const NavBarDropDiv = styled.div`
   position: absolute;
   align-items: center;
-  margin-left: -5rem;
+  margin-left: -2rem;
+  margin-top: 0.5rem;
+  display: block;
   padding: 1rem;
   width: max-content;
   min-width: 7rem;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
   background-color: rgba(247,247,242, 0.7);
-  z-index: 99; 
+  z-index: 10; 
   
-  
-  @media (max-width: 800px){
-    margin-left: -6.5rem;
+  @media (max-width:1000px){
+    margin-left: -4rem;
   }
   
-  @media (max-width: 400px){
-    margin-left: -7rem;
+  @media (max-width:850px){
+    margin-left: -5rem;
+  }
+  
+  @media (max-width:800px){
+    margin-left: -3rem;
+  }
+  
+  @media (max-width:600px){
+    margin-left: -5rem;
+  }
+  
+  
+  @media (max-width:330px){
+    margin-left: -5.5rem;
   }
 `
 

@@ -60,11 +60,15 @@ export const DashboardContent = styled.div`
     }
     
     @media (max-width:600px){
-      font-size:1.7rem;
+      font-size:1.8rem;
     }
     
     @media (max-width:400px){
-      font-size:1.5rem;
+      font-size:1.6rem;
+    }
+    
+    @media (max-width:300px){
+      font-size:1.3rem;
     }
   }
 `

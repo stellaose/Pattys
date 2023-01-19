@@ -379,6 +379,6 @@ export const AccountLink = styled.div`
   padding-top: 1rem;
   width: 100%;
   height: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1); */
   
 `
