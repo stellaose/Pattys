@@ -138,7 +138,7 @@ const NavBar = () => {
                     <NavBarDropDiv>
                       <NavBarDropdown>
                         <li >
-                          <NavLink to="/my-account/dashboard" exact='true' activeclassName= 'active' onClick={closeDrop} style={{fontWeight: 700, color: '#c5d86d'}}>
+                          <NavLink to="/my-account/profile" exact='true' activeclassName= 'active' onClick={closeDrop} style={{fontWeight: 700, color: '#c5d86d'}}>
                             {savedUser?.avatar ? (savedUser.avatar.map((item) => (
                               <img src={item?.url} key={item?.url} alt=""/>
                             ))) : (
