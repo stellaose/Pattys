@@ -72,7 +72,7 @@ export const Map = styled.div`
 
 export const Img = styled.img`
   width: 16rem;
-  height: 14rem;
+  height: 16rem;
   border-radius: 50%;
   
   @media (max-width:1000px){
