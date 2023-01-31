@@ -35,7 +35,7 @@ const Dashboard = () => {
               </div>
             ))}
             
-            <Link to='/my-account/profile'>
+            <Link to='/my-account/edit-profile'>
               <EditButton>Edit Profile</EditButton>
             </Link>
           </Map>
