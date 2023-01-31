@@ -1,6 +1,7 @@
 import React from 'react'
 import { BiPurchaseTag } from 'react-icons/bi'
-import { MdSpaceDashboard, MdFavoriteBorder } from 'react-icons/md';
+import { FaUserEdit } from 'react-icons/fa';
+import { MdFavoriteBorder } from 'react-icons/md';
 import { RiProfileLine } from 'react-icons/ri'
 import { TbJewishStar } from 'react-icons/tb'
 import { NavLink } from 'react-router-dom'
@@ -13,15 +14,15 @@ const Sidebar = () => {
     <>
       <SidebarBody>
         <SideContent>
-          <NavLink to = 'dashboard' exact='true' activeclassName = 'active'>
+          <NavLink to = 'profile' exact='true' activeclassName = 'active'>
             <>
-            <MdSpaceDashboard/> <span>Dashboard</span>
+            <RiProfileLine/> <span>Profile</span>
             </>
           </NavLink>
           
-          <NavLink to = 'profile' exact='true' activeclassName = 'active'>
+          <NavLink to = 'edit-profile' exact='true' activeclassName = 'active'>
             <>
-              <RiProfileLine/> <span>Profile</span>
+              <FaUserEdit/> <span>Edit Profile</span>
             </>
           </NavLink>
           

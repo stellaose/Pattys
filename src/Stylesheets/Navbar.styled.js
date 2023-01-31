@@ -391,7 +391,7 @@ export const SidebarBody = styled.div`
   background-color: #f7f7f2;
   height: inherit;
   position: absolute;
-  padding-top: 5rem;
+  padding-top: 3rem;
   margin-right: 2rem;
   width: 11rem;
   
@@ -401,6 +401,7 @@ export const SidebarBody = styled.div`
   
   @media(max-width: 600px){
     width: max-content;
+    margin-right: 1rem;
   }
 `
 
@@ -422,12 +423,12 @@ export const SideContent = styled.div`
       background-color: #c5d86d;
     }
  
-    @media (max-width: 1000px){
-        padding: 1rem auto 1rem 0.5rem;
+    @media all and (max-width: 1000px){
+      padding: 1rem auto 1rem 0.5rem;
     }
     
     @media (max-width: 400px){
-        padding: 1rem auto 1rem 0.1rem;
+      padding: 1rem auto 1rem 0.2rem;
     }
       
     span{
@@ -439,7 +440,6 @@ export const SideContent = styled.div`
     svg{
       font-size: 1.4rem;
       margin-bottom: -0.3rem;
-        
     }
    
   }

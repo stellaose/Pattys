@@ -29,13 +29,11 @@ function App() {
         <Route exact path="/" element={<Landing />} />
 
         <Route exact path="my-account" element={<ProtectedRoute><Account /></ProtectedRoute>} >
-          <Route exact path = 'dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route exact path = 'profile' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         
           <Route exact path="favourite" element={<ProtectedRoute><Favourite /></ProtectedRoute>} />
 
-          
-          
-          <Route exact path="profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/>
+          <Route exact path="edit-profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/>
           
           <Route exact path="order" element={<ProtectedRoute><Order /></ProtectedRoute>} />
 

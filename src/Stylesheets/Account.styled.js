@@ -9,9 +9,17 @@ export const AccountBody = styled.div`
   padding: 1rem 0 1rem 11rem;
   max-height: 32.5rem;
   height: 32.5rem;
-  overflow: auto;
+  overflow-y: auto;
+  
+  @media (max-width:1000px){
+    padding: 1rem 0 1rem 10rem;
+  }
   
   @media (max-width: 600px){
-    padding: 1rem 0 1rem 4rem;
+    padding: 1rem 0 1rem 2rem;
+  }
+  
+  @media (max-width: 400px){
+    padding: 1rem 0 1rem 1rem;
   }
 `
