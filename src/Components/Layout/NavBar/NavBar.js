@@ -10,8 +10,7 @@ import { AiFillFacebook,
 import { 
         CiSearch,
         CiHeart,
-        CiShoppingCart,
-        CiUser } from 'react-icons/ci';
+        CiShoppingCart } from 'react-icons/ci';
 import { 
         GrMenu,
         GrClose } from 'react-icons/gr'
@@ -81,7 +80,7 @@ const NavBar = () => {
               </h3>
             </NavLink>
                       
-            <NavLink to='my-wishlist' exact='true' activeclassName = 'active'>
+            <NavLink to='my-account/wishlist' exact='true' activeclassName = 'active'>
               <h3>
                 Wishlist
               </h3>
@@ -104,7 +103,7 @@ const NavBar = () => {
               <CiSearch/>
             </p>
                       
-            <NavLink to = 'my-favourite' exact='true' activeclassName= 'active'>
+            <NavLink to = 'my-account/favourite' exact='true' activeclassName= 'active'>
               <p>
                 <CiHeart/>
               </p>
@@ -120,14 +119,16 @@ const NavBar = () => {
               
             <NavBarDropNav onClick={handleDrop}>
               <Link to = '#' >
-                {isAuthenticated ? (
+                {isAuthenticated && (
                   <>
                     <p>
-                    {savedUser?.avatar && savedUser.avatar.map((item) => (
+                      {savedUser.avatar.map((item) => (
                       <img src={item?.url} key={item?.url} alt=""/>
-                    ))} {' '}<span >{savedUser?.firstname}</span></p>
+                      )) 
+                      } {' '}<span >{savedUser?.firstname}</span>
+                    </p>
                   </>
-                ) : (<p><CiUser/></p>)}
+                ) }
                 
               </Link>
                
@@ -137,17 +138,21 @@ const NavBar = () => {
                     <NavBarDropDiv>
                       <NavBarDropdown>
                         <li >
-                          <NavLink to="my-account" exact='true' activeclassName= 'active' onClick={closeDrop} style={{fontWeight: 700, color: '#c5d86d'}}>
-                            {savedUser?.avatar && savedUser.avatar.map((item) => (
+                          <NavLink to="/my-account/dashboard" exact='true' activeclassName= 'active' onClick={closeDrop} style={{fontWeight: 700, color: '#c5d86d'}}>
+                            {savedUser?.avatar ? (savedUser.avatar.map((item) => (
                               <img src={item?.url} key={item?.url} alt=""/>
-                            ))} {' '}
+                            ))) : (
+                              <>
+                                <img src="/asset/avatar.png" alt=""/>
+                              </>
+                            ) } {' '}
                             {savedUser?.firstname} {' '} {savedUser?.lastname}
                           </NavLink>
                         </li>
                         <hr/>
                         <br/>
                         <li>
-                          <NavLink to="my-order" exact='true' activeclassName= 'active' onClick={closeDrop}>
+                          <NavLink to="my-account/my-order" exact='true' activeclassName= 'active' onClick={closeDrop}>
                             My Orders
                           </NavLink>
                         </li>

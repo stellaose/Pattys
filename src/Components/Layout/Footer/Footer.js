@@ -26,7 +26,7 @@ const Footer = () => {
               </p>
             </NavLink>
                         
-            <NavLink to='my-dashboard' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
+            <NavLink to='my-account/dashboard' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 Dashboard
               </p>
@@ -40,7 +40,7 @@ const Footer = () => {
               </p>
             </NavLink>
                         
-            <NavLink to ='my-wishlist' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
+            <NavLink to ='my-account/wishlist' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 Wishlist
               </p>

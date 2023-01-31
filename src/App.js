@@ -18,15 +18,31 @@ import ProductScreen from "./Pages/ProductScreen";
 import ForgetPassword from "./Pages/ForgetPassword";
 import ProtectedRoute from "./Components/Molecules/ProtectedRoute";
 import Account from "./Pages/Account";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      
       <Routes>
         <Route exact path="/" element={<Landing />} />
 
-        <Route exact path="my-account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+        <Route exact path="my-account" element={<ProtectedRoute><Account /></ProtectedRoute>} >
+          <Route exact path = 'dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        
+          <Route exact path="favourite" element={<ProtectedRoute><Favourite /></ProtectedRoute>} />
+
+          
+          
+          <Route exact path="profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/>
+          
+          <Route exact path="order" element={<ProtectedRoute><Order /></ProtectedRoute>} />
+
+          <Route exact path="wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
+        </Route>
+        
+        <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
 
         <Route exact path="login" element={<Login />} />
 
@@ -38,23 +54,12 @@ function App() {
 
         <Route exact path="contact-us" element={<Contact />} />
 
-        <Route exact path="my-favourite" element={<ProtectedRoute><Favourite /></ProtectedRoute>} />
-
-        <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-
         <Route exact path="shop-now/:keyword" element={<Product />} />
 
         <Route exact path="shop-now" element={<Product />} />
 
         <Route exact path="shop-now/shop/:id" element={<ProductScreen />} />
 
-        <Route exact path="my-dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-
-        <Route exact path="my-order" element={<ProtectedRoute><Order /></ProtectedRoute>} />
-
-        <Route exact path="my-wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
-
-        
         <Route exact path="checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
       </Routes>
 

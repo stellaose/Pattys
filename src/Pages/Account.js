@@ -1,16 +1,24 @@
 import React from 'react';
 import MetaData from '../Components/Layout/MetaData';
-import AccountTab from '../Components/Organisms/Tabs/AccountTab';
-import { AccountBody } from '../Stylesheets/Account.styled';
+import { Outlet } from 'react-router-dom';
+// import AccountTab from '../Components/Organisms/Tabs/AccountTab';
+import { AccountBody, AccountGrid } from '../Stylesheets/Account.styled';
+import Sidebar from '../Components/Layout/Sidebar';
 
 const Account = () => {
    
   return (
     <>
+      
       <MetaData title={'My Account || Pattys E-commerce'}/>
-      <AccountBody>
-        <AccountTab/>
-      </AccountBody>
+      <AccountGrid>
+        <Sidebar/>
+          <AccountBody>
+        {/* <AccountTab/> */}
+          <Outlet/>
+        </AccountBody>
+      </AccountGrid>
+      
       
     </>
   )

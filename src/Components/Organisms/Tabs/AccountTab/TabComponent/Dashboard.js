@@ -16,6 +16,8 @@ const Dashboard = () => {
           
           <h1>Good to see you <span style={{color: '#cd586d'}}>{savedUser?.firstname}{' '}{savedUser?.lastname}!</span></h1>
         </DashboardContent>
+        
+        <a href="#profile">Go</a>
       </DashboardBody>
     </>
   )

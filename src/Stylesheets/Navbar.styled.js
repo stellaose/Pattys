@@ -386,3 +386,61 @@ export const EndNavList = styled.div`
         }
     }
 `
+
+export const SidebarBody = styled.div`
+  background-color: #f7f7f2;
+  height: inherit;
+  position: absolute;
+  padding-top: 5rem;
+  margin-right: 2rem;
+  width: 11rem;
+  
+  @media (max-width: 1000px){
+    width: 10rem;
+  }
+  
+  @media(max-width: 600px){
+    width: max-content;
+  }
+`
+
+export const SideContent = styled.div`
+  position: absolute;
+  width: 100%;
+
+  a{
+    text-decoration: none;
+    color: #260c1a;
+    display: block;
+    position: relative;
+    line-height: 1.5rem;
+    padding: 1rem 2rem 1rem 1rem;
+    font-weight: 600;
+    
+    &.active, &:focus, &:hover{
+      color: #f7f7f2;
+      background-color: #c5d86d;
+    }
+ 
+    @media (max-width: 1000px){
+        padding: 1rem auto 1rem 0.5rem;
+    }
+    
+    @media (max-width: 400px){
+        padding: 1rem auto 1rem 0.1rem;
+    }
+      
+    span{
+      @media (max-width:600px){
+        display: none;
+      }
+    }
+      
+    svg{
+      font-size: 1.4rem;
+      margin-bottom: -0.3rem;
+        
+    }
+   
+  }
+`
