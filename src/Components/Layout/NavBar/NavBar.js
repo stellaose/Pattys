@@ -10,7 +10,8 @@ import { AiFillFacebook,
 import { 
         CiSearch,
         CiHeart,
-        CiShoppingCart } from 'react-icons/ci';
+        CiShoppingCart, 
+        CiUser } from 'react-icons/ci';
 import { 
         GrMenu,
         GrClose } from 'react-icons/gr'
@@ -119,17 +120,14 @@ const NavBar = () => {
               
             <NavBarDropNav onClick={handleDrop}>
               <Link to = '#' >
-                {isAuthenticated && (
+              {isAuthenticated ? (
                   <>
                     <p>
-                      {savedUser.avatar.map((item) => (
+                    {savedUser?.avatar && savedUser.avatar.map((item) => (
                       <img src={item?.url} key={item?.url} alt=""/>
-                      )) 
-                      } {' '}<span >{savedUser?.firstname}</span>
-                    </p>
+                    ))} {' '}<span >{savedUser?.firstname}</span></p>
                   </>
-                ) }
-                
+                ) : (<p><CiUser/></p>)}
               </Link>
                
               {
