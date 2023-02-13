@@ -32,19 +32,12 @@ const Footer = () => {
               </p>
             </NavLink>
                         
-                        
-                        
             <NavLink to ='about-us' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 About Us
               </p>
             </NavLink>
                         
-            <NavLink to ='my-account/wishlist' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
-              <p>
-                Wishlist
-              </p>
-            </NavLink>
           </PageLeftDiv>
           <PageMidDiv>
             <h3>Address</h3>

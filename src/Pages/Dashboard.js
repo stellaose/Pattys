@@ -9,7 +9,8 @@ import {
         Img,
         Map,
         OrderBtn,
-        Right} from '..//Stylesheets/Dashboard.styled'
+        Right,
+        RightGrid} from '..//Stylesheets/Dashboard.styled'
 import { loadUserAction } from '../Redux/Actions/UserAction'
 
 const Dashboard = () => {
@@ -41,19 +42,27 @@ const Dashboard = () => {
           </Map>
             
           <DashRight>
-            <Right>
-              <h4>First Name</h4>
-              <p>{savedUser?.firstname}</p>
-            </Right>
+            <RightGrid>
+              <Right>
+                <h4>First Name</h4>
+                <p>{savedUser?.firstname}</p>
+              </Right>
+              
+              <Right>
+                <h4>Last Name</h4>
+                <p>{savedUser?.lastname}</p>
+              </Right>
+            </RightGrid>
             
-            <Right>
-              <h4>Last Name</h4>
-              <p>{savedUser?.lastname}</p>
-            </Right>
             
             <Right>
               <h4>Email</h4>
               <p>{savedUser?.email}</p>
+            </Right>
+            
+            <Right>
+              <h4>Joined</h4>
+              <p>{String(savedUser?.createdAt).substring(0, 10)}</p>
             </Right>
             
             <Right>

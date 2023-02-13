@@ -11,6 +11,10 @@ export const AccountBody = styled.div`
   height: 32.5rem;
   overflow-y: auto;
   
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  
   @media (max-width:1000px){
     padding: 1rem 0 1rem 10rem;
   }

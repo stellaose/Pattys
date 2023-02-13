@@ -12,7 +12,6 @@ import Product from "./Pages/Product";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Layout/Footer/Footer";
 import Order from "./Pages/Order";
-import Wishlist from "./Pages/Wishlist";
 import Checkout from "./Pages/Checkout";
 import ProductScreen from "./Pages/ProductScreen";
 import ForgetPassword from "./Pages/ForgetPassword";
@@ -37,7 +36,6 @@ function App() {
           
           <Route exact path="order" element={<ProtectedRoute><Order /></ProtectedRoute>} />
 
-          <Route exact path="wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
         </Route>
         
         <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />

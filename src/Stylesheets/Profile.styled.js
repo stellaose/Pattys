@@ -51,11 +51,13 @@ export const ProfileContent = styled.div`
   @media (max-width:1000px){
     grid-template-columns: 45% auto;
     gap: 4rem;
+    width: 85%;
   }
   
   @media (max-width:780px){
     grid-template-columns: auto;
     gap: 2rem;
+    width: 90%;
   }
 `
 
@@ -74,9 +76,19 @@ export const Img = styled.img`
   height: 16rem;
   border-radius: 50%;
   
+  @media (max-width:1200px){
+    width: 15rem;
+    height: 15rem;
+  }
+  
   @media (max-width:1000px){
     width: 14rem;
     height: 14rem;
+  }
+  
+  @media (max-width:800px){
+    width: 13rem;
+    height: 13rem;
   }
   
   @media (max-width: 600px){
@@ -97,7 +109,7 @@ export const Img = styled.img`
 
 export const EditButton = styled.button`
   background-color: #260c1a;
-  padding: 0.7rem 3rem;
+  padding: 0.7rem 2.5rem;
   border: 1px solid #260c1a;
   border-radius: 5px;
   font-size: 1.1rem;
@@ -113,31 +125,39 @@ export const EditButton = styled.button`
   
   @media (max-width:1000px){
     font-size: 1.05rem;
+    padding: 0.7rem 2.2rem;
+    
   }
     
   @media (max-width:600px){
     font-size: 1rem;
-    padding: 0.5rem 2.5rem;
+    padding: 0.5rem 2rem;
   }
     
   @media (max-width:400px){
     font-size: 0.95rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.8rem;
     
   }
-    
   @media (max-width:300px){
     font-size: 0.9rem;
   }
 `
-
-export const ProfRight = styled.div`
+export const ProfRight = styled.form`
   text-align: left;
   margin-top: 1rem;
 `
 
 export const Right = styled.div`
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 1.3rem;
+  
+  @media (max-width:1000px){
+    margin: 1rem 0;
+  }
+  
+  @media (max-width:800px){
+    margin: 1rem 0 0.5rem;
+  }
   
   h4{
     font-size: 1.2rem;
@@ -188,12 +208,32 @@ export const Right = styled.div`
   }
 `
 
-export const OrderBtn = styled.button`
+export const RightGrid = styled.div`
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 1rem;
+
+  
+  @media (max-width:1000px){
+    grid-template-columns: 50% 50%;
+    gap: 0;
+    margin: 1rem 0;
+    
+  }
+  
+  @media (max-width:500px){
+    grid-template-columns: auto;
+    gap: 0;
+  }
+`
+
+export const OrderBtn = styled.input`
   padding: 0.7rem 3rem;
   background-color: #f05d23;
   border: 1px solid #f05d23;
   border-radius: 5px;
   font-size: 1.1rem;
+  outline: none;
   color: #f7f7f2;
   font-weight: 600;
   margin: 2rem auto 0;
@@ -221,5 +261,94 @@ export const OrderBtn = styled.button`
     
   @media (max-width:300px){
     font-size: 0.9rem;
+  }
+`
+
+export const AvatarInput = styled.input`
+  overflow: hidden;
+  
+  &::-webkit-file-upload-button{
+    visibility: hidden;
+  }
+  
+  &::before{
+    content: 'Select some files';
+    display: inline-block;
+    background-color: #260c1a;
+    border: 1px solid #260c1a;
+    border-radius: 5px;
+    padding: 0.7rem 3rem;
+    color: #f7f7f2;
+    outline: none;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 2rem auto 0;
+    
+    
+    @media (max-width:1000px){
+      font-size: 1.05rem;
+    }
+      
+    @media (max-width:600px){
+      font-size: 1rem;
+      padding: 0.5rem 2.5rem;
+    }
+      
+    @media (max-width:400px){
+      font-size: 0.95rem;
+      padding: 0.5rem 2rem;
+      
+    }
+      
+    @media (max-width:300px){
+      font-size: 0.9rem;
+    }
+    
+  }
+  
+  &:hover {
+    background: none;
+    color: #260c1a;
+  }
+`
+
+export const Input = styled.input`
+  padding: 0.5rem;
+  width: 80%;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #c5d86d;
+  border-radius: 5px;
+  
+  @media (max-width:1000px){
+    width: 95%;
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width:800px){
+    width: 85%;
+  }
+  
+  @media (max-width:600px){
+    font-size: 0.9rem;
+    width: 80%;
+  }
+    
+  @media (max-width:400px){
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width:330px){
+    width: 70%;
+  }
+ 
+ 
+    
+  @media (max-width:300px){
+    font-size: 0.8rem;
   }
 `

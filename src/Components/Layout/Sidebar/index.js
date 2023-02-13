@@ -3,7 +3,6 @@ import { BiPurchaseTag } from 'react-icons/bi'
 import { FaUserEdit } from 'react-icons/fa';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { RiProfileLine } from 'react-icons/ri'
-import { TbJewishStar } from 'react-icons/tb'
 import { NavLink } from 'react-router-dom'
 import { 
           SidebarBody, 
@@ -23,12 +22,6 @@ const Sidebar = () => {
           <NavLink to = 'edit-profile' exact='true' activeclassName = 'active'>
             <>
               <FaUserEdit/> <span>Edit Profile</span>
-            </>
-          </NavLink>
-          
-          <NavLink to = 'wishlist' exact='true' activeclassName = 'active'>
-            <>
-              <TbJewishStar/> <span>Wishlist</span>
             </>
           </NavLink>
           

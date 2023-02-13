@@ -137,8 +137,39 @@ export const DashRight = styled.div`
   margin-top: 1rem;
 `
 
+export const RightGrid = styled.div`
+  display: grid;
+  grid-template-columns: 30% 30%;
+  gap: 1rem;
+  
+  
+  @media (max-width:1200px){
+    grid-template-columns: 40% 40%;
+  }
+  
+  @media (max-width:1000px){
+    grid-template-columns: 50% 50%;
+    gap: 0;
+    margin: 1rem 0;
+    
+  }
+  
+  @media (max-width:500px){
+    grid-template-columns: auto;
+    gap: 0;
+  }
+`
+
 export const Right = styled.div`
   margin: 1rem 0 2rem;
+  
+  @media (max-width:1000px){
+    margin: 1rem 0;
+  }
+  
+  @media (max-width:800px){
+    margin: 1rem 0 1.5rem;
+  }
   
   h4{
     font-size: 1.2rem;

@@ -81,12 +81,6 @@ const NavBar = () => {
               </h3>
             </NavLink>
                       
-            <NavLink to='my-account/wishlist' exact='true' activeclassName = 'active'>
-              <h3>
-                Wishlist
-              </h3>
-            </NavLink>
-            
             <NavLink to = 'about-us' exact='true' activeclassName = 'active'>
               <h3>About us</h3>
             </NavLink>
@@ -221,19 +215,16 @@ const NavBar = () => {
                 </h3>
               </NavLink>
                           
-              <NavLink to='my-wishlist' exact='true' activeclassName = 'active' onClick={closeNav}>
-                <h3>
-                  Wishlist
-                </h3>
-              </NavLink>
               <NavLink to = 'about-us' exact='true' activeclassName = 'active'>
                 <p>About us</p>
               </NavLink>
+              
               <NavLink to ='contact-us' exact='true' activeclassName = 'active' onClick={closeNav}>
                 <h3>
                   Contact Us
                 </h3>
               </NavLink>
+              
               <a href = 'https://www.instagram.com/stellaose/' target='_blank' rel='noreferrer' onClick={closeNav}>
                 <p>
                   <AiFillFacebook/>
