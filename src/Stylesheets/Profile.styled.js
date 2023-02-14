@@ -41,7 +41,8 @@ export const ProfileBody = styled.div`
   }
 `
 
-export const ProfileContent = styled.div`
+
+export const ProfileContent = styled.form`
   width: 80%;
   margin: 1rem auto;
   display: grid;
@@ -70,7 +71,6 @@ export const Map = styled.div`
   }
   
 `
-
 export const Img = styled.img`
   width: 16rem;
   height: 16rem;
@@ -143,7 +143,7 @@ export const EditButton = styled.button`
     font-size: 0.9rem;
   }
 `
-export const ProfRight = styled.form`
+export const ProfRight = styled.div`
   text-align: left;
   margin-top: 1rem;
 `
@@ -346,9 +346,18 @@ export const Input = styled.input`
     width: 70%;
   }
  
- 
-    
   @media (max-width:300px){
     font-size: 0.8rem;
   }
+`
+
+export const LoadingSection = styled.div`
+    width: 40vw;
+    align-items: center;
+    margin: 0 auto;
+    height: 28rem;
+    
+    @media (max-width:600px){
+        height: 28rem;
+    }
 `

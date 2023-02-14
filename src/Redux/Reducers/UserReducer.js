@@ -6,11 +6,11 @@ const initialState = user ? {
   loading: false,
   error: {},
   user,
-  isAuthenticated: true
+  isAuthenticated: true,
 } : {
   loading: false,
   user: {},
-  isAuthenticated: false
+  isAuthenticated: false,
 }
 
 export const userReducer = (state = initialState, action) => {
@@ -105,7 +105,7 @@ export const userReducer = (state = initialState, action) => {
   }
 }
 
-export const profileReducer = (state= initialState, action) => {
+export const profileReducer = (state= {}, action) => {
   switch (action.type) {
     case UserType.UPDATE_PROFILE_REQUEST:
       return{

@@ -73,24 +73,34 @@ export const loadUserAction = () => async (dispatch) => {
   }
 }
 
-export const updateProfile = (email, firstname, lastname, avatar) => async (dispatch) => {
+export const updateProfile = ( firstname, lastname, email, avatar) => async (dispatch) => {
   try {
     dispatch({type: UserType.UPDATE_PROFILE_REQUEST});
     
-    const configure = {headers: {'Content-Type': 'multipart/form-data'}} 
+    const token = JSON.stringify(localStorage.getItem('refreshToken'))
+
     
-    const { data } = await axios.post(`${config.BASE_URL}/v1/user/me/update`, 
+    const { data } = await axios.put(`${config.BASE_URL}/v1/user/me/update`, 
     {
       firstname, 
       lastname, 
       email, 
       avatar
-    }, configure)
+    }, {headers: {
+      'Content-Type': 'multipart/form-data',
+      Authorization: `${token}`
+    }}
+  )
     console.log('User Updated', data)
     
-    dispatch({type: UserType.UPDATE_PROFILE_SUCCESS})
+    dispatch({
+      type: UserType.UPDATE_PROFILE_SUCCESS,
+      payload: data.success
+    })
+    // navigate('/login')
     
   } catch (error) {
+    console.log(error)
     dispatch({
       type: UserType.UPDATE_PROFILE_FAILURE,
       payload: error.data.error
