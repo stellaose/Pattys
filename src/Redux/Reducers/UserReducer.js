@@ -1,132 +1,134 @@
 import UserType from "../Types/UserType";
 
-const user = JSON.parse(localStorage.getItem('token'))
+const user = JSON.parse(localStorage.getItem("PattysToken"));
 
-const initialState = user ? {
-  loading: false,
-  error: {},
-  user,
-  isAuthenticated: true,
-} : {
-  loading: false,
-  user: {},
-  isAuthenticated: false,
-}
+const initialState = user
+  ? {
+      loading: false,
+      error: {},
+      user,
+      isAuthenticated: true,
+    }
+  : {
+      loading: false,
+      user: {},
+      isAuthenticated: false,
+    };
 
 export const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case UserType.LOGIN_REQUEST:
     case UserType.REGISTER_REQUEST:
     case UserType.LOAD_USER_REQUEST:
-      return{
+      return {
         loading: true,
-        isAuthenticated: false
-      }
-    
-    case UserType.LOGIN_SUCCESS: 
+        isAuthenticated: false,
+      };
+
+    case UserType.LOGIN_SUCCESS:
     case UserType.REGISTER_SUCCESS:
     case UserType.LOAD_USER_SUCCESS:
-      return{
+      return {
         ...state,
         loading: false,
         isAuthenticated: true,
-        user: action.payload
-      }
+        user: action.payload,
+      };
     case UserType.LOGIN_FAILURE:
     case UserType.REGISTER_FAILURE:
-      return{
+      return {
         ...state,
         loading: false,
         isAuthenticated: false,
         user: null,
-        error: action.payload
-      }
+        error: action.payload,
+      };
     case UserType.LOAD_USER_FAILURE:
       return {
         loading: false,
         isAuthenticated: false,
         user: null,
-        error: action.payload
-      }
-    case UserType.LOGOUT_REQUEST: 
-      return{
+        error: action.payload,
+      };
+    case UserType.LOGOUT_REQUEST:
+      return {
         ...state,
         loading: true,
-        isAuthenticated: true
-      }
-      
-    case UserType.LOGOUT_SUCCESS: 
-      return{
+        isAuthenticated: true,
+      };
+
+    case UserType.LOGOUT_SUCCESS:
+      return {
         ...state,
         loading: false,
         isAuthenticated: false,
         user: null,
-        error: {}
-      }
-      
+        error: {},
+      };
+
     case UserType.LOGOUT_FAILURE:
-      return{
+      return {
         ...state,
         loading: false,
         isAuthenticated: true,
         user: action.user,
-        error: action.payload
-      }
-      
-    case UserType.USER_DETAILS_REQUEST: 
-      return{
+        error: action.payload,
+      };
+
+    case UserType.USER_DETAILS_REQUEST:
+      return {
         ...state,
         loading: true,
-      }
-      
+      };
+
     case UserType.USER_DETAILS_SUCCESS:
-      return{
+      return {
         ...state,
-        loading:false,
+        loading: false,
         isAuthenticated: true,
-        user: action.payload
-      }
-      
+        user: action.payload,
+      };
+
     case UserType.USER_DETAILS_FAILURE:
-      return{
+      return {
         ...state,
         loading: false,
         user: {},
-        error: action.payload
-      }
-      
+        error: action.payload,
+      };
+
     case UserType.CLEAR_ERRORS:
       return {
         ...state,
-        error: null
-      }
+        error: null,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export const profileReducer = (state= {}, action) => {
+export const profileReducer = (state = {}, action) => {
   switch (action.type) {
     case UserType.UPDATE_PROFILE_REQUEST:
-      return{
+      return {
         ...state,
-        loading: true
-      }
-      
+        loading: true,
+      };
+
     case UserType.UPDATE_PROFILE_SUCCESS:
-      return{
+      return {
         ...state,
-        loading:false,
-        isUpdated: action.payload
-      }
-      
+        loading: false,
+        isUpdated: action.payload,
+      };
+
     case UserType.UPDATE_PROFILE_FAILURE:
-      return{
+      return {
         ...state,
-        loading:false,
-        error: action.payload
-      }
+        loading: false,
+        error: action.payload,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
