@@ -308,6 +308,7 @@ export const NavBarDropdown = styled.ul`
       img{
         width: 2rem;
         margin-bottom: -0.5rem;
+        border-radius: 50%;
       }
     }
     

@@ -41,7 +41,7 @@ const Profile = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(updateProfile(firstName, lastName, email, avatar))
+    dispatch(updateProfile(firstName, lastName, email, avatar))
   }
   
   const updateProfilePic = (e) => {
