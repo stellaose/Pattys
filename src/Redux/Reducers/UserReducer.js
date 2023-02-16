@@ -128,6 +128,12 @@ export const profileReducer = (state = {}, action) => {
         loading: false,
         error: action.payload,
       };
+    
+    case UserType.UPDATE_PROFILE_RESET:
+      return{
+        ...state,
+        isUpdated: false,
+      }
     default:
       return state;
   }

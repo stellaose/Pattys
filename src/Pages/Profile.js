@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { clearErrors, loadUserAction, updateProfile } from '../Redux/Actions/UserAction';
+// import UserType from '../Redux/Types/UserType';
 import {  AvatarInput,
           Img,
           Input,
@@ -19,7 +20,7 @@ const Profile = () => {
   const { user } = useSelector(state => state.user);
   const savedUser = user?.savedUser;
   
-  const { error, isUpdated, loading } = useSelector(state => state.profile)
+  const { error, isUpdated } = useSelector(state => state.profile)
   
   const [firstName, setFirstName] = useState(savedUser?.firstname)
   const [lastName, setLastName] = useState(savedUser?.lastname)
@@ -41,7 +42,16 @@ const Profile = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateProfile(firstName, lastName, email, avatar))
+    dispatch(updateProfile(firstName, lastName, email, avatar, navigate))
+    
+    if(isUpdated){
+      alert('Details updated successfully')
+      dispatch(loadUserAction)
+      
+    } else if (error){
+      alert('An error occurred')
+      dispatch(clearErrors())
+    }
   }
   
   const updateProfilePic = (e) => {
@@ -65,17 +75,8 @@ const Profile = () => {
       setAvatarPreview(savedUser?.avatar[0]?.url)
     }
     
-    // if(error){
-    //   alert('An error occurred. Please try again')
-    //   dispatch(clearErrors())
-    // }
-    
-    if(isUpdated){
-      alert('Details updated successfully.')
-      // dispatch(loadUserAction())
-      // navigate('/my-account/profile')
-    }
-  }, [isUpdated, error, dispatch, savedUser, navigate])
+}, [savedUser])
+  
   
   return (
     <>
@@ -83,11 +84,6 @@ const Profile = () => {
         <h1>Edit Profile</h1>
         <ProfileContent encType='multipart/form-data' onSubmit={handleSubmit}>
           <Map>
-            {/* {savedUser?.avatar.map((data) => (
-              <div key={data?.url}>
-                <Img src={data?.url}  alt=""/>
-              </div>
-            ))} */}
             <Img src={avatarPreview} alt="Avatar"/>            
             <AvatarInput
               type="file"

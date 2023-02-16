@@ -60,12 +60,21 @@ export const RegisterAction =
 export const loadUserAction = () => async (dispatch) => {
   try {
     dispatch({ type: UserType.LOAD_USER_REQUEST });
+    
+    const token = JSON.parse(localStorage.getItem("PattysToken"))?.token;
+    
 
-    const { data } = await axios.get(`${config.BASE_URL}/v1/user/me`);
+    const { data } = await axios.get(`${config.BASE_URL}/v1/user/me`,
+    {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
+    
 
     dispatch({
       type: UserType.LOAD_USER_SUCCESS,
-      payload: data,
+      payload: data.thisUser,
     });
   } catch (error) {
     dispatch({
@@ -104,12 +113,12 @@ export const updateProfile =
         type: UserType.UPDATE_PROFILE_SUCCESS,
         payload: data.success,
       });
-      // navigate('/login')
+      
     } catch (error) {
       console.log(error);
       dispatch({
         type: UserType.UPDATE_PROFILE_FAILURE,
-        payload: error.data.error,
+        payload: error.response.data.message,
       });
     }
   };

@@ -17,6 +17,7 @@ import {
         PasswordDiv} from '../Stylesheets/Login.styled'
 import { LoginAction } from '../Redux/Actions/UserAction';
 
+
 const Login = () => {
   const { loading, error, isAuthenticated } = useSelector(state => state.user)
   
@@ -37,7 +38,6 @@ const Login = () => {
   
   const handleLogin = (e) => {
     e.preventDefault();
-    // alert('Login Successful')
     dispatch(LoginAction(loginEmail, loginPassword, navigate))
   }
   
@@ -46,7 +46,11 @@ const Login = () => {
     if(isAuthenticated){
       alert('Login Successful')
     }
-  }, [isAuthenticated, error, dispatch])
+    
+    if(error){
+      alert('Login failed.Please try again.')
+    }
+  }, [isAuthenticated, error])
   return (
     <>
       <MetaData title={'Login || Pattys E-Commerce'}/>
@@ -112,6 +116,7 @@ const Login = () => {
         )}
         
       </LoginBody>
+      
     </>
   )
 }

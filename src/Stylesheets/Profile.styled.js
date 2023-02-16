@@ -272,7 +272,7 @@ export const AvatarInput = styled.input`
   }
   
   &::before{
-    content: 'Select some files';
+    content: 'Change Picture';
     display: inline-block;
     background-color: #260c1a;
     border: 1px solid #260c1a;
