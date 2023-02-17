@@ -26,7 +26,7 @@ const Footer = () => {
               </p>
             </NavLink>
                         
-            <NavLink to='my-account/dashboard' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
+            <NavLink to='my-account/profile' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 Dashboard
               </p>
