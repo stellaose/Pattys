@@ -15,6 +15,7 @@ import Order from "./Pages/Order";
 import Checkout from "./Pages/Checkout";
 import ProductScreen from "./Pages/ProductScreen";
 import ForgetPassword from "./Pages/ForgetPassword";
+import UpdatePassword from "./Pages/UpdatePassword";
 import ProtectedRoute from "./Components/Molecules/ProtectedRoute";
 import Account from "./Pages/Account";
 import Profile from "./Pages/Profile";
@@ -35,6 +36,8 @@ function App() {
           <Route exact path="edit-profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/>
           
           <Route exact path="order" element={<ProtectedRoute><Order /></ProtectedRoute>} />
+          
+          <Route exact path="change-password" element={<ProtectedRoute><UpdatePassword/></ProtectedRoute>} />
 
         </Route>
         

@@ -162,7 +162,7 @@ export const Right = styled.div`
   h4{
     font-size: 1.2rem;
     color: #aeaeac;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 0.5rem;
     
     @media (max-width:1000px){
@@ -205,25 +205,6 @@ export const Right = styled.div`
   
   a{
     text-decoration: none;
-  }
-`
-
-export const RightGrid = styled.div`
-  display: grid;
-  grid-template-columns: 45% 45%;
-  gap: 1rem;
-
-  
-  @media (max-width:1000px){
-    grid-template-columns: 50% 50%;
-    gap: 0;
-    margin: 1rem 0;
-    
-  }
-  
-  @media (max-width:500px){
-    grid-template-columns: auto;
-    gap: 0;
   }
 `
 
@@ -316,13 +297,22 @@ export const AvatarInput = styled.input`
 `
 
 export const Input = styled.input`
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   width: 80%;
   outline: none;
   font-size: 1rem;
   font-weight: 500;
-  border: 1px solid #c5d86d;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #260c1a;
+  background-color: transparent;
+  
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover, 
+  &:-webkit-autofill:focus, 
+  &:-webkit-autofill:active  {
+    transition: background-color 5000s;
+    -webkit-text-fill-color: none !important;
+  }
   
   @media (max-width:1000px){
     width: 95%;
@@ -352,12 +342,13 @@ export const Input = styled.input`
 `
 
 export const LoadingSection = styled.div`
-    width: 40vw;
-    align-items: center;
-    margin: 0 auto;
-    height: 28rem;
+  width: 40vw;
+  align-items: center;
+  margin: 0 auto;
+  height: 28rem;
     
-    @media (max-width:600px){
-        height: 28rem;
-    }
+  @media (max-width:600px){
+    height: 28rem;
+  }
 `
+

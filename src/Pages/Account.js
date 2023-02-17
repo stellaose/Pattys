@@ -14,7 +14,6 @@ const Account = () => {
       <AccountGrid>
         <Sidebar/>
           <AccountBody>
-        {/* <AccountTab/> */}
           <Outlet/>
         </AccountBody>
       </AccountGrid>

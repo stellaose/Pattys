@@ -6,7 +6,7 @@ export const AccountGrid = styled.div`
 
 export const AccountBody = styled.div`
   background-color: #f7f7f2;
-  padding: 1rem 0 1rem 11rem;
+  padding: 1rem 0 1rem 12rem;
   max-height: 32.5rem;
   height: 32.5rem;
   overflow-y: auto;
@@ -16,7 +16,7 @@ export const AccountBody = styled.div`
   }
   
   @media (max-width:1000px){
-    padding: 1rem 0 1rem 10rem;
+    padding: 1rem 0 1rem 11rem;
   }
   
   @media (max-width: 600px){

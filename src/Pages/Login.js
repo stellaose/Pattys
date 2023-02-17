@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import MetaData from '../Components/Layout/MetaData'
+import { AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
+
 import {  
         GoogleSection,
         LoadingSection,
@@ -12,7 +14,9 @@ import {
         LoginColumn, 
         LoginContainer, 
         LoginInput,
+        LoginInputBody,
         LoginLabel,
+        LoginPassword,
         LoginSection,
         PasswordDiv} from '../Stylesheets/Login.styled'
 import { LoginAction } from '../Redux/Actions/UserAction';
@@ -21,12 +25,16 @@ import { LoginAction } from '../Redux/Actions/UserAction';
 const Login = () => {
   const { loading, error, isAuthenticated } = useSelector(state => state.user)
   
+  const [show, setShow] = useState('')
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('');
   
   const navigate = useNavigate()
   const dispatch = useDispatch()
   
+  const handleShow = () => {
+    setShow(!show)
+  }
   
   const handleInputLogin = (e) => {
     setLoginEmail(e.target.value)
@@ -84,13 +92,18 @@ const Login = () => {
                 <br/>
                 <LoginLabel htmlFor="">Password</LoginLabel>
                 <br/>
-                <LoginInput 
-                  type='password'
-                  value={loginPassword}
-                  placeholder='Password'
-                  onChange={handleInputPassword}
-                  required
-                />
+                <LoginInputBody>
+                  <LoginPassword
+                     type={ show ? 'text' : 'password'}
+                    value={loginPassword}
+                    placeholder='Password'
+                    onChange={handleInputPassword}
+                    required
+                  /> <span onClick={handleShow}>
+                  {show ? <AiOutlineEyeInvisible/> : <AiOutlineEye/>}
+                </span>
+                </LoginInputBody>
+               
                 <br/>
                               
                 <PasswordDiv>

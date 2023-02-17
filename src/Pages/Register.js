@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import MetaData from "../Components/Layout/MetaData";
 import { RegisterAction } from "../Redux/Actions/UserAction";
+import { AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
+
 import {
   RegisterBody,
   RegisterBox,
@@ -10,7 +12,9 @@ import {
   RegisterColumn,
   RegisterContainer,
   RegisterInput,
+  RegisterInputBody,
   RegisterLabel,
+  RegisterPassword,
   RegisterSection,
   NameLabel,
   NameInput,
@@ -24,6 +28,7 @@ const Register = () => {
   
   const navigate = useNavigate()
   
+  const [show, setShow] = useState('')
   const [values, setValues] = useState({
     firstname: '',
     lastname: '',
@@ -32,6 +37,10 @@ const Register = () => {
   })
   
   const {firstname, lastname, email, password} = values;
+  
+  const handleShow = () => {
+    setShow(!show)
+  }
   
   const handleFirstNameInput = (e) => {
     setValues({...values, firstname: e.target.value})
@@ -112,14 +121,17 @@ const Register = () => {
               <br />
               <RegisterLabel htmlFor="">Password</RegisterLabel>
               <br />
-              <RegisterInput 
-                type="password" 
-                name='password'
-                placeholder="Password"
-                value={password}
-                onChange={handlePasswordInput}
-                required
-                />
+              <RegisterInputBody>
+                  <RegisterPassword
+                     type={ show ? 'text' : 'password'}
+                    value={password}
+                    placeholder='Password'
+                    onChange={handlePasswordInput}
+                    required
+                  /> <span onClick={handleShow}>
+                  {show ? <AiOutlineEyeInvisible/> : <AiOutlineEye/>}
+                </span>
+                </RegisterInputBody>
               <br />
 
               <PasswordDiv>

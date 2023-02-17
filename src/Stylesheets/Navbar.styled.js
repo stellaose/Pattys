@@ -394,10 +394,10 @@ export const SidebarBody = styled.div`
   position: absolute;
   padding-top: 3rem;
   margin-right: 2rem;
-  width: 11rem;
+  width: 11.5rem;
   
   @media (max-width: 1000px){
-    width: 10rem;
+    width: 11.5rem;
   }
   
   @media(max-width: 600px){

@@ -60,17 +60,14 @@ export const RegisterAction =
 export const loadUserAction = () => async (dispatch) => {
   try {
     dispatch({ type: UserType.LOAD_USER_REQUEST });
-    
-    const token = JSON.parse(localStorage.getItem("PattysToken"))?.token;
-    
 
-    const { data } = await axios.get(`${config.BASE_URL}/v1/user/me`,
-    {
+    const token = JSON.parse(localStorage.getItem("PattysToken"))?.token;
+
+    const { data } = await axios.get(`${config.BASE_URL}/v1/user/me`, {
       headers: {
         Authorization: `${token}`,
       },
     });
-    
 
     dispatch({
       type: UserType.LOAD_USER_SUCCESS,
@@ -84,14 +81,13 @@ export const loadUserAction = () => async (dispatch) => {
   }
 };
 
-export const updateProfile =
+export const updateProfileAction =
   (firstname, lastname, email, avatar) => async (dispatch) => {
     try {
       dispatch({ type: UserType.UPDATE_PROFILE_REQUEST });
 
       const token = JSON.parse(localStorage.getItem("PattysToken"))?.token;
 
-      console.log({ token });
       const { data } = await axios.put(
         `${config.BASE_URL}/v1/user/me/update`,
         {
@@ -107,19 +103,56 @@ export const updateProfile =
           },
         }
       );
-      console.log("User Updated", data);
 
       dispatch({
         type: UserType.UPDATE_PROFILE_SUCCESS,
         payload: data.success,
       });
-      
     } catch (error) {
       console.log(error);
       dispatch({
         type: UserType.UPDATE_PROFILE_FAILURE,
         payload: error.response.data.message,
       });
+    }
+  };
+
+export const updatePasswordAction =
+  (password, newPassword, confirmPassword) => async (dispatch) => {
+    try {
+      dispatch({
+        type: UserType.UPDATE_PASSWORD_REQUEST,
+      });
+
+      const token = JSON.parse(localStorage.getItem("PattysToken"))?.token;
+
+      const { data } = await axios.put(
+        `${config.BASE_URL}/v1/user/update-password`,
+        {
+          password,
+          newPassword,
+          confirmPassword,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+          },
+        }
+      );
+
+      dispatch({
+        type: UserType.UPDATE_PASSWORD_SUCCESS,
+        payload: data.success
+      });
+      
+    localStorage.removeItem("PattysToken", JSON.stringify(data));
+    } catch (error) {
+      console.log(error)
+      dispatch({
+        type: UserType.UPDATE_PASSWORD_FAILURE,
+        payload: error.response.data.message,
+      })
     }
   };
 

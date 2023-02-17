@@ -2,7 +2,7 @@ import React from 'react'
 import { BiPurchaseTag } from 'react-icons/bi'
 import { FaUserEdit } from 'react-icons/fa';
 import { MdFavoriteBorder } from 'react-icons/md';
-import { RiProfileLine } from 'react-icons/ri'
+import { RiProfileLine, RiLockPasswordLine } from 'react-icons/ri'
 import { NavLink } from 'react-router-dom'
 import { 
           SidebarBody, 
@@ -22,6 +22,12 @@ const Sidebar = () => {
           <NavLink to = 'edit-profile' exact='true' activeclassName = 'active'>
             <>
               <FaUserEdit/> <span>Edit Profile</span>
+            </>
+          </NavLink>
+          
+          <NavLink to = 'change-password' exact='true' activeclassName = 'active'>
+            <>
+              <RiLockPasswordLine/> <span>Edit Password</span>
             </>
           </NavLink>
           

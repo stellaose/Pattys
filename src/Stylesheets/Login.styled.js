@@ -147,12 +147,66 @@ export const LoginInput = styled.input`
     &:-webkit-autofill:hover, 
     &:-webkit-autofill:focus, 
     &:-webkit-autofill:active  {
-        transition: background-color 5000s;
-        -webkit-text-fill-color: none !important;
+      transition: background-color 5000s;
+      -webkit-text-fill-color: none !important;
     }
     
     @media(max-width:600px){
         width: 95%;
+    }
+    
+    @media (max-width:400px){
+        font-size: 0.9rem;
+    }
+    
+    @media (max-width:300px){
+        font-size: 0.8rem;
+    }
+`
+export const LoginInputBody = styled.div`
+    border: none;
+    border-bottom: 1px solid #260c1a;
+    width: 90%;
+    padding: 0.5rem 0 0.3rem;
+    outline: none;
+    
+    span{
+      svg{
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media(max-width:600px){
+        width: 95%;
+    }
+    
+    @media (max-width:400px){
+        font-size: 0.9rem;
+    }
+    
+    @media (max-width:300px){
+        font-size: 0.8rem;
+    }
+`
+
+export const LoginPassword = styled.input`
+    border: none;
+    width: 90%;
+    font-size: 0.95rem;
+    font-weight: 600;
+    outline: none;
+    background-color: transparent;
+    
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+      transition: background-color 5000s;
+      -webkit-text-fill-color: none !important;
+    }
+    
+    @media (max-width:600px){
+      width: 85%;
     }
     
     @media (max-width:400px){
