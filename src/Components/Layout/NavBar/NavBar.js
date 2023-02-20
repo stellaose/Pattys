@@ -105,7 +105,7 @@ const NavBar = () => {
                           
             </NavLink>
                       
-            <NavLink to = 'cart' exact='true' activeclassName= 'active'>
+            <NavLink to = 'my-account/cart' exact='true' activeclassName= 'active'>
               <p>
                 <CiShoppingCart/>
               </p>

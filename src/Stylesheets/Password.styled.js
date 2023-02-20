@@ -163,7 +163,7 @@ export const Right = styled.div`
 
 export const ChangeInput = styled.div`
   padding: 0.5rem 0 0.3rem;
-  width: 80%;
+  width: 85%;
   border: none;
   border-bottom: 1px solid #260c1a;
   background-color: transparent;
@@ -192,7 +192,7 @@ export const Input = styled.input`
     -webkit-text-fill-color: none !important;
   }
   
-  @media (max-width:600px){
+  @media (max-width:1100px){
       width: 85%;
     }
     
@@ -243,5 +243,33 @@ export const OrderBtn = styled.input`
     
   @media (max-width:300px){
     font-size: 0.9rem;
+  }
+`
+
+export const ForgetContainer = styled.div`
+  background-color: #f7f7f2;
+`
+
+export const ForgetBody = styled.div`
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  text-align: center;
+  
+  @media (max-width: 1000px){
+    width: 85%;
+  }
+  
+  @media (max-width: 600px){
+    width: 90%;
+  }
+`
+
+export const ForgetImg = styled.img`
+  width: 60%;
+  
+  @media (max-width: 1000px){
+    width: 70%;
   }
 `

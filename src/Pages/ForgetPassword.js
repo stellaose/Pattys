@@ -1,12 +1,18 @@
 import React from 'react'
+import {  ForgetBody, 
+          ForgetContainer, 
+          ForgetImg } from '../Stylesheets/Password.styled'
 
 const ForgetPassword = () => {
   return (
-    <div>
-      ForgetPassword
-      <a href="my-account#profile-tab">Click</a>
+    <>
+      <ForgetContainer>
+        <ForgetBody>
+          <ForgetImg src='/asset/forget.png'/>
+        </ForgetBody>
+      </ForgetContainer>
       
-    </div>
+    </>
   )
 }
 

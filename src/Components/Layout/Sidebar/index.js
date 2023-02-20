@@ -1,4 +1,5 @@
 import React from 'react'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BiPurchaseTag } from 'react-icons/bi'
 import { FaUserEdit } from 'react-icons/fa';
 import { MdFavoriteBorder } from 'react-icons/md';
@@ -40,6 +41,12 @@ const Sidebar = () => {
           <NavLink to = 'order' exact='true' activeclassName = 'active'>
             <>
               <BiPurchaseTag/> <span>Orders</span>
+            </>
+          </NavLink>
+          
+          <NavLink to = 'cart' exact='true' activeclassName = 'active'>
+            <>
+              <AiOutlineShoppingCart/> <span>Cart</span>
             </>
           </NavLink>
         </SideContent>

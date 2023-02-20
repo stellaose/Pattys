@@ -17,6 +17,7 @@ import {
 const UpdatePassword = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
+  
   const { error, isUpdated } = useSelector((state) => state.profile)
   
   const [show, setShow] = useState('')

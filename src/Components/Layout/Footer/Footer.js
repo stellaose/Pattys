@@ -28,7 +28,7 @@ const Footer = () => {
                         
             <NavLink to='my-account/profile' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
-                Dashboard
+                Profile
               </p>
             </NavLink>
                         

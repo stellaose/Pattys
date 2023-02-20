@@ -38,10 +38,10 @@ function App() {
           <Route exact path="order" element={<ProtectedRoute><Order /></ProtectedRoute>} />
           
           <Route exact path="change-password" element={<ProtectedRoute><UpdatePassword/></ProtectedRoute>} />
+          
+          <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
 
         </Route>
-        
-        <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
 
         <Route exact path="login" element={<Login />} />
 
