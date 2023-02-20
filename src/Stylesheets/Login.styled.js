@@ -219,7 +219,6 @@ export const LoginPassword = styled.input`
 `
 
 export const PasswordDiv = styled.div`
-    margin-top: 1rem;
     width: 95%;
     display: flex;
     justify-content: space-between;

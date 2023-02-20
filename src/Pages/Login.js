@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
@@ -23,7 +23,7 @@ import { LoginAction } from '../Redux/Actions/UserAction';
 
 
 const Login = () => {
-  const { loading, error, isAuthenticated } = useSelector(state => state.user)
+  const { loading } = useSelector(state => state.user)
   
   const [show, setShow] = useState('')
   const [loginEmail, setLoginEmail] = useState('')
@@ -49,16 +49,16 @@ const Login = () => {
     dispatch(LoginAction(loginEmail, loginPassword, navigate))
   }
   
-  useEffect (() => {
+  // useEffect (() => {
     
-    if(isAuthenticated){
-      alert('Login Successful')
-    }
+  //   if(isAuthenticated){
+  //     alert('Login Successful')
+  //   }
     
-    if(error){
-      alert('Login failed.Please try again.')
-    }
-  }, [isAuthenticated, error])
+  //   if(error){
+  //     alert('Login failed.Please try again.')
+  //   }
+  // }, [isAuthenticated, error])
   return (
     <>
       <MetaData title={'Login || Pattys E-Commerce'}/>
@@ -112,7 +112,7 @@ const Login = () => {
                   </Link>
                                   
                   <Link to = '/forget-password'>
-                    <small>Forget Password</small>
+                    <small>Forget Password?</small>
                   </Link>
                 </PasswordDiv>
                               

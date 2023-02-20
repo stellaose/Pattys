@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 import { updatePasswordAction } from '../Redux/Actions/UserAction';
 import { AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 import { 
@@ -16,9 +15,6 @@ import {
 
 const UpdatePassword = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-  
-  const { error, isUpdated } = useSelector((state) => state.profile)
   
   const [show, setShow] = useState('')
   const [showNew, setShowNew] = useState('')
@@ -61,15 +57,6 @@ const UpdatePassword = () => {
       dispatch(updatePasswordAction(oldPassword, newPassword, confirmPassword))
     }
     
-    
-    if (isUpdated) {
-      alert("Password Changed please login again to continue.");
-      navigate('/login')
-      // dispatch(loadUserAction);
-    } else if (error) {
-      alert("An error occurred");
-      // dispatch(clearErrors());
-    }
   }
   return (
     <>

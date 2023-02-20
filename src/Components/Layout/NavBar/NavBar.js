@@ -115,13 +115,14 @@ const NavBar = () => {
             <NavBarDropNav onClick={handleDrop}>
               <Link to = '#' >
               {isAuthenticated ? (
-                  <>
-                    <p>
+                <>
+                  <p>
                     {savedUser?.avatar && savedUser.avatar.map((item) => (
                       <img src={item?.url} key={item?.url} alt=""/>
-                    ))} {' '}<span >{savedUser?.firstname}</span></p>
-                  </>
-                ) : (<p><CiUser/></p>)}
+                    ))} {' '}<span >{savedUser?.firstname}</span>
+                  </p>
+                </>
+              ) : (<p><CiUser/></p>)}
               </Link>
                
               {
@@ -215,7 +216,7 @@ const NavBar = () => {
                 </h3>
               </NavLink>
                           
-              <NavLink to = 'about-us' exact='true' activeclassName = 'active'>
+              <NavLink to = 'about-us' exact='true' activeclassName = 'active' onClick={closeNav}>
                 <p>About us</p>
               </NavLink>
               

@@ -18,13 +18,17 @@ export const LoginAction = (email, password, navigate) => async (dispatch) => {
       type: UserType.LOGIN_SUCCESS,
       payload: data,
     });
+    alert('Login Successfull')
     navigate(-1);
     localStorage.setItem("PattysToken", JSON.stringify(data));
   } catch (error) {
+    console.log(error)
+    alert('Incorrect credentials')
     dispatch({
       type: UserType.LOGIN_FAILURE,
-      payload: error.data.message,
+      payload: error.message,
     });
+    navigate('/login')
   }
 };
 
@@ -48,8 +52,10 @@ export const RegisterAction =
         type: UserType.REGISTER_SUCCESS,
         payload: data,
       });
+      alert('Registration completed. Welcome to Pattys')
       navigate("/login");
     } catch (error) {
+      alert('An error occured. Please try again')
       dispatch({
         type: UserType.REGISTER_FAILURE,
         payload: error.data.error,
@@ -108,8 +114,9 @@ export const updateProfileAction =
         type: UserType.UPDATE_PROFILE_SUCCESS,
         payload: data.success,
       });
+      alert("Password Changed please login again to continue.");
     } catch (error) {
-      console.log(error);
+      alert("An error occurred. Please try again");
       dispatch({
         type: UserType.UPDATE_PROFILE_FAILURE,
         payload: error.response.data.message,
@@ -164,6 +171,7 @@ export const logoutAction = (navigate) => async (dispatch) => {
   dispatch({
     type: UserType.LOGOUT_SUCCESS,
   });
+  
   navigate("/");
   localStorage.removeItem("PattysToken", data?.token);
 };

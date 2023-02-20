@@ -41,6 +41,7 @@ const About = () => {
               The interests of our customers are always top priority for us, so we hope you will enjoy our products as much as we enjoy making them available to you.
             </p>
             
+            <Img src="/asset/vision.jpg" alt=""/>
           </MissionPage>
         </AboutBody>
       </AboutContainer>
