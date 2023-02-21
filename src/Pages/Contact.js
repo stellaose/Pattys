@@ -80,7 +80,7 @@ const Contact = () => {
                     />
                     <br/>
                     <InputBtn>
-                        <InputButton type="submit" disabled={state.submitting}  value="SEND" onClick={() => setShow(true)}/>
+                        <InputButton type="submit" disabled={state.submitting}  value="Send Message" onClick={() => setShow(true)}/>
                     </InputBtn>
                     
                    

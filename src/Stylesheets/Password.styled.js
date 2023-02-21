@@ -413,7 +413,7 @@ export const EnterButton = styled.input`
   width: 80%;
   padding: 0.7rem 0;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: none;
   outline: none;
   cursor: pointer;
@@ -425,5 +425,21 @@ export const EnterButton = styled.input`
     border: 1px solid #c5d86d;
     color: #c5d86d;
     background-color: transparent;
+  }
+  
+  @media (max-width:1000px){
+    font-size: 1.05rem;
+  }
+    
+  @media (max-width:600px){
+    font-size: 1rem;
+  }
+    
+  @media (max-width:400px){
+    font-size: 0.95rem;    
+  }
+    
+  @media (max-width:300px){
+    font-size: 0.9rem;
   }
 `

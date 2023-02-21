@@ -276,7 +276,7 @@ export const RegisterButton = styled.input`
   width: 80%;
   padding: 0.7rem 0;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #f7f7f2;
   font-weight: 600;
   border: none;
@@ -288,6 +288,22 @@ export const RegisterButton = styled.input`
     color: #f05d23;
     border: 1px solid #f05d23;
     background-color: transparent;
+  }
+  
+  @media (max-width:1000px){
+    font-size: 1.05rem;
+  }
+    
+  @media (max-width:600px){
+    font-size: 1rem;
+  }
+    
+  @media (max-width:400px){
+    font-size: 0.95rem;
+  }
+    
+  @media (max-width:300px){
+    font-size: 0.9rem;
   }
 `;
 

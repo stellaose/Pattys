@@ -419,6 +419,7 @@ export const CountSection = styled.div`
         padding: 0.3rem 0.2rem;
         color: #f7f7f2;
         border: none;
+        
         background-color: #260c1a;
         cursor: pointer;
         border-radius: 0 5px 5px 0;
@@ -432,15 +433,33 @@ export const CountSection = styled.div`
     .button{
         padding: 0.3rem 0.2rem;
         color: #f7f7f2;
-        border: none;
+        border: 1px solid #260c1a;
         background-color: #260c1a;
         cursor: pointer;
+        font-size: 1.1rem;
         border-radius: 5px 0 0 5px ;
         
         
         svg{
             font-size: 1rem;
         }
+        
+        @media (max-width:1000px){
+        font-size: 1.05rem;
+      }
+        
+      @media (max-width:600px){
+        font-size: 1rem;
+      }
+        
+      @media (max-width:400px){
+        font-size: 0.95rem;
+        
+      }
+        
+      @media (max-width:300px){
+        font-size: 0.9rem;
+      }
     }
     
     input{

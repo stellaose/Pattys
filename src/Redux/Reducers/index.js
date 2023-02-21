@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import productDetailsReducer from "./ProductDetailsReducer";
 import productReducer from "./ProductReducer";
-import { userReducer, profileReducer, forgetPasswordReducer } from "./UserReducer";
+import { userReducer, profileReducer, passwordReducer } from "./UserReducer";
 
 
 const rootReducer = combineReducers({
@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
     productDetail: productDetailsReducer,
     profile: profileReducer,
     user: userReducer,
-    forgetPassword: forgetPasswordReducer
+    password: passwordReducer
 })
 
 export default rootReducer

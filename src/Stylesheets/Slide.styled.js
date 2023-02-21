@@ -114,6 +114,22 @@ export const LeftSlide = styled.div`
               background-color: transparent;
               color: #260c1a;
             }
+            
+          @media (max-width:1000px){
+            font-size: 1.05rem;
+          }
+            
+          @media (max-width:600px){
+            font-size: 1rem;
+          }
+            
+          @media (max-width:400px){
+            font-size: 0.95rem;
+          }
+            
+          @media (max-width:300px){
+            font-size: 0.9rem;
+          }
         }
     }
 `

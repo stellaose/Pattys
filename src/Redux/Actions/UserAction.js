@@ -189,6 +189,38 @@ export const forgetPasswordAction = (email) => async (dispatch) => {
   }
 }
 
+export const resetPasswordAction = ( password, confirmPassword, token, navigate) => async (dispatch) => {
+  try {
+    dispatch({type: UserType.RESET_PASSWORD_REQUEST})
+     
+    const configure = { headers: { "Content-Type": "application/json" } };
+     
+    const { data } = await axios.put(
+      `${config.BASE_URL}/v1/user/reset-password/${token}`, 
+      {
+        password,
+        confirmPassword
+      }, 
+      configure
+    );
+    
+    dispatch({
+      type: UserType.RESET_PASSWORD_SUCCESS,
+      payload: data.success
+    })
+    
+    alert('Password changed successfully. Please login again to continue')
+    navigate('/login')
+  } catch (error) {
+    console.log(error)
+    alert('An error occurred')
+    dispatch({
+      type: UserType.RESET_PASSWORD_FAILURE
+    })
+  }
+ 
+}
+
 export const logoutAction = (navigate) => async (dispatch) => {
   dispatch({ type: UserType.LOGOUT_REQUEST });
 
