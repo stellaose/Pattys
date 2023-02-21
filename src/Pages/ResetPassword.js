@@ -58,7 +58,7 @@ const ResetPassword = () => {
       
       <ForgetContainer>
         <ForgetBody>
-          <ForgetImg src='/asset/reset.png'/>
+          <ForgetImg src='/asset/reset.png' loading='eager'/ >
           
           <ForgetInput onSubmit={handleSubmit}>
             <Right>

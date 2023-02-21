@@ -28,7 +28,7 @@ const ForgetPassword = () => {
       <MetaData title={'Forget Password || Pattys E-Commerce'}/>
       <ForgetContainer>
         <ForgetBody>
-          <ForgetImg src='/asset/forgot.png'/>
+          <ForgetImg src='/asset/forgot.png' loading='eager'/>
           <h1>Forget Password?</h1>
           <p>
             To reset your password, enter your email below and submit. An email will be sent to you with instructions about how to complete the process.
