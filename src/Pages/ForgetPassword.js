@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import {  
         EnterButton,
         EnterSection,
@@ -7,14 +8,24 @@ import {
         ForgetImg, 
         ForgetInput,
         InputSection} from '../Stylesheets/Password.styled'
+import MetaData from '../Components/Layout/MetaData'
+import { forgetPasswordAction } from '../Redux/Actions/UserAction'
 
 const ForgetPassword = () => {
+  const dispatch = useDispatch()
+  const [inputEmail, setInputEmail] = useState('')
+  
+  const handleInputEmail = (e) => {
+    setInputEmail(e.target.value)
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault()
+    dispatch(forgetPasswordAction(inputEmail))
   }
   return (
     <>
+      <MetaData title={'Forget Password || Pattys E-Commerce'}/>
       <ForgetContainer>
         <ForgetBody>
           <ForgetImg src='/asset/forgot.png'/>
@@ -28,13 +39,16 @@ const ForgetPassword = () => {
             <InputSection
               placeholder='E-mail'
               type='email'
+              name='email'
+              value={inputEmail}
+              onChange= {handleInputEmail}
+              required
             />
             
             <EnterSection>
               <EnterButton type= 'submit' value='Send Email'/>
             </EnterSection>
           </ForgetInput>
-          
           
         </ForgetBody>
       </ForgetContainer>

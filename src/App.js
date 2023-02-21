@@ -19,6 +19,7 @@ import UpdatePassword from "./Pages/UpdatePassword";
 import ProtectedRoute from "./Components/Molecules/ProtectedRoute";
 import Account from "./Pages/Account";
 import Profile from "./Pages/Profile";
+import ResetPassword from "./Pages/ResetPassword";
 
 function App() {
   return (
@@ -46,6 +47,8 @@ function App() {
         <Route exact path="login" element={<Login />} />
 
         <Route exact path="forget-password" element={<ForgetPassword />} />
+        
+        <Route exact path = 'reset-password' element={<ResetPassword/>}/>
 
         <Route exact path="register" element={<Register />} />
 

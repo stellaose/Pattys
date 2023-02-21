@@ -169,6 +169,7 @@ export const ChangeInput = styled.div`
   background-color: transparent;
   
   span{
+    cursor: pointer;
     svg{
       font-size: 1.5rem;
     }

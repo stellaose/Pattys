@@ -163,6 +163,32 @@ export const updatePasswordAction =
     }
   };
 
+export const forgetPasswordAction = (email) => async (dispatch) => {
+  try {
+    dispatch({type: UserType.FORGET_PASSWORD_REQUEST})
+    
+    const configure = { headers: { "Content-Type": "application/json" } };
+    
+    const { data } = await axios.post(
+      `${config.BASE_URL}/v1/user/forget-password`,
+      { email},
+      configure
+    );
+    
+    dispatch({
+      type: UserType.FORGET_PASSWORD_SUCCESS,
+      payload: data.message
+    })
+    
+    alert('E-mail sent. Please check your inbox.')
+  } catch (error) {
+    console.log(error)
+    dispatch({
+      type: UserType.FORGET_PASSWORD_FAILURE,
+    })
+  }
+}
+
 export const logoutAction = (navigate) => async (dispatch) => {
   dispatch({ type: UserType.LOGOUT_REQUEST });
 

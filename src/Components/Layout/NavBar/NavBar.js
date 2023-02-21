@@ -49,7 +49,6 @@ const NavBar = () => {
   const handleLogout = (e) => {
     e.preventDefault()
     dispatch(logoutAction(navigate))
-    // window.location.reload(false)
   }
 
   const handleDrop = () => {

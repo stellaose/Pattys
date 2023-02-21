@@ -49,16 +49,6 @@ const Login = () => {
     dispatch(LoginAction(loginEmail, loginPassword, navigate))
   }
   
-  // useEffect (() => {
-    
-  //   if(isAuthenticated){
-  //     alert('Login Successful')
-  //   }
-    
-  //   if(error){
-  //     alert('Login failed.Please try again.')
-  //   }
-  // }, [isAuthenticated, error])
   return (
     <>
       <MetaData title={'Login || Pattys E-Commerce'}/>

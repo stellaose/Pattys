@@ -141,3 +141,34 @@ export const profileReducer = (state = {}, action) => {
       return state;
   }
 };
+
+
+export const forgetPasswordReducer = (state = {}, action) => {
+  switch (action.type) {
+    case UserType.FORGET_PASSWORD_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      }
+    case UserType.FORGET_PASSWORD_SUCCESS: 
+      return {
+        ...state,
+        loading: false,
+        message: action.payload
+      }
+    case UserType.FORGET_PASSWORD_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      }
+    case UserType.CLEAR_ERRORS:
+      return{
+        ...state,
+        error: null
+      }
+    default:
+      return state;
+  }
+}
