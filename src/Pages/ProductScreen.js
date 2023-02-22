@@ -11,6 +11,7 @@ import {
   Review,
 } from "../Components/Organisms/Tabs/ProductTabs/Details";
 import ReactStars from "react-rating-stars-component";
+import { addToCartAction } from "../Redux/Actions/CartActions";
 import MetaData from "../Components/Layout/MetaData";
 import {
   ButtonSection,
@@ -41,6 +42,7 @@ import {
 
 const ProductScreen = () => {
   const [activeTab, setActiveTab] = useState("screen1");
+  const [quantity, setQuantity] = useState(1)
   const dispatch = useDispatch();
   const { id } = useParams();
   const { loading, error, product } = useSelector(
@@ -48,9 +50,23 @@ const ProductScreen = () => {
   );
 
   const shareUrl = `https://pattys.vercel.app/${product?._id}`;
+  
+  const increaseQuantity = () => {
+    
+    if(product?.stock <= quantity) return;
+    setQuantity(quantity + 1)
+  }
+  
+  const decreaseQuantity = () => {
+    if( 1 <= quantity) return;
+    setQuantity(quantity - 1)
+  }
 
   const ratingChanged = () => {};
-
+  
+  const addToCart = () => {
+    dispatch(addToCartAction(id, quantity))
+  }
   const reviews = product?.reviews;
   const description = product?.description;
 
@@ -128,11 +144,11 @@ const ProductScreen = () => {
                 </OtherSection>
                 <CountSection>
                   <button className="button">
-                    <AiOutlineMinus />
+                    <AiOutlineMinus  onClick={decreaseQuantity}/>
                   </button>
-                  <input type="number" value="1" />
+                  <input readOnly type="number" value={quantity} />
                   <button>
-                    <AiOutlinePlus />
+                    <AiOutlinePlus onClick={increaseQuantity} />
                   </button>
                 </CountSection>
                 <ShareSection>
@@ -164,7 +180,7 @@ const ProductScreen = () => {
                 </ShareSection>
 
                 <ButtonSection>
-                  <button>Add to Cart</button>
+                  <button onClick={addToCart}>Add to Cart</button>
                 </ButtonSection>
               </ProductRightScreen>
             </ProductScreenContent>

@@ -13,7 +13,7 @@ const Account = () => {
       <MetaData title={'My Account || Pattys E-commerce'}/>
       <AccountGrid>
         <Sidebar/>
-          <AccountBody>
+        <AccountBody>
           <Outlet/>
         </AccountBody>
       </AccountGrid>

@@ -401,22 +401,42 @@ export const SidebarBody = styled.div`
   }
   
   @media(max-width: 600px){
-    width: max-content;
-    margin-right: 1rem;
+    width: 100%;
+    height: max-content;
+    overflow-x: auto;
+    overflow-y: none;
+    padding-top: 0;
+    margin-bottom: 2rem;
+    
+    &::-webkit-scrollbar{
+      display: none;
+    }
   }
 `
 
 export const SideContent = styled.div`
   position: absolute;
   width: 100%;
+  display: block;
+  
+  
+  @media (max-width:600px){
+    position: unset;
+    display: flex;
+    justify-content: space-around;   
+  }
+  
+  @media (max-width: 425px){
+    justify-content: unset;
+  }
 
   a{
     text-decoration: none;
     color: #260c1a;
-    display: block;
     position: relative;
+    display: block;
     line-height: 1.5rem;
-    padding: 1rem 2rem 1rem 1rem;
+    padding: 1rem 1.5rem;
     font-weight: 600;
     
     &.active, &:focus, &:hover{
@@ -426,6 +446,10 @@ export const SideContent = styled.div`
  
     @media all and (max-width: 1000px){
       padding: 1rem auto 1rem 0.5rem;
+    }
+    
+    @media (max-width:600px){
+      display: flex;
     }
     
     @media (max-width: 400px){

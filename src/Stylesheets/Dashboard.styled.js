@@ -6,6 +6,7 @@ export const DashboardBody = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 2rem;
+  margin-top: 2rem;
   padding: 1rem 1rem 2rem 0;
   
   @media (max-width:1000px){

@@ -20,7 +20,7 @@ export const AccountBody = styled.div`
   }
   
   @media (max-width: 600px){
-    padding: 1rem 0 1rem 2rem;
+    padding: 1rem 0 1rem;
   }
   
   @media (max-width: 400px){
