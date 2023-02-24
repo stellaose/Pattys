@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-
-
 export const NavbarBody = styled.div`
     justify-content: space-between;
     display: flex;
@@ -124,7 +122,6 @@ export const MidNav = styled.div`
         display: none;
     }
 `
-
 
 export const NavImg = styled.img`
     height: 3rem;
@@ -348,10 +345,10 @@ export const EndNavList = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 4rem;
     padding: 2rem;
     width: 80vw;
-    height: max-content;
+    height: 33rem;
     overflow: auto;
     right: 0;
     font-size: 1.2rem;

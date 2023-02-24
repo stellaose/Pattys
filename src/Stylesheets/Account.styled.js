@@ -8,8 +8,10 @@ export const AccountGrid = styled.div`
 export const AccountBody = styled.div`
   background-color: #f7f7f2;
   padding: 1rem 0 1rem 12rem;
-  max-height: 32.5rem;
-  height: 32.5rem;
+  /* max-height: 32.5rem;
+  height: 32.5rem; */
+  max-height: 34rem;
+    height: 34rem;
   overflow-y: auto;
   
   &::-webkit-scrollbar{
@@ -22,5 +24,7 @@ export const AccountBody = styled.div`
   
   @media (max-width: 600px){
     padding: 1rem 0 1rem;
+    max-height: 37rem;
+    height: 37rem;
   }
 `

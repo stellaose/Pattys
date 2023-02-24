@@ -77,7 +77,7 @@ export const ProfileContent = styled.form`
 
 export const Map = styled.div`
   margin-top:2rem;
-  /* text-align: center;   */
+  text-align: center;  
 `
 
 export const Img = styled.img`
