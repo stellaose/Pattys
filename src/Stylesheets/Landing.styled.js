@@ -5,7 +5,7 @@ export const LandingBody = styled.div`
     background-color: #f7f7f2;
     
     @media (max-width:600px){
-        padding: 6rem 1rem 1rem;
+        padding: 5rem 0 1rem;
     }
     
 `
