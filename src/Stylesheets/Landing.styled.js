@@ -4,10 +4,6 @@ export const LandingBody = styled.div`
     padding: 7rem 1rem 1rem;
     background-color: #f7f7f2;
     
-    @media (max-width:600px){
-        padding: 1rem 0;
-    }
-    
 `
 
 export const HeroBody = styled.div`
