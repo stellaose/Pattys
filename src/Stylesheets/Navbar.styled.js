@@ -1,11 +1,17 @@
 import styled from 'styled-components'
 
-export const Nav = styled.div` 
+
+
+export const NavbarBody = styled.div`
+    justify-content: space-between;
+    display: flex;
     padding: 1.5rem 3rem 0.5rem;
-    position: relative;
+    position: fixed;
     color: #260c1a;
     background-color: #f7f7f2;
     z-index: 50;
+    left: 0;
+    right: 0;
     
     @media (max-width: 1000px){
         padding: 1rem 2rem;
@@ -18,11 +24,6 @@ export const Nav = styled.div`
     @media (max-width: 400px){
         padding: 1rem 0.5rem;
     }
-`
-
-export const NavbarBody = styled.div`
-    justify-content: space-between;
-    display: flex;
 `
 
 export const RightNav = styled.div`
@@ -402,10 +403,12 @@ export const SidebarBody = styled.div`
   
   @media(max-width: 600px){
     width: 100%;
+    margin-right: 0;
     height: max-content;
     overflow-x: auto;
     overflow-y: none;
     padding-top: 0;
+    margin-top: -1rem;
     margin-bottom: 2rem;
     
     &::-webkit-scrollbar{

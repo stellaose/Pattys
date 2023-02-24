@@ -13,6 +13,11 @@ export const ChangeBody = styled.div`
     padding: 1rem 2rem 2rem 0;
   }
   
+  @media (max-width: 780px){
+    padding: 1rem 1rem 2rem;
+    margin-left: 0;
+  }
+  
   h1{
     font-size: 2rem;
     text-align: center;
@@ -51,15 +56,19 @@ export const ChangeContent = styled.div`
   gap: 8rem;
   
   @media (max-width:1000px){
-    grid-template-columns: 45% auto;
-    gap: 4rem;
-    width: 85%;
+    grid-template-columns: 40% auto;
+    gap: 3rem;
+    width: 90%;
   }
   
   @media (max-width:780px){
     grid-template-columns: auto;
     gap: 2rem;
-    width: 90%;
+    width: 85%;
+  }
+  
+  @media (max-width: 600px){
+    width: 95%;
   }
 `
 
@@ -80,20 +89,16 @@ export const Img = styled.img`
     width: 14rem;
   }
   
-  @media (max-width:800px){
+  @media (max-width: 600px){
     width: 13rem;
   }
   
-  @media (max-width: 600px){
-    width: 12rem;
-  }
-  
   @media (max-width: 400px){
-    width: 10rem;
+    width: 11rem;
   }
   
   @media (max-width: 300px){
-    width: 9rem;
+    width: 10rem;
   }
 `
 
@@ -164,10 +169,18 @@ export const Right = styled.div`
 
 export const ChangeInput = styled.div`
   padding: 0.5rem 0 0.3rem;
-  width: 85%;
+  width: 100%;
   border: none;
   border-bottom: 1px solid #260c1a;
   background-color: transparent;
+  
+  @media (max-width: 780px){
+    width: 85%;
+  }
+  
+  @media (max-width: 400px){
+    width: 90%;
+  }
   
   span{
     cursor: pointer;
@@ -194,21 +207,27 @@ export const Input = styled.input`
     -webkit-text-fill-color: none !important;
   }
   
-  @media (max-width:1100px){
-      width: 85%;
-    }
-    
-  @media (max-width:400px){
-    font-size: 0.85rem;
+  @media (max-width: 1000px){
+    width: 85%;
   }
   
-  @media (max-width:330px){
-    width: 70%;
+  @media (max-width: 780px){
+    width: 90%;
   }
- 
+  
+  @media (max-width:400px){
+    font-size: 0.85rem;
+    width: 85%;
+  }
+  
   @media (max-width:300px){
     font-size: 0.8rem;
   }
+`
+
+export const Order = styled.div`
+  text-align: center;
+  margin-top: 2rem;
 `
 
 export const OrderBtn = styled.input`

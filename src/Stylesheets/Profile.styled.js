@@ -12,6 +12,11 @@ export const ProfileBody = styled.div`
     padding: 1rem 2rem 2rem 0;
   }
   
+  @media (max-width:600px){
+    padding: 1rem 1rem 2rem;
+    margin-left: 0;
+  }
+  
   h1{
     font-size: 2rem;
     text-align: center;
@@ -53,25 +58,28 @@ export const ProfileContent = styled.form`
   @media (max-width:1000px){
     grid-template-columns: 45% auto;
     gap: 4rem;
-    width: 85%;
   }
   
   @media (max-width:780px){
     grid-template-columns: auto;
     gap: 2rem;
+    width: 80%;
+  }
+  
+  @media (max-width:600px){
     width: 90%;
+  }
+  
+  @media (max-width:300px){
+    width: 95%;
   }
 `
 
 export const Map = styled.div`
   margin-top:2rem;
-  text-align: center;
-  
-  @media (max-width: 780px){
-    text-align: unset;
-  }
-  
+  /* text-align: center;   */
 `
+
 export const Img = styled.img`
   width: 16rem;
   height: 16rem;
@@ -248,6 +256,7 @@ export const OrderBtn = styled.input`
 
 export const AvatarInput = styled.input`
   overflow: hidden;
+
   
   &::-webkit-file-upload-button{
     visibility: hidden;
@@ -273,6 +282,10 @@ export const AvatarInput = styled.input`
     @media (max-width:1000px){
       font-size: 1.05rem;
     }
+    
+    @media (max-width: 780px){
+      /* margin-left:4rem; */
+    }
       
     @media (max-width:600px){
       font-size: 1rem;
@@ -282,11 +295,13 @@ export const AvatarInput = styled.input`
     @media (max-width:400px){
       font-size: 0.95rem;
       padding: 0.5rem 2rem;
+      /* margin-left:3rem; */
       
     }
       
     @media (max-width:300px){
       font-size: 0.9rem;
+      /* margin-left: 2rem; */
     }
     
   }
@@ -320,21 +335,17 @@ export const Input = styled.input`
     font-size: 0.95rem;
   }
   
-  @media (max-width:800px){
-    width: 85%;
+  @media (max-width:780px){
+    width: 90%;
   }
   
   @media (max-width:600px){
     font-size: 0.9rem;
-    width: 80%;
   }
     
   @media (max-width:400px){
     font-size: 0.85rem;
-  }
-  
-  @media (max-width:330px){
-    width: 70%;
+    width: 85%;
   }
  
   @media (max-width:300px){

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContactBody = styled.div`
-    padding: 3rem 0 4rem;
+    padding: 8rem 0 4rem;
     background-color: #f7f7f2;
     
 `

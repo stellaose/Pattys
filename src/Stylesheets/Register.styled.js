@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const RegisterBody = styled.div`
   background-color: #f7f7f2;
-  padding: 0.5rem 0 4rem;
+  padding: 6rem 0 4rem;
 
   @media (max-width: 880px) {
-    padding: 2rem 0 4rem;
+    padding: 7rem 0 4rem;
   }
 `;
 

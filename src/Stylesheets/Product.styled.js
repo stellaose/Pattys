@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProductsListBody = styled.div`
     background-color: #f7f7f2;
-    padding: 1rem 0 2rem;
+    padding: 6rem 0 2rem;
 `
 
 export const ProductsContainer = styled.div`

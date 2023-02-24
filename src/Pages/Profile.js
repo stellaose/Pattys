@@ -123,7 +123,7 @@ const Profile = () => {
               />
             </Right>
 
-            <Right>
+            <Right style={{textAlign: 'center'}}>
               <OrderBtn type="submit" value="Update Profile" />
             </Right>
           </ProfRight>

@@ -13,6 +13,11 @@ export const DashboardBody = styled.div`
     padding: 1rem 2rem 2rem 0;
   }
   
+  @media (max-width:600px){
+    padding: 1rem 1rem 2rem;
+    margin-left: 0;
+  }
+  
   h1{
     font-size: 2rem;
     text-align: center;
@@ -58,23 +63,32 @@ export const DashboardContent = styled.div`
   @media (max-width:780px){
     grid-template-columns: auto;
     gap: 2rem;
+    width: 80%;
+  }
+  
+  @media (max-width:600px){
+    width: 90%;
+  }
+  
+  @media (max-width:300px){
+    width: 95%;
   }
 `
 
 export const Map = styled.div`
   margin-top:2rem;
   text-align: center;
-  
-  @media (max-width: 780px){
-    text-align: unset;
-  }
-  
 `
 
 export const Img = styled.img`
   width: 16rem;
   height: 16rem;
   border-radius: 50%;
+  
+  @media (max-width:1200px){
+    width: 15rem;
+    height: 15rem;
+  }
   
   @media (max-width:1000px){
     width: 14rem;
@@ -155,7 +169,7 @@ export const RightGrid = styled.div`
     
   }
   
-  @media (max-width:500px){
+  @media (max-width:330px){
     grid-template-columns: auto;
     gap: 0;
   }

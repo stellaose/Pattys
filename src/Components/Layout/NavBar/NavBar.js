@@ -23,7 +23,6 @@ import {
         EndNav,
         EndNavList,
         MidNav,
-        Nav,
         NavbarBody,
         NavBarDropDiv,
         NavBarDropdown,
@@ -67,7 +66,6 @@ const NavBar = () => {
     
   return (
     <>
-      <Nav>
         <NavbarBody>
           <Link to = '/'>
             <NavImg src='/asset/logo.png'/>
@@ -251,10 +249,9 @@ const NavBar = () => {
                               
             </EndNavList>
           )}
-        </RightNav>
+          </RightNav>
                   
         </NavbarBody>
-      </Nav>
       
       <SearchModal onClose={() => setShow(false)} show={show}/>
     </>

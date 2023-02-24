@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const LandingBody = styled.div`
-    padding: 1rem;
+    padding: 7rem 1rem 1rem;
     background-color: #f7f7f2;
     
     @media (max-width:600px){

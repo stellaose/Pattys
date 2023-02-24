@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const AccountGrid = styled.div`
  background-color: #f7f7f2;
+ padding: 6rem 0 1rem; 
 `
 
 export const AccountBody = styled.div`
@@ -21,9 +22,5 @@ export const AccountBody = styled.div`
   
   @media (max-width: 600px){
     padding: 1rem 0 1rem;
-  }
-  
-  @media (max-width: 400px){
-    padding: 1rem 0 1rem 1rem;
   }
 `

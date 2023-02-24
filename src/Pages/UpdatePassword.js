@@ -10,6 +10,7 @@ import {
         Img,
         Input,
         Map, 
+        Order, 
         OrderBtn, 
         Right} from '../Stylesheets/Password.styled'
 
@@ -115,10 +116,14 @@ const UpdatePassword = () => {
               </ChangeInput>
             </Right>
             
-            <OrderBtn
-              type='submit'
-              value="Update Password"
-            />
+            <Order>
+              <OrderBtn
+                type='submit'
+                value="Update Password"
+              />
+            </Order>
+            
+           
           </ChangeRight>
         </ChangeContent>
       </ChangeBody>
