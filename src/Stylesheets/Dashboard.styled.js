@@ -128,6 +128,8 @@ export const EditButton = styled.button`
     font-size: 1rem;
     padding: 0.5rem 2.5rem;
   }
+  
+  
     
   @media (max-width:400px){
     font-size: 0.95rem;
@@ -143,6 +145,14 @@ export const EditButton = styled.button`
 export const DashRight = styled.div`
   text-align: left;
   margin-top: 1rem;
+  
+  @media (max-width:780px){
+    padding: 0 1rem;
+  }
+  
+  @media (max-width:360px){
+    padding: 0 0.5rem;
+  }
 `
 
 export const RightGrid = styled.div`

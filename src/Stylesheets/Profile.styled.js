@@ -71,6 +71,11 @@ export const ProfileContent = styled.form`
 export const Map = styled.div`
   margin-top:2rem;
   text-align: center;  
+  
+  @media (max-width: 780px){
+    text-align: unset;
+    padding: 0 1rem;
+  }
 `
 
 export const Img = styled.img`
@@ -97,6 +102,8 @@ export const Img = styled.img`
     width: 12rem;
     height: 12rem;
   }
+  
+  
   
   @media (max-width: 400px){
     width: 10rem;
@@ -148,6 +155,14 @@ export const EditButton = styled.button`
 export const ProfRight = styled.div`
   text-align: left;
   margin-top: 1rem;
+  
+  @media (max-width:780px){
+    padding: 0 1rem;
+  }
+  
+  @media (max-width:360px){
+    padding: 0 0.5rem;
+  }
 `
 
 export const Right = styled.div`
