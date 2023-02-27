@@ -101,6 +101,14 @@ export const Img = styled.img`
 export const ChangeRight = styled.form`
   text-align: left;
   margin-top: 1rem;
+  
+  @media (max-width:780px){
+    padding: 0 1rem;
+  }
+  
+  @media (max-width:360px){
+    padding: 0 0.5rem;
+  }
 `
 
 export const Right = styled.div`
