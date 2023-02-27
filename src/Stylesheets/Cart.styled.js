@@ -213,7 +213,7 @@ export const CountSection = styled.div`
     border: 1px solid #260c1a;
     background-color: #260c1a;
     cursor: pointer;
-    /* border-radius: 0 5px 5px 0; */
+    border-radius: 0 5px 5px 0;
     
     svg{
       font-size: 1rem;
@@ -231,7 +231,7 @@ export const CountSection = styled.div`
     background-color: #260c1a;
     cursor: pointer;
     font-size: 1.1rem;
-    /* border-radius: 5px 0 0 5px ; */
+    border-radius: 5px 0 0 5px ;
         
     svg{
       font-size: 1rem;
