@@ -65,7 +65,7 @@ const Dashboard = () => {
               <p>{String(savedUser?.createdAt).substring(0, 10)}</p>
             </Right>
             
-            <Right>
+            <Right style={{textAlign: 'center'}}>
               <Link to = '/my-account/order'>
                 <OrderBtn>View my orders</OrderBtn>
               </Link>

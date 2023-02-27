@@ -12,12 +12,15 @@ export const CartBody = styled.div`
   }
   
   @media (max-width:780px){
-    width: 95%;
+    width: 90%;
   }
   
   @media (max-width:600px){
     margin: 2rem auto 0;
-    width: 97%;
+  }
+  
+  @media (max-width: 300px){
+    width: 95%;
   }
 
   h1{
@@ -52,8 +55,18 @@ export const CartBody = styled.div`
 `
 
 export const CardBody = styled.div`
-  margin: 0.5rem auto;
-  display: block;
+  margin: 0.5rem 0;
+  display: grid;
+  grid-template-columns: 25% auto;
+  gap: 2rem;
+  
+  @media (max-width:1100px){
+    gap: 1rem;
+  }
+  
+  @media (max-width:900px){
+   grid-template-columns: auto;
+  }
 `
 
 export const CardTop = styled.div`
@@ -61,26 +74,21 @@ export const CardTop = styled.div`
   padding: 1rem;
   border-radius: 10px;
   margin: 1rem 0;
-  
+ 
   @media (max-width: 800px){
     padding: 1rem 0.5rem;
+    
   }
-  
-  /* @media (max-width:600px){
-    border: none;
-  } */
   
   p{
     text-align: right;
-    margin: -1.5rem -0.5rem 1rem 0;
+    margin: -1.5rem -0.5rem 0.5rem 0;
     
     @media (max-width: 800px){
       text-align: right;
       margin: -1rem 0 0.1rem;
     }
-    
-    
-    
+      
     svg{
       color: #F05D23;
       font-size: 1.2rem;
@@ -106,55 +114,48 @@ export const CardTop = styled.div`
 
 export const TopCard = styled.div`
   display: grid;
-  grid-template-columns: 15% auto;
+  grid-template-columns: auto 20% 15%;
   gap: 2rem;
   
   @media (max-width: 1000px){
-    grid-template-columns: 18% auto;
+    grid-template-columns: auto 20% 15%;
     gap: 1rem;
   }
   
-  @media (max-width: 800px){
-    gap: 3rem;
-  }
-  
-  @media (max-width: 600px){
-    gap: 1rem;
-    grid-template-columns: 30% auto;
+  @media (max-width:900px){
+    display: block;
   }
 `
 
 export const CardImg = styled.img`
   width: 100%;
   
-  @media (max-width: 800px){
-    margin-top: 1rem;
+  @media (max-width: 900px){
+    width: 10rem;
   }
+  
+  @media (max-width:600px){
+    width: 9rem;
+  }
+  
+  @media (max-width:400px){
+    width: 8rem;
+  }
+  
+  @media (max-width: 300px){
+    width: 7rem;
+  }
+  
 `
 
 export const CardMid = styled.div`
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 3rem;
-  padding: 1rem 0;
-  
-  @media (max-width: 1200px){
-    grid-template-columns: auto auto auto;
-    gap: 2rem;
-  }
-  
-  @media (max-width: 1000px){
-    grid-template-columns: auto auto auto;
-    gap: 1rem;
-    padding: 0.5rem;
-  }
-  
-  @media (max-width: 800px){
-    display: block;
-  }
+  display: block;
+  align-items: center;
+  margin: auto 0;
 `
 
 export const LeftOne = styled.div`
+  
   h4{
     font-size: 1.2rem;
     font-weight: 600;
@@ -171,40 +172,49 @@ export const LeftOne = styled.div`
       font-size: 0.95rem;
     }
   }
-`
-
-export const LeftTwo = styled.div`
-
- 
-`
-
-export const LeftThree = styled.div`
-   h3{
-    font-size: 1.3rem;
+  
+  p{
+    font-size: 1.1rem;
     text-align: center;
-            
-    @media (max-width:800px){
-      font-size: 1.2rem;
-      text-align: right;
+    margin: 0.5rem 0;
+    
+    @media (max-width: 1000px){
+      font-size: 1.05rem;
+    }
+    
+    @media (max-width:900px){
+      text-align: left;
     }
             
     @media (max-width: 400px){
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
             
     @media (max-width:300px){
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   }
-  
+`
+
+export const LeftTwo = styled.div`
+  align-items: center;
+  margin: auto 0;
+`
+
+export const LeftThree = styled.div`
+  text-align: right;
+  align-items: center;
+  margin: auto 0;
  
 `
 
 export const CountSection = styled.div`
+  align-items: center;
+  margin: auto 0;
   
-  @media (max-width: 800px){
-    margin: 0.5rem 0;
-    text-align: right;
+  @media (max-width: 900px){
+    margin: 0;
+    text-align: left;
   }
   
   button{
@@ -346,9 +356,9 @@ export const ProceedBtn = styled.div`
   text-align: right;
   
   button{
-    background-color: #c5d86d;
+    background-color: #f05d23;
     padding: 0.7rem 2rem;
-    border: 1px solid #c5d86d;
+    border: 1px solid #f05d23;
     border-radius: 5px;
     font-size: 1.2rem;
     color: #f7f7f2;

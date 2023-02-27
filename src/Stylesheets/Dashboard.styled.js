@@ -128,8 +128,6 @@ export const EditButton = styled.button`
     font-size: 1rem;
     padding: 0.5rem 2.5rem;
   }
-  
-  
     
   @media (max-width:400px){
     font-size: 0.95rem;

@@ -41,6 +41,9 @@ function App() {
           <Route exact path="change-password" element={<ProtectedRoute><UpdatePassword/></ProtectedRoute>} />
           
           <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+          
+          
+         <Route exact path="checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
 
         </Route>
 
@@ -62,7 +65,6 @@ function App() {
 
         <Route exact path="shop-now/shop/:id" element={<ProductScreen />} />
 
-        <Route exact path="checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
       </Routes>
 
       <Footer />

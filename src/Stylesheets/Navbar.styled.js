@@ -436,7 +436,7 @@ export const SideContent = styled.div`
     position: relative;
     display: block;
     line-height: 1.5rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     font-weight: 600;
     
     &.active, &:focus, &:hover{

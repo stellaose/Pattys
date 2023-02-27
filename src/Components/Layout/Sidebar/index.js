@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { AiOutlineShoppingCart, AiOutlineCreditCard } from 'react-icons/ai'
 import { BiPurchaseTag } from 'react-icons/bi'
 import { FaUserEdit } from 'react-icons/fa';
 import { MdFavoriteBorder } from 'react-icons/md';
@@ -47,6 +47,12 @@ const Sidebar = () => {
           <NavLink to = 'cart' exact='true' activeclassName = 'active'>
             <>
               <AiOutlineShoppingCart/> <span>Cart</span>
+            </>
+          </NavLink>
+          
+          <NavLink to = 'checkout' exact='true' activeclassName = 'active'>
+            <>
+              <AiOutlineCreditCard/> <span>Checkout</span>
             </>
           </NavLink>
         </SideContent>

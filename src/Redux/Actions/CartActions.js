@@ -2,7 +2,7 @@ import CartType from "../Types/CartType";
 import axios from "axios";
 import config from "../../config";
 
-export const addToCartAction  = (id, quantity) => async (dispatch, getState) => {
+export const addToCartAction  = (id, quantity, navigate) => async (dispatch, getState) => {
   try {
     const { data } = await axios.get(`${config.BASE_URL}/v1/product/one-product/${id}`)
     console.log(data)
@@ -21,6 +21,7 @@ export const addToCartAction  = (id, quantity) => async (dispatch, getState) => 
     localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
     
     alert('Product added to cart successfully.')
+    navigate('/my-account/cart')
   } catch (error) {
     console.log(error)
   }
