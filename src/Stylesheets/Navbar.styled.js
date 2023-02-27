@@ -450,6 +450,7 @@ export const SideContent = styled.div`
     
     @media (max-width:600px){
       display: flex;
+      padding: 1rem 1.5rem;
     }
     
     @media (max-width: 400px){

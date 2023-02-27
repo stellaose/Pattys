@@ -1,11 +1,9 @@
 import React from 'react'
-import { AiOutlineClose } from "react-icons/ai";
 import { 
         CardBody, 
         CardImg, 
         CardMid, 
-        LeftOne,
-        TopCard} from '../../../Stylesheets/Cart.styled'
+        LeftOne} from '../../../Stylesheets/Cart.styled'
 
 const CartCard = ({item}) => {
   

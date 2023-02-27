@@ -67,7 +67,7 @@ const Cart = () => {
                   </LeftTwo>
                   
                   <LeftThree>
-                    <h3>&#8358;{product.subtotal}</h3>
+                    <h3>&#8358;{product.price * product.quantity}</h3>
                   </LeftThree>
                 </TopCard>
                 

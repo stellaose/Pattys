@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getProductDetails } from "../Redux/Actions/ProductAction";
 import {
   TabItem,
@@ -44,6 +44,7 @@ const ProductScreen = () => {
   const [activeTab, setActiveTab] = useState("screen1");
   const [quantity, setQuantity] = useState(1)
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { id } = useParams();
   const { loading, error, product } = useSelector(
     (state) => state.productDetail
@@ -65,7 +66,7 @@ const ProductScreen = () => {
   const ratingChanged = () => {};
   
   const addToCart = () => {
-    dispatch(addToCartAction(id, quantity))
+    dispatch(addToCartAction(id, quantity, navigate))
   }
   const reviews = product?.reviews;
   const description = product?.description;
