@@ -5,17 +5,20 @@ export const ChangeBody = styled.div`
   display: block;
   align-items: center;
   justify-content: center;
-  margin-left: 2rem;
-  margin-top: 2rem;
-  padding: 1rem 1rem 2rem 0;
+  margin: 2rem auto 0;
+  width:80%;
   
   @media (max-width:1000px){
-    padding: 1rem 2rem 2rem 0;
+    width: 85%;
   }
   
-  @media (max-width: 780px){
-    padding: 1rem 1rem 2rem;
-    margin-left: 0;
+  @media (max-width:780px){
+    width: 95%;
+  }
+  
+  @media (max-width:600px){
+    margin: 2rem auto 0;
+    width: 97%;
   }
   
   h1{
@@ -49,7 +52,6 @@ export const ChangeBody = styled.div`
 `
 
 export const ChangeContent = styled.div`
-  width: 80%;
   margin: 1rem auto;
   display: grid;
   grid-template-columns: 30% auto;
@@ -58,17 +60,11 @@ export const ChangeContent = styled.div`
   @media (max-width:1000px){
     grid-template-columns: 40% auto;
     gap: 3rem;
-    width: 90%;
   }
   
   @media (max-width:780px){
     grid-template-columns: auto;
     gap: 2rem;
-    width: 85%;
-  }
-  
-  @media (max-width: 600px){
-    width: 95%;
   }
 `
 

@@ -12,18 +12,14 @@ export const CartBody = styled.div`
   }
   
   @media (max-width:780px){
-    width: 90%;
+    width: 95%;
   }
   
   @media (max-width:600px){
     margin: 2rem auto 0;
-    width: 95%;
-  }
-  
-  @media (max-width:300px){
     width: 97%;
   }
-  
+
   h1{
     font-size: 2rem;
     text-align: center;
@@ -67,8 +63,12 @@ export const CardTop = styled.div`
   margin: 1rem 0;
   
   @media (max-width: 800px){
-    padding: 1rem 0.3rem;
+    padding: 1rem 0.5rem;
   }
+  
+  /* @media (max-width:600px){
+    border: none;
+  } */
   
   p{
     text-align: right;
@@ -76,7 +76,7 @@ export const CardTop = styled.div`
     
     @media (max-width: 800px){
       text-align: right;
-      margin: -1rem 0 1rem;
+      margin: -1rem 0 0.1rem;
     }
     
     
@@ -213,7 +213,7 @@ export const CountSection = styled.div`
     border: 1px solid #260c1a;
     background-color: #260c1a;
     cursor: pointer;
-    border-radius: 0 5px 5px 0;
+    /* border-radius: 0 5px 5px 0; */
     
     svg{
       font-size: 1rem;
@@ -231,7 +231,7 @@ export const CountSection = styled.div`
     background-color: #260c1a;
     cursor: pointer;
     font-size: 1.1rem;
-    border-radius: 5px 0 0 5px ;
+    /* border-radius: 5px 0 0 5px ; */
         
     svg{
       font-size: 1rem;
@@ -270,11 +270,13 @@ export const CountSection = styled.div`
     
     @media (max-width:1000px){
       font-size: 0.95rem;
+      width: 2.5rem;
     }
         
     @media (max-width:600px){
       font-size: 0.9rem;
       padding: 0.2rem;
+      width: 2rem;
     }
         
     @media (max-width:400px){
@@ -295,7 +297,7 @@ export const CardDown = styled.div`
   margin: 1.5rem 0 1rem;
   
   @media (max-width: 800px){
-    padding: 1rem 0.3rem;
+    padding: 1rem 0.5rem;
   }
 `
 

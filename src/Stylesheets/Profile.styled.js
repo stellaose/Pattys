@@ -4,17 +4,20 @@ export const ProfileBody = styled.div`
   display: block;
   align-items: center;
   justify-content: center;
-  margin-left: 2rem;
-  margin-top: 2rem;
-  padding: 1rem 1rem 2rem 0;
+  margin: 2rem auto 0;
+  width:80%;
   
   @media (max-width:1000px){
-    padding: 1rem 2rem 2rem 0;
+    width: 85%;
+  }
+  
+  @media (max-width:780px){
+    width: 95%;
   }
   
   @media (max-width:600px){
-    padding: 1rem 1rem 2rem;
-    margin-left: 0;
+    margin: 2rem auto 0;
+    width: 97%;
   }
   
   h1{
@@ -49,7 +52,6 @@ export const ProfileBody = styled.div`
 
 
 export const ProfileContent = styled.form`
-  width: 80%;
   margin: 1rem auto;
   display: grid;
   grid-template-columns: 30% auto;
@@ -63,15 +65,6 @@ export const ProfileContent = styled.form`
   @media (max-width:780px){
     grid-template-columns: auto;
     gap: 2rem;
-    width: 80%;
-  }
-  
-  @media (max-width:600px){
-    width: 90%;
-  }
-  
-  @media (max-width:300px){
-    width: 95%;
   }
 `
 
