@@ -58,6 +58,7 @@ export const DashboardContent = styled.div`
   @media (max-width:1000px){
     grid-template-columns: 45% auto;
     gap: 4rem;
+    width: 85%;
   }
   
   @media (max-width:780px){

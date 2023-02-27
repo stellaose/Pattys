@@ -62,7 +62,6 @@ function App() {
 
         <Route exact path="shop-now/shop/:id" element={<ProductScreen />} />
 
-        <Route exact path="checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
       </Routes>
 
       <Footer />

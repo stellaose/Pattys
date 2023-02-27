@@ -390,7 +390,7 @@ export const SidebarBody = styled.div`
   background-color: #f7f7f2;
   height: inherit;
   position: absolute;
-  padding-top: 3rem;
+  padding-top: 5rem;
   margin-right: 2rem;
   width: 11.5rem;
   

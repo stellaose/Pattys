@@ -55,9 +55,9 @@ const Footer = () => {
                 Contact Us
               </p>
             </NavLink>
-            <NavLink to ='checkout' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
+            <NavLink to ='my-account/cart' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
-                Checkout
+                Cart
               </p>
             </NavLink>
           </PageMidDiv>

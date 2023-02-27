@@ -1,8 +1,15 @@
 import React from 'react'
+import CartCard from '../Components/Organisms/CartCard'
+import { CartBody } from '../Stylesheets/Cart.styled'
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <>
+      <CartBody>
+        <h1>My Cart</h1>
+        <CartCard/>
+      </CartBody>
+    </>
   )
 }
 

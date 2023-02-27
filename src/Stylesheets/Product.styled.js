@@ -263,7 +263,8 @@ export const LoadingSection = styled.div`
 
 export const ProductScreenBody = styled.div`
     background-color: #f7f7f2;
-    padding: 1rem 0 3rem;
+    padding: 8rem 0 3rem;
+
 `
 
 export const ProductScreenContent = styled.div`
@@ -414,63 +415,63 @@ export const OtherSection = styled.div`
 `
 
 export const CountSection = styled.div`
-    margin-bottom: 1rem;
-    button{
-        padding: 0.3rem 0.2rem;
-        color: #f7f7f2;
-        border: none;
+  margin-bottom: 1rem;
+  button{
+    padding: 0.3rem 0.2rem;
+    color: #f7f7f2;
+    border: none;
         
-        background-color: #260c1a;
-        cursor: pointer;
-        border-radius: 0 5px 5px 0;
+    background-color: #260c1a;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
         
         
-        svg{
-            font-size: 1rem;
-        }
+    svg{
+      font-size: 1rem;
     }
+  }
     
-    .button{
-        padding: 0.3rem 0.2rem;
-        color: #f7f7f2;
-        border: 1px solid #260c1a;
-        background-color: #260c1a;
-        cursor: pointer;
-        font-size: 1.1rem;
-        border-radius: 5px 0 0 5px ;
+  .button{
+    padding: 0.3rem 0.2rem;
+    color: #f7f7f2;
+    border: 1px solid #260c1a;
+    background-color: #260c1a;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 5px 0 0 5px ;
         
         
-        svg{
-            font-size: 1rem;
-        }
-        
-        @media (max-width:1000px){
-        font-size: 1.05rem;
-      }
-        
-      @media (max-width:600px){
-        font-size: 1rem;
-      }
-        
-      @media (max-width:400px){
-        font-size: 0.95rem;
-        
-      }
-        
-      @media (max-width:300px){
-        font-size: 0.9rem;
-      }
+    svg{
+      font-size: 1rem;
     }
+        
+    @media (max-width:1000px){
+      font-size: 1.05rem;
+    }
+        
+    @media (max-width:600px){
+      font-size: 1rem;
+    }
+        
+    @media (max-width:400px){
+      font-size: 0.95rem;
+        
+    }
+        
+    @media (max-width:300px){
+      font-size: 0.9rem;
+    }
+  }
     
-    input{
-        width: 3rem;
-        padding: 0.2rem;
-        font-size: 1rem;
-        background-color: transparent;
-        border: 1px solid #260c1a;
-        outline: none;
-        /* border-radius: 5px; */
-    }
+  input{
+    width: 3rem;
+    padding: 0.2rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid #260c1a;
+    outline: none;
+    /* border-radius: 5px; */
+  }
 `
 export const ShareSection = styled.div`
     h3{
