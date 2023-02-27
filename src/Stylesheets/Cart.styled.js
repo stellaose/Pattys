@@ -220,7 +220,22 @@ export const CountSection = styled.div`
       
       @media (max-width: 600px){
         font-size: 0.8rem;
+        
       }
+    }
+    
+    @media (max-width:600px){
+      font-size: 0.9rem;
+      padding: 0.21rem 0.2rem;
+    }
+        
+    @media (max-width:400px){
+      font-size: 0.85rem;
+        
+    }
+        
+    @media (max-width:300px){
+      font-size: 0.8rem;
     }
   }
     
@@ -247,6 +262,7 @@ export const CountSection = styled.div`
         
     @media (max-width:600px){
       font-size: 0.9rem;
+      padding: 0.21rem 0.2rem;
     }
         
     @media (max-width:400px){
