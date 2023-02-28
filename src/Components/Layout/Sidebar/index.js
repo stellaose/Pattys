@@ -1,9 +1,10 @@
 import React from 'react'
-import { AiOutlineShoppingCart, AiOutlineCreditCard } from 'react-icons/ai'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BiPurchaseTag } from 'react-icons/bi'
-import { FaUserEdit } from 'react-icons/fa';
+import { CiCreditCard1 } from 'react-icons/ci'
+import { FaUserEdit, FaUser } from 'react-icons/fa';
 import { MdFavoriteBorder } from 'react-icons/md';
-import { RiProfileLine, RiLockPasswordLine } from 'react-icons/ri'
+import {  RiLockPasswordLine } from 'react-icons/ri'
 import { NavLink } from 'react-router-dom'
 import { 
           SidebarBody, 
@@ -16,7 +17,7 @@ const Sidebar = () => {
         <SideContent>
           <NavLink to = 'profile' exact='true' activeclassName = 'active'>
             <>
-            <RiProfileLine/> <span>Profile</span>
+            <FaUser/> <span>Profile</span>
             </>
           </NavLink>
           
@@ -52,7 +53,7 @@ const Sidebar = () => {
           
           <NavLink to = 'checkout' exact='true' activeclassName = 'active'>
             <>
-              <AiOutlineCreditCard/> <span>Checkout</span>
+              <CiCreditCard1/> <span>Checkout</span>
             </>
           </NavLink>
         </SideContent>

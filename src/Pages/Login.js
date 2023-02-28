@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import MetaData from '../Components/Layout/MetaData'
 import { AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
@@ -21,16 +21,18 @@ import {
         PasswordDiv} from '../Stylesheets/Login.styled'
 import { LoginAction } from '../Redux/Actions/UserAction';
 
-
 const Login = () => {
-  const { loading } = useSelector(state => state.user)
+  const { loading, isAuthenticated } = useSelector(state => state.user)
   
   const [show, setShow] = useState('')
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('');
   
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const dispatch = useDispatch()
+  
+  const redirect = searchParams.get('redirect')
   
   const handleShow = () => {
     setShow(!show)
@@ -46,8 +48,20 @@ const Login = () => {
   
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(LoginAction(loginEmail, loginPassword, navigate))
+    dispatch(LoginAction(loginEmail, loginPassword))
+   
   }
+  
+  useEffect(() => {
+    if(isAuthenticated){
+      if(redirect){
+        navigate(`/${redirect}`);
+      } else {
+        navigate(-2)
+      }
+    }
+  }, [navigate, isAuthenticated, redirect])
+  
   
   return (
     <>

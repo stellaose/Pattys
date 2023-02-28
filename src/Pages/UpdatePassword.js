@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { updatePasswordAction } from '../Redux/Actions/UserAction';
 import { AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
+import MetaData from '../Components/Layout/MetaData';
 import { 
         ChangeBody,
         ChangeContent, 
@@ -61,6 +62,7 @@ const UpdatePassword = () => {
   }
   return (
     <>
+      <MetaData title={'Update Password || Pattys E-commerce'}/>
       <ChangeBody>
         <h1>Update Password</h1>
         <ChangeContent>

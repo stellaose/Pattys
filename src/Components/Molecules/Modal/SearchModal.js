@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { FaRegWindowClose } from 'react-icons/fa'
+import { IoClose } from 'react-icons/io5'
 import { 
         BtnInput,
         Button,
@@ -35,7 +35,7 @@ const SearchModal = (props) => {
       <>
         <ModalOverlay>
           <SearchContainer>
-            <Button onClick={handleRedirect}><FaRegWindowClose/></Button>
+            <Button onClick={handleRedirect}><IoClose/></Button>
               <SearchModalInput>
                 
                 <br/>

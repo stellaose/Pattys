@@ -151,7 +151,7 @@ export const NavBarDropNav = styled.div`
       
       img{
         width: 2.5rem;
-        margin-bottom: -0.5rem;
+        /* margin-bottom: -0.5rem; */
         border-radius: 50%;
         
         @media (max-width:1000px){
@@ -189,7 +189,7 @@ export const NavBarDropNav = styled.div`
       
       svg{
         font-size: 1.8rem;
-        margin: 0.5rem 1rem 1rem 0.5rem;
+        margin: 0.5rem 1rem 0.5rem 0.5rem;
               
         @media (max-width:600px){
           font-size: 1.5rem;

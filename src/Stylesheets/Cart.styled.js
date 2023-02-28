@@ -1,5 +1,24 @@
 import styled from "styled-components";
 
+export const EmptyCart = styled.div`
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  margin-top: 3rem;
+  
+  svg{
+    font-size: 2rem;
+    
+    @media (max-width: 600px){
+      font-size: 1.5rem;
+    }
+  }
+
+  p{
+    text-align: center;
+  }
+`
+
 export const CartBody = styled.div`
   display: block;
   align-items: center;
@@ -52,6 +71,8 @@ export const CartBody = styled.div`
       font-size: 1.3rem;
     }
   }
+  
+  
 `
 
 export const CardBody = styled.div`
@@ -91,21 +112,17 @@ export const CardTop = styled.div`
       
     svg{
       color: #F05D23;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin-top: 1rem;
       cursor: pointer;
       
-      @media (max-width: 1000px){
-        font-size: 1.1rem;
-      }
-      
       @media  (max-width: 600px){
         margin: 0.5rem 0;
-        font-size: 1rem;
+        font-size: 1.3rem;
       }
       
-      @media (max-width: 400px){
-        font-size: 0.9rem;
+      @media (max-width: 300px){
+        font-size: 1.1rem;
       }
     }
   }
@@ -158,7 +175,7 @@ export const LeftOne = styled.div`
   
   h4{
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 700;
             
     @media (max-width:800px){
       font-size: 1.1rem;
@@ -175,15 +192,13 @@ export const LeftOne = styled.div`
   
   p{
     font-size: 1.1rem;
-    text-align: center;
+    color: #aeaeac;
+    font-weight: 600;
+    text-align: left;
     margin: 0.5rem 0;
     
     @media (max-width: 1000px){
       font-size: 1.05rem;
-    }
-    
-    @media (max-width:900px){
-      text-align: left;
     }
             
     @media (max-width: 400px){

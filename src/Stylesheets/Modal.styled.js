@@ -175,23 +175,23 @@ export const Button = styled.button`
   border: none;
   
   svg{
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #f05d23;
     
     @media (max-width:1000px){
-      font-size: 1.9rem;
+      font-size: 1.7rem;
     }
     
     @media (max-width:800px){
-      font-size: 1.8rem;
-    }
-    
-    @media (max-width:600px){
       font-size: 1.6rem;
     }
     
-    @media (max-width:400px){
+    @media (max-width:600px){
       font-size: 1.5rem;
+    }
+    
+    @media (max-width:400px){
+      font-size: 1.4rem;
     }
   }
                 

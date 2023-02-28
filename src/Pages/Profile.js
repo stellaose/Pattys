@@ -5,6 +5,7 @@ import {
   loadUserAction,
   updateProfileAction,
 } from "../Redux/Actions/UserAction";
+import MetaData from "../Components/Layout/MetaData";
 import {
   AvatarInput,
   Img,
@@ -79,6 +80,7 @@ const Profile = () => {
 
   return (
     <>
+      <MetaData title={'Edit Profile || Pattys E-commerce'}/>
       <ProfileBody>
         <h1>Edit Profile</h1>
         <ProfileContent encType="multipart/form-data" onSubmit={handleSubmit}>

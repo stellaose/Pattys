@@ -1,8 +1,15 @@
 import React from 'react'
+import {TbHeartOff} from 'react-icons/tb'
+import { EmptyFav } from '../Stylesheets/Favourite.styled'
 
 const Favourite = () => {
   return (
-    <div>Favourite</div>
+    <>
+      <EmptyFav>
+        <TbHeartOff/>
+        <p>You have not added anything here.</p>
+      </EmptyFav>
+    </>
   )
 }
 

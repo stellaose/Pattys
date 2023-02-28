@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import MetaData from '../Components/Layout/MetaData'
 import { 
         DashboardBody, 
         DashboardContent, 
@@ -26,6 +27,7 @@ const Dashboard = () => {
   
   return (
     <>
+      <MetaData title={'My Profile || Pattys E-commerce'}/>
       <DashboardBody>
         <h1>My Information</h1>    
         <DashboardContent>

@@ -1,7 +1,10 @@
-import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { AiOutlineMinus, AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { IoClose } from 'react-icons/io5'
+
+import { TbShoppingCartOff } from 'react-icons/tb'
 import CartCard from '../Components/Organisms/CartCard'
 import { 
           CardDown, 
@@ -12,86 +15,109 @@ import {
           LeftThree,
           ProceedBtn,
           LeftTwo,
-          TopCard} from '../Stylesheets/Cart.styled'
+          TopCard,
+          EmptyCart} from '../Stylesheets/Cart.styled'
+import { addToCartAction, removeFromCartAction } from '../Redux/Actions/CartActions';
+import MetaData from '../Components/Layout/MetaData';
 
 const Cart = () => {
   const dispatch = useDispatch()
   const { cartItems } = useSelector((state) => state.cart)
   
-  const [quantity, setQuantity] = useState(1)
+  const navigate = useNavigate()
   
-  const increaseQuantity = () => {
-    
-    // if(product?.stock <= quantity) return;
-    setQuantity(quantity + 1)
+  const increaseQuantity = (id, quantity, stock) => {
+    const newQty = quantity + 1
+    if(stock <= quantity ){
+      return
+    }
+    dispatch(addToCartAction(id, newQty))
   }
   
-  const decreaseQuantity = () => {
-    // if( 1 <= quantity) return;
-    setQuantity(quantity - 1)
+  const decreaseQuantity = (id, quantity) => {
+    const newQty = quantity - 1;
+    if(1 >= quantity){
+      return
+    }
+    dispatch(addToCartAction(id, newQty))
   }
   
-  console.log(cartItems)
-  const product = {
-    image: '/asset/shirt1.jpg',
-    name: 'Defacto Man Slim Fit Knitted Short - Black',
-    quantity: 2,
-    price: 1000,
-    total: 1000
-  }
+  const removeFromCart = (id) => {
+    dispatch(removeFromCartAction(id))
+  } 
+   
+  const handleCheckout = () => {
+    navigate('/login?redirect=my-account/checkout')
+  }  
   return (
     <>
+      <MetaData title={'My Cart || Pattys E-commerce'}/>
       <CartBody>
-        <h1>My Cart</h1>
-        
-       
-        {
-          cartItems && cartItems.map((product) => (
-            <>
-              
-              <CardTop>
-                <p><AiOutlineClose/></p>
-                <TopCard>
-                  <CartCard item={product}/>
-                
-                  <LeftTwo>
-                    <CountSection>
-                      <button className="button">
-                        <AiOutlineMinus  onClick={decreaseQuantity}/>
-                      </button>
-                      <input readOnly type="number" value={product.quantity} />
-                      <button >
-                        <AiOutlinePlus onClick={increaseQuantity} />
-                      </button>
-                    </CountSection>
-                  </LeftTwo>
-                  
-                  <LeftThree>
-                    <h3>&#8358;{product.price * product.quantity}</h3>
-                  </LeftThree>
-                </TopCard>
-                
-              </CardTop>
-            </>
-           
+        {cartItems.length === 0 ? (
+          <>
+            <EmptyCart>
+              <TbShoppingCartOff/>
+              <p>No product in your cart</p>
+            </EmptyCart>
             
-          ))
-        }
+          </>
+        ) : (
+          <>
+            <h1>My Cart</h1>
+            
+            {
+              cartItems && cartItems.map((product) => (
+                <>
+                  
+                  <CardTop key={product.product}>
+                    <p onClick={() => removeFromCart(product.product)}><IoClose /></p>
+                    <TopCard>
+                      <CartCard item={product}/>
+                    
+                      <LeftTwo>
+                        <CountSection>
+                          <button className="button">
+                            <AiOutlineMinus  onClick={() => decreaseQuantity(product.product, product.quantity)}/>
+                          </button>
+                          <input readOnly type="number" value={product.quantity} />
+                          <button >
+                            <AiOutlinePlus onClick={() => increaseQuantity(
+                              product.product,
+                              product.quantity,
+                              product.stock
+                            )} />
+                          </button>
+                        </CountSection>
+                      </LeftTwo>
+                      
+                      <LeftThree>
+                        <h3>&#8358;{product.price * product.quantity}</h3>
+                      </LeftThree>
+                    </TopCard>
+                    
+                  </CardTop>
+                  
+                 
+                </>
+              
+                
+              ))
+            }
+            
+            <CardDown>
+              <DownCard>
+                <h2>Total</h2>
+                <h2>&#8358;{cartItems.reduce((acc, product) => acc + product.quantity * product.price, 0)}</h2>
+              </DownCard>
+                    
+              <ProceedBtn>
+                <button onClick={handleCheckout}>Proceed to Checkout</button>
+              </ProceedBtn>
+            </CardDown>
+            
+          </>
+        )}
         
-        <CardDown>
-          <DownCard>
-            <h2>Total</h2>
-            <h2>&#8358;{product.total}</h2>
-          </DownCard>
-          
-          <Link to='/my-account/checkout'>
-            <ProceedBtn>
-              <button>Proceed to Checkout</button>
-            </ProceedBtn>
-          </Link>
-          
-         
-        </CardDown>
         
       </CartBody>
     </>
