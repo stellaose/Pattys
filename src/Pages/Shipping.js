@@ -30,10 +30,15 @@ const Shipping = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     
+    if(phoneNo.length < 11 || phoneNo.length > 11){
+      alert('Phone number must be equal to 11 digits')
+    }
+    
     dispatch(
       saveShippingInfoAction({country, state, address, city, pinCode, phoneNo})
     )
     navigate('/checkout/confirm-order')
+    window.scroll(0, 0)
   }
   return (
     <>

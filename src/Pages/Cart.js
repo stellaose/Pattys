@@ -49,6 +49,7 @@ const Cart = () => {
    
   const handleCheckout = () => {
     navigate('/login?redirect=checkout/shipping')
+    window.scroll(0, 0)
   }  
   return (
     <>
