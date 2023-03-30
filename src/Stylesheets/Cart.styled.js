@@ -19,6 +19,16 @@ export const EmptyCart = styled.div`
   }
 `
 
+export const CartContainer = styled.div`
+  background-color: #f7f7f2;
+  padding: 6rem 0 4rem;
+    
+    
+  @media (max-width:880px){
+    padding: 7rem 0 4rem;
+  }
+`
+
 export const CartBody = styled.div`
   display: block;
   align-items: center;

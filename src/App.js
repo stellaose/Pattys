@@ -12,14 +12,16 @@ import Product from "./Pages/Product";
 import Dashboard from "./Pages/Dashboard";
 import Footer from "./Components/Layout/Footer/Footer";
 import Order from "./Pages/Order";
-import Checkout from "./Pages/Checkout";
 import ProductScreen from "./Pages/ProductScreen";
 import ForgetPassword from "./Pages/ForgetPassword";
 import UpdatePassword from "./Pages/UpdatePassword";
-import ProtectedRoute from "./Components/Molecules/ProtectedRoute";
+import ProtectedRoute from "./Utils/ProtectedRoute";
 import Account from "./Pages/Account";
 import Profile from "./Pages/Profile";
 import ResetPassword from "./Pages/ResetPassword";
+import Shipping from "./Pages/Shipping";
+import ConfirmOrder from "./Pages/ConfirmOrder";
+import Payment from './Pages/Payment';
 
 function App() {
   return (
@@ -38,13 +40,7 @@ function App() {
           
           <Route exact path="order" element={<ProtectedRoute><Order /></ProtectedRoute>} />
           
-          <Route exact path="change-password" element={<ProtectedRoute><UpdatePassword/></ProtectedRoute>} />
-          
-          <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-          
-          
-         <Route exact path="checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
-
+          <Route exact path="change-password" element={<ProtectedRoute><UpdatePassword/></ProtectedRoute>} />          
         </Route>
 
         <Route exact path="login" element={<Login />} />
@@ -64,7 +60,14 @@ function App() {
         <Route exact path="shop-now" element={<Product />} />
 
         <Route exact path="shop-now/shop/:id" element={<ProductScreen />} />
-
+        
+        <Route exact path="cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+         
+        <Route exact path="checkout/shipping" element={<ProtectedRoute><Shipping/></ProtectedRoute>} />
+        
+        <Route exact path="checkout/confirm-order" element={<ProtectedRoute><ConfirmOrder/></ProtectedRoute>} />
+        
+        <Route exact path = 'checkout/payment' element = {<ProtectedRoute><Payment/></ProtectedRoute>}/>
       </Routes>
 
       <Footer />

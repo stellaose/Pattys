@@ -59,7 +59,7 @@ const ProductScreen = () => {
   }
   
   const decreaseQuantity = () => {
-    if( 1 <= quantity) return;
+    if( 1 >= quantity) return;
     setQuantity(quantity - 1)
   }
 

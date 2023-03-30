@@ -190,7 +190,7 @@ export const RegisterAction =
       alert('Registration completed. Welcome to Pattys')
       navigate("/login");
     } catch (error) {
-      alert('An error occured. Please try again')
+      alert('An error occurred. Please try again')
       dispatch(registerFailure(error));
     }
   };

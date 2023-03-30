@@ -56,10 +56,12 @@ const NavBar = () => {
     
   const closeDrop = () => {
     setDrop(false)
+    window.scroll(0, 0)
   }
     
   const closeNav = () => {
     setNav(false)
+    window.scroll(0, 0)
   }
     
   const location = useLocation()
@@ -72,17 +74,17 @@ const NavBar = () => {
           </Link>
                   
           <MidNav>
-            <NavLink to = 'shop-now' exact='true' activeclassName = 'active'>
+            <NavLink to = 'shop-now' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <h3>
                 Shop
               </h3>
             </NavLink>
                       
-            <NavLink to = 'about-us' exact='true' activeclassName = 'active'>
+            <NavLink to = 'about-us' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <h3>About us</h3>
             </NavLink>
                       
-            <NavLink to ='contact-us' exact='true' activeclassName = 'active'>
+            <NavLink to ='contact-us' exact='true' activeclassName = 'active' onClick={() => {window.scroll(0, 0)}}>
               <h3>
                 Contact Us
               </h3>
@@ -95,14 +97,14 @@ const NavBar = () => {
               <CiSearch/>
             </p>
                       
-            <NavLink to = 'my-account/favourite' exact='true' activeclassName= 'active'>
+            <NavLink to = 'my-account/favourite' exact='true' activeclassName= 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 <CiHeart/>
               </p>
                           
             </NavLink>
                       
-            <NavLink to = 'my-account/cart' exact='true' activeclassName= 'active'>
+            <NavLink to = 'cart' exact='true' activeclassName= 'active' onClick={() => {window.scroll(0, 0)}}>
               <p>
                 <CiShoppingCart/>
               </p>

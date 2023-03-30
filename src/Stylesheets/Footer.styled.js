@@ -159,22 +159,7 @@ export const PageMidDiv = styled.div`
                 font-size: 1rem;
             }
         }
-        
-        h3{
-            font-size: 1.3rem;
-            
-            @media (max-width:800px){
-                font-size: 1.2rem;
-            }
-            
-            @media (max-width: 400px){
-                font-size: 1.1rem;
-            }
-            
-            @media (max-width:300px){
-                font-size: 1rem;
-            }
-        }
+       
         
         p{
             margin-bottom: 1rem;

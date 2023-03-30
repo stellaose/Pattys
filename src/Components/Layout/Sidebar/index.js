@@ -44,18 +44,6 @@ const Sidebar = () => {
               <BiPurchaseTag/> <span>Orders</span>
             </>
           </NavLink>
-          
-          <NavLink to = 'cart' exact='true' activeclassName = 'active'>
-            <>
-              <AiOutlineShoppingCart/> <span>Cart</span>
-            </>
-          </NavLink>
-          
-          <NavLink to = 'checkout' exact='true' activeclassName = 'active'>
-            <>
-              <CiCreditCard1/> <span>Checkout</span>
-            </>
-          </NavLink>
         </SideContent>
       </SidebarBody>
     </>
