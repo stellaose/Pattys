@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+import config from "./config";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import About from "./Pages/About";
@@ -22,8 +24,33 @@ import ResetPassword from "./Pages/ResetPassword";
 import Shipping from "./Pages/Shipping";
 import ConfirmOrder from "./Pages/ConfirmOrder";
 import Payment from './Pages/Payment';
+import axios from "axios";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
+  
+  const [stripeApiKey, setStripeApiKey] = useState('')
+  
+  const getStripeApiKey = async () => {
+    const token = JSON.parse(localStorage.getItem("PattysToken"))?.token;
+    
+    const { data } = await axios.get(
+      `${config.BASE_URL}/v1/payment/send-stripe-key`,
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
+      }
+    );
+    console.log(data, 'stripe key')
+    setStripeApiKey(data.stripeApiKey)
+  }
+  
+  useEffect(() => {
+    getStripeApiKey()
+  }, [])
+  
   return (
     <div className="App">
       <NavBar />
@@ -67,7 +94,16 @@ function App() {
         
         <Route exact path="checkout/confirm-order" element={<ProtectedRoute><ConfirmOrder/></ProtectedRoute>} />
         
-        <Route exact path = 'checkout/payment' element = {<ProtectedRoute><Payment/></ProtectedRoute>}/>
+        
+        <Route exact path = 'checkout/payment' element = {<Elements stripe={loadStripe(stripeApiKey)}><ProtectedRoute><Payment/></ProtectedRoute></Elements>}/>
+        
+        {/* {stripeApiKey && (
+          <Route exact path = 'checkout/payment' element = {<Elements stripe={loadStripe(stripeApiKey)}><ProtectedRoute><Payment/></ProtectedRoute></Elements>}/>
+        )} */}
+        
+        {/* <Route exact path = 'checkout/payment' element = {<ProtectedRoute><Payment/></ProtectedRoute>}/> */}
+        
+       
       </Routes>
 
       <Footer />

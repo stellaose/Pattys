@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import MetaData from '../Components/Layout/MetaData'
 import CheckoutSteps from '../Components/Molecules/MultiStep'
 import { 
+  ButtonDiv,
         CardDown,
         CartDiv,
         CartSection,
@@ -20,13 +21,27 @@ const ConfirmOrder = () => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart)  
   const { user } = useSelector((state) => state.user)
   
+  const navigate = useNavigate()
+  
   const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country}`;
-  
   const savedUser = user?.savedUser
+  const subtotal = cartItems.reduce(
+    (acc, item) => acc + item.quantity * item.price, 0
+  )
+  const shippingCharges = subtotal > 1000 ? 0 : 200;
+  const tax = subtotal * 0.01
+  const total = subtotal + tax + shippingCharges;
   
-  console.log('user', savedUser)
-  console.log('shippingInfo', shippingInfo)
-  console.log('cartItems', cartItems)
+  const handleProceed = () => {
+    const data = {
+      subtotal,
+      shippingCharges,
+      tax,
+      total
+    }
+    sessionStorage.setItem('OrderInfo', JSON.stringify(data))
+    navigate('/checkout/payment')
+  }
   return (
     <>
       <MetaData title={'Confirm Order || Pattys E-Commerce'}/>
@@ -76,10 +91,30 @@ const ConfirmOrder = () => {
                 <h2>Order Summary</h2>
                 <CardDown>
                   <DownCard>
-                    <h2></h2>
+                    <p>Subtotal:</p>
+                    <p>&#8358;{subtotal}</p>
+                  </DownCard>
+                  
+                  <DownCard>
+                    <p>Shipping Charges:</p>
+                    <p>&#8358;{shippingCharges}</p>
+                  </DownCard>
+                  
+                  <DownCard>
+                    <p>VAT:</p>
+                    <p>&#8358;{tax}</p>
+                  </DownCard>
+                  
+                  <DownCard>
+                    <h2>Total:</h2>
+                    <h2>&#8358;{total}</h2>
                   </DownCard>
                 </CardDown>
               </CartDiv>
+              
+              <ButtonDiv>
+                <button onClick={handleProceed}>Proceed to Payment</button>
+              </ButtonDiv>
             </ConfirmContainer>
           </ConfirmBody>
         </CheckoutContainer>

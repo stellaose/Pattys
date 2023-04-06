@@ -67,7 +67,7 @@ const ProductScreen = () => {
   
   const addToCart = () => {
     dispatch(addToCartAction(id, quantity))
-    navigate('/my-account/cart')
+    navigate('/cart')
   }
   const reviews = product?.reviews;
   const description = product?.description;

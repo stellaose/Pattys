@@ -80,6 +80,12 @@ code {
     margin-top: 2rem;
 }
 
+.payment{
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  font-size: 600;
+}
+
 
 @media(max-width:1000px){
     .swiper > .swiper-button-next::after,  .swiper > .swiper-button-prev::after{
@@ -93,20 +99,31 @@ code {
 }
 
 @media (max-width:600px){
-    .tab, .nonTab, .screen, .nonScreen{
-        font-size: 1rem;
-    }
+  .tab, .nonTab, .screen, .nonScreen{
+    font-size: 1rem;
+  }
 }
 
+@media (max-width:400px){
+  .payment{
+    font-size: 1rem;
+  }
+}
+
+
 @media(max-width:300px){
-    .swiper > .swiper-button-next::after, .swiper > .swiper-button-prev::after{
-        padding-top: 2rem;
+  .swiper > .swiper-button-next::after, .swiper > .swiper-button-prev::after{
+    padding-top: 2rem;
         
-    }
+  }
     
-    .tab, .nonTab, .screen, .nonScreen{
-        font-size: 0.9rem;
-    }
+  .tab, .nonTab, .screen, .nonScreen{
+    font-size: 0.9rem;
+  }
+  
+  .payment{
+    font-size: 0.9rem;
+  }
 }
 
 

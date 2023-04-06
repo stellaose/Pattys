@@ -210,11 +210,11 @@ export const LoginPassword = styled.input`
     }
     
     @media (max-width:400px){
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     @media (max-width:300px){
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 `
 
@@ -250,7 +250,7 @@ export const LoginButton = styled.input`
         background-color: transparent;
     }
     
-    @media (max-width:1000px){
+  @media (max-width:1000px){
     font-size: 1.05rem;
   }
     

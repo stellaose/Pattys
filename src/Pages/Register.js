@@ -6,22 +6,20 @@ import { RegisterAction } from "../Redux/Actions/UserAction";
 import { AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 
 import {
-  RegisterBody,
-  RegisterBox,
-  RegisterButton,
-  RegisterColumn,
-  RegisterContainer,
-  RegisterInput,
-  RegisterInputBody,
-  RegisterLabel,
-  RegisterPassword,
-  RegisterSection,
-  NameLabel,
-  NameInput,
-  NameSection,
-  PasswordDiv,
-  Image,
-} from "../Stylesheets/Register.styled";
+          Image,
+          NameInput,
+          NameSection,
+          PasswordDiv,
+          RegisterBody,
+          RegisterBox,
+          RegisterButton,
+          RegisterColumn,
+          RegisterContainer,
+          RegisterInput,
+          RegisterInputBody,
+          RegisterLabel,
+          RegisterPassword,
+          RegisterSection } from "../Stylesheets/Register.styled";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -82,7 +80,7 @@ const Register = () => {
               
               <NameSection>
                 <div>
-                  <NameLabel htmlFor="">FirstName</NameLabel>
+                  <RegisterLabel htmlFor="">FirstName</RegisterLabel>
                   <br />
                   <NameInput 
                     type="text" 
@@ -94,7 +92,7 @@ const Register = () => {
                   />
                 </div>
                 <div>
-                  <NameLabel htmlFor="">LastName</NameLabel>
+                  <RegisterLabel htmlFor="">LastName</RegisterLabel>
                   <br />
                   <NameInput 
                     type="text" 

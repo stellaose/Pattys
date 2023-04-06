@@ -115,6 +115,8 @@ export const RegisterLabel = styled.label`
   margin-top: 1rem;
   font-size: 1rem;
   font-weight: 600;
+  color: #aeaeac;
+  
 
   @media (max-width: 400px) {
     font-size: 0.9rem;
@@ -230,20 +232,6 @@ export const NameSection = styled.div`
   display: grid;
   grid-template-columns: 44% 44%;
   gap: 1rem;
-`;
-export const NameLabel = styled.label`
-  text-align: left;
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-
-  @media (max-width: 400px) {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 300px) {
-    font-size: 0.8rem;
-  }
 `;
 
 export const NameInput = styled.input`
